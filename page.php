@@ -1,55 +1,55 @@
-<?php// get_header(); ?>
-			
-			<div id="content" class="clearfix row">
-			
-				<div id="main" class="col-sm-8 clearfix" role="main">
+<?php
+/*
+Template Name: My-Homepage
+*/
+?>
+<?php get_header(); ?>
+<?php 
+// loop through the sub-pages of your custom post type
+$parent = $post->ID;
+$childpages = new WP_Query( array(
+	'post_type'      	=> 'page', 
+	'post_parent'    	=> $parent,
+	'posts_per_page' 	=> 100,
+	'orderby'        	=> 'menu_order',
+	'order' 			=> 'ASC'
+)); 
+	while ( $childpages->have_posts() ) : $childpages->the_post(); ?>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-						<header>
-							
-							<div class="page-header"><h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1></div>
-						
-						</header> <!-- end article header -->
-					
-						<section class="post_content clearfix" itemprop="articleBody">
-							<?php the_content(); ?>
-					
-						</section> <!-- end article section -->
-						
-						<footer>
-			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ', ', '</p>'); ?>
-							
-						</footer> <!-- end article footer -->
-					
-					</article> <!-- end article -->
-					
-					<?php comments_template('',true); ?>
-					
-					<?php endwhile; ?>		
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
-			
-				</div> <!-- end #main -->
-    
-				<?php get_sidebar(); // sidebar 1 ?>
-    
-			</div> <!-- end #content -->
+	<section role="main">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<?php get_template_part('partials/article','header');?>
+			<section class="post_content clearfix" itemprop="articleBody">
+				<?php the_content();?>
+				<!-- Proof ob Konditionen oder nicht -->
+				<?php
+				if( get_field('konditionen_eintragen') )
+				{
+				    _e('Konditionen','theme_text_domain');
+				    get_template_part('partials/conditions');
+				}
+				?>
+				<?php $this_subpage=$post->ID; ?>
 
+				<?php 
+				//Loop through the sub-pages of the child pages next
+				$subpages = new WP_Query( array(
+					'post_type' => 'page', 
+					'post_parent' => $this_subpage,
+					'posts_per_page' => -1,
+					'orderby' => 'menu_order',
+					'order' 			=> 'ASC'
+				));
+				while ( $subpages->have_posts() ) : $subpages->the_post(); ?>
+				<?php get_template_part('partials/accordion');?>
+				<?php endwhile; wp_reset_query(); ?>
+
+		</section><!--.content -->
+		<footer>	  
+		<!-- Todo  edit button --></footer>
+		</article>
+	</section>		
+<?php endwhile; wp_reset_query(); ?>
 <?php get_footer(); ?>
+
+

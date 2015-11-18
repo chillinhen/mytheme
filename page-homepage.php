@@ -16,13 +16,10 @@ $childpages = new WP_Query( array(
 )); 
 	while ( $childpages->have_posts() ) : $childpages->the_post(); ?>
 
-	<section role="main">
-		<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">		
-		<header>
-			<hgroup>
-				<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-			</hgroup>
-		</header><!-- end article header -->
+	<section role="main" class="container">
+		<?php $anker = get_field('anker'); ?>	
+		<article id="<?php echo ($anker) ? $anker : 'post'.the_ID(); ?>" <?php post_class('row'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<?php get_template_part('partials/article','header');?>
 			<section class="post_content clearfix" itemprop="articleBody">
 				<?php the_content();?>
 				<!-- Proof ob Konditionen oder nicht -->
