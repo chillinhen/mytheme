@@ -38,7 +38,7 @@ function myTheme_setup() {
 	
 		    function my_styles() {
 	        wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-			wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/library/css/myTheme.css', 'style', '1.0', 'screen');
+			wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/library/stylesheets/myTheme.css', 'style', '1.0', 'screen');
 
 	
 			wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic', 'style', '1.0', 'screen');
