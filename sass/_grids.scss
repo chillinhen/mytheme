@@ -26,23 +26,19 @@ container-position: center,
     }
 }
 article{
-    
     .container{
         section {
             @include container(1170px);
             margin:0 auto;
-            
-            blockquote{
-                @include span(last 4 of 12);
-            }
-            > p, .panel, ul {
-                @include span(8 of 12);
-                display: inline-block;
-            }
+        }
+        .post_content > div{
+          @include span(8 of 12);  
+        }
+        .quote{
+           @include span(last 4 of 12); 
         }
         footer {
             clear:both;
-            margin-right:span(4 wide of 12);
         }
 
     }

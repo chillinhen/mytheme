@@ -1,10 +1,16 @@
+<?php
+$sub_posts = array();
+for ($label = 1; $label <= 6; $label++) :
+    $sub_posts[] = get_field('sub-post_0' . $label);
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('buttons'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');>
-        
-    <div class="container">
-	<section class="post_content" itemprop="articleBody">
-	    <?php the_content(); ?>
-	</section> <!-- end article section -->
-	  <footer></footer>
-</div>
-</article>
+endfor;
+?>
+
+<?php
+foreach ($sub_posts as $post) :
+    if ($post) :
+        setup_postdata($post);
+        get_template_part('partials/accordion');
+    endif;
+endforeach;
+?>

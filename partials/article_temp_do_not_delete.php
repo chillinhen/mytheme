@@ -1,25 +1,14 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<!--<div class="col-sm-8">-->
-	<header>
-		<hgroup>
-			<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-		</hgroup>
-	</header><!-- end article header -->
-	<section class="post_content clearfix" itemprop="articleBody">
-	    <?php the_content(); ?>
-	    
-	    	<!-- Proof ob Konditionen oder nicht -->
-	    	<?php
-	    	if( get_field('konditionen_eintragen') )
-	    	{
-	    	    _e('Konditionen','theme_text_domain');
-	    	    get_template_part('partials/conditions');
-	    	}
-	    	?>
-	    
-	</section> <!-- end article section -->
-	
-	  <footer>	  
-	  <!-- Todo  edit button --></footer> <!-- end article footer -->
-</article>
-        
+Gefangen in der Trauer.
+Eingeschlossen in einem leidvollen, einsamen Raum.
+Leugnen? Fliehen? – nützt nichts.
+Gefangen in der Trauer.
+
+Dieser Raum ist jetzt für die die Wahrheit.
+Niemand weiß, ob sich jemals ein Weg heraus öffnen wird.
+
+Dieser Raum ist jetzt für dich die Wahrheit.
+
+Ich möchte dich besuchen, wenn ich darf,
+in deinem Raum des Schmerzes.	
+Vielleicht kann ich ein Licht sein.
+Ich möchte dich besuchen, wenn ich darf.

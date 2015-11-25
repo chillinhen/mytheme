@@ -287,7 +287,7 @@ article#kontakt strong {
   margin-right: 0;
 }
 
-/* line 31, ../sass/_grids.scss */
+/* line 30, ../sass/_grids.scss */
 article .container section {
   max-width: 1170px;
   margin-left: auto;
@@ -300,36 +300,35 @@ article .container section:after {
   display: block;
   clear: both;
 }
-/* line 35, ../sass/_grids.scss */
-article .container section blockquote {
+/* line 34, ../sass/_grids.scss */
+article .container .post_content > div {
+  width: 65.95745%;
+  float: left;
+  margin-right: 2.12766%;
+}
+/* line 37, ../sass/_grids.scss */
+article .container .quote {
   width: 31.91489%;
   float: right;
   margin-right: 0;
 }
-/* line 38, ../sass/_grids.scss */
-article .container section > p, article .container section .panel, article .container section ul {
-  width: 65.95745%;
-  float: left;
-  margin-right: 2.12766%;
-  display: inline-block;
-}
-/* line 43, ../sass/_grids.scss */
+/* line 40, ../sass/_grids.scss */
 article .container footer {
   clear: both;
-  margin-right: 34.04255%;
+  /*            margin-right:span(4 wide of 12);*/
 }
-/* line 51, ../sass/_grids.scss */
+/* line 48, ../sass/_grids.scss */
 article.buttons section > * {
   width: 40.42553%;
   float: left;
   margin-right: 2.12766%;
 }
 
-/* line 57, ../sass/_grids.scss */
+/* line 54, ../sass/_grids.scss */
 .conditions {
   margin-top: 1em;
 }
-/* line 59, ../sass/_grids.scss */
+/* line 56, ../sass/_grids.scss */
 .conditions .row {
   max-width: 100%;
   margin-left: auto;
@@ -341,13 +340,13 @@ article.buttons section > * {
   display: block;
   clear: both;
 }
-/* line 61, ../sass/_grids.scss */
+/* line 58, ../sass/_grids.scss */
 .conditions .row > .label {
   width: 25.92593%;
   float: left;
   margin-right: 3.7037%;
 }
-/* line 64, ../sass/_grids.scss */
+/* line 61, ../sass/_grids.scss */
 .conditions .row > .value {
   width: 70.37037%;
   float: right;
@@ -397,11 +396,11 @@ article.buttons section > * {
 }
 
 /* line 40, ../sass/_layout.scss */
-article.page {
+article.rubrik {
   margin-bottom: 110px;
 }
 /* line 42, ../sass/_layout.scss */
-article.page > header {
+article.rubrik > header {
   height: 414px;
   width: 100%;
   background-size: cover;
@@ -410,7 +409,7 @@ article.page > header {
   padding-top: 2em;
 }
 /* line 49, ../sass/_layout.scss */
-article.page > header > hgroup {
+article.rubrik > header > hgroup {
   background: url("../img/Bilderrahmen.svg") center center no-repeat;
   background-size: 100%;
   height: 510px;
@@ -425,18 +424,18 @@ article.page > header > hgroup {
   -ms-transform: rotate(-1.25deg);
 }
 /* line 59, ../sass/_layout.scss */
-article.page > header > hgroup > .thumbnail {
+article.rubrik > header > hgroup > .thumbnail {
   border: 15px solid white;
   overflow: hidden;
 }
 /* line 62, ../sass/_layout.scss */
-article.page > header > hgroup > .thumbnail > img {
+article.rubrik > header > hgroup > .thumbnail > img {
   height: 476px;
   width: auto;
   max-width: none;
 }
 /* line 68, ../sass/_layout.scss */
-article.page > header > hgroup .page-title {
+article.rubrik > header > hgroup .page-title {
   position: absolute;
   top: 3em;
   left: 2em;
@@ -444,7 +443,7 @@ article.page > header > hgroup .page-title {
   text-align: center;
 }
 /* line 79, ../sass/_layout.scss */
-article.page > .container {
+article.rubrik > .container {
   padding-top: 160px;
   background-color: white;
   background-image: url("../img/Voegel.svg"), url("../img/Leuchtturm.svg");
@@ -453,7 +452,7 @@ article.page > .container {
   background-size: auto 80px, auto 375px;
 }
 /* line 87, ../sass/_layout.scss */
-article.page.buttons {
+article.rubrik.buttons {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -461,39 +460,39 @@ article.page.buttons {
 }
 @media screen and (max-width: 992px) {
   /* line 87, ../sass/_layout.scss */
-  article.page.buttons {
+  article.rubrik.buttons {
     height: 100vH;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 87, ../sass/_layout.scss */
-  article.page.buttons {
+  article.rubrik.buttons {
     height: 778px;
   }
 }
 /* line 100, ../sass/_layout.scss */
-article.page.buttons > .container {
+article.rubrik.buttons > .container {
   background-color: transparent;
   background-image: none;
   padding-top: 430px;
 }
 /* line 107, ../sass/_layout.scss */
-article.page#kontakt, article.page #impressum {
+article.rubrik#kontakt, article.rubrik #impressum {
   background: #558dbe;
 }
 /* line 109, ../sass/_layout.scss */
-article.page#kontakt > .container, article.page #impressum > .container {
+article.rubrik#kontakt > .container, article.rubrik #impressum > .container {
   background-color: transparent;
   background-image: none;
   padding-bottom: 110px;
 }
 /* line 113, ../sass/_layout.scss */
-article.page#kontakt > .container .row, article.page #impressum > .container .row {
+article.rubrik#kontakt > .container .row, article.rubrik #impressum > .container .row {
   display: -webkit-flex;
   display: flex;
 }
 /* line 117, ../sass/_layout.scss */
-article.page#kontakt > .container [class*="col"], article.page #impressum > .container [class*="col"] {
+article.rubrik#kontakt > .container [class*="col"], article.rubrik #impressum > .container [class*="col"] {
   -webkit-flex: 1 0;
   flex: 1 0;
   padding: 1.8em 3em 0;
@@ -502,17 +501,17 @@ article.page#kontakt > .container [class*="col"], article.page #impressum > .con
   border-color: white;
 }
 /* line 122, ../sass/_layout.scss */
-article.page#kontakt > .container [class*="col"].last, article.page #impressum > .container [class*="col"].last {
+article.rubrik#kontakt > .container [class*="col"].last, article.rubrik #impressum > .container [class*="col"].last {
   padding-right: 0;
   border-right: 0;
 }
 /* line 126, ../sass/_layout.scss */
-article.page#kontakt > .container [class*="col"].first, article.page #impressum > .container [class*="col"].first {
+article.rubrik#kontakt > .container [class*="col"].first, article.rubrik #impressum > .container [class*="col"].first {
   padding-left: 0;
   border-left: 0;
 }
 /* line 130, ../sass/_layout.scss */
-article.page#kontakt > .container .page-title, article.page #impressum > .container .page-title {
+article.rubrik#kontakt > .container .page-title, article.rubrik #impressum > .container .page-title {
   display: none;
 }
 
