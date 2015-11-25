@@ -1,66 +1,10 @@
-<?php get_header(); ?>
-<section role="main" class="container">
-    <?php
-// loop through the sub-pages of your custom post type
-    $parent = $post->ID;
-    $childpages = new WP_Query(array(
-        'post_type' => 'page',
-        'post_parent' => $parent,
-        'posts_per_page' => 100,
-        'orderby' => 'menu_order',
-        'order' => 'ASC'
-    ));
-    while ($childpages->have_posts()) : $childpages->the_post();
-        ?>
 
-
-        <?php $anker = get_field('anker'); ?>	
-        <article id="<?php echo ($anker) ? $anker : 'post' . the_ID(); ?>" <?php post_class('row'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-            <?php get_template_part('partials/article', 'header'); ?>
-            <section class="post_content" itemprop="articleBody">
-                <?php the_content(); ?>
-                <!-- Proof ob Konditionen oder nicht -->
-                <?php
-                if (get_field('konditionen_eintragen')) {
-                    _e('Konditionen', 'theme_text_domain');
-                    get_template_part('partials/conditions');
-                }
-                ?>
-                <?php $this_subpage = $post->ID; ?>
-
-                <?php
-                //Loop through the sub-pages of the child pages next
-                $subpages = new WP_Query(array(
-                    'post_type' => 'page',
-                    'post_parent' => $this_subpage,
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC'
-                ));
-                while ($subpages->have_posts()) : $subpages->the_post();
-                    ?>
-                    <?php get_template_part('partials/accordion'); ?>
-                <?php
-                endwhile;
-                wp_reset_query();
-                ?>
-                <?php
-                $quote = get_field('quotes');
-                $post = $quote;
-                setup_postdata($post);
-                get_template_part('partials/article', 'quote');
-                wp_reset_postdata();
-                ?>
-            </section><!--.content -->
-            <footer>	  
-                <!-- Todo  edit button --></footer>
-        </article>
-
-    <?php
-    endwhile;
-    wp_reset_query();
-    ?>
-</section>	
-<?php get_footer(); ?>
-
-
+<article id="post-<?php the_ID(); ?>" <?php post_class('buttons'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');>
+        
+    <div class="container">
+	<section class="post_content" itemprop="articleBody">
+	    <?php the_content(); ?>
+	</section> <!-- end article section -->
+	  <footer></footer>
+</div>
+</article>

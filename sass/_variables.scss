@@ -1,8 +1,24 @@
+/**** Debugging ***/
+
+@mixin foo($col){
+    border:2px dashed $col;
+}
+
+/**** Breakpoints ***/
+$screen-mini: 320px;
+$screen-xs: 480px;
+$screen-maxPhone: 736px;
+$screen-smallPad:600px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
 /**** type ***/
 $baseHeadWeight:300;
 $baseFontstack:'Open Sans', Arial, Helvetica, sans-serif;
 $baseFontsize:12px;
 $baselineHeight:$baseFontsize * 1.33;
+$baseFontsizeMiddle:$baseFontsize * 1.33;
 
 $font-size-h1: 3.33em;
 $font-size-h2: 2em;
@@ -19,8 +35,12 @@ $blue:#558dbe;
 $basecolor:$blue;
 $brown:rgba(52,52,52,0.85);
 $beige:#c1a879;
+$lightbeige:#dacbaf;
 $textcolor:#4d575e;
 $headerSpan:#5d7677;
+
+//*** misc. measuremts ****/
+$headerHeight:110px;
 
 /**** Mixins *****/
 @mixin border-panel($width,$style,$color){
@@ -44,4 +64,24 @@ $headerSpan:#5d7677;
     -webkit-transform: rotate($dg);
     -o-transform: rotate($dg);
     -ms-transform: rotate($dg);
+}
+///alpha background
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+/*** bullets***/
+@mixin bullets($url,$size){
+    &:before{
+                    content: ' ';
+                    background: transparent $url left center no-repeat;
+                    height:$size;
+                    display:inline-block;
+                    float:left;
+                    margin:0 1em 1em 0;
+                    width:16px;
+                }
 }

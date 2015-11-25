@@ -2,7 +2,11 @@
 add_action('after_setup_theme', 'myTheme_setup');
 
 function myTheme_setup() {
-	//later
+    remove_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+    if (!current_user_can('manage_options')) {
+        //show_admin_bar( false );
+    }
+    //later
 	#add_image_size( 'wpbs-bg', 1024, 506, true);
 	#add_image_size( 'wpbs-header-thumb', 512, 300, true);
 	

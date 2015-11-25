@@ -6,4 +6,9 @@ jQuery(document).ready(function ($) {
             $(this).toggleClass('open');
         });
     });
+    
+    //external links
+      $('a').filter(function() {
+	    return this.hostname && this.hostname !== location.hostname;
+	  }).attr("target","_blank");
 });

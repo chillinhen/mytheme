@@ -16,10 +16,10 @@ $notes_double = get_field('notes-double');
 $location = get_field('adresse');
 $notes = get_field('notes');
 ?>
-<!-- put in array -->
+<!-- ToDo:put in array -->
 <header id="heading-<?php the_ID(); ?>">
 
-    <h3 role="button" data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="false" aria-controls="collapse-<?php the_ID(); ?>"><?php _e("Konditionen", "wpbootstrap"); ?></h3>
+    <h3 role="button" data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="false" aria-controls="collapse-<?php the_ID(); ?>"><?php _e("Konditionen", "html5blank"); ?></h3>
 </header>
 <div class="collapse" id="collapse-<?php the_ID(); ?>">
     <div class="row">

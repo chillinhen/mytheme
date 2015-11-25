@@ -25,7 +25,13 @@
             <?php get_template_part('partials/article', 'header'); ?>
             <div class="container">
                 <section class="post_content" itemprop="articleBody">
-                    <?php the_content(); ?>
+                    <!-- Proof ob Kontakt oder nicht? -->
+                        <?php
+                        if (get_field('kontaktdaten_eintragen')) :
+                            get_template_part('partials/contact');
+                        else: the_content();
+                        endif;
+                        ?>
                             <!-- Proof ob Konditionen oder nicht -->
                             <?php if (get_field('konditionen_eintragen')) : ?>
                                 <div class="conditions panel">
@@ -35,6 +41,9 @@
                                 </div>
                             <?php endif;
                             ?>
+                            
+                             
+                            
 
                     <?php $this_subpage = $post->ID; 
                     $subpages = new WP_Query(array(
@@ -49,8 +58,10 @@
                         endwhile;
                         wp_reset_query();
                         ?>
-                            <footer></footer>
+                            <footer>
+                            </footer>
                 </section>
+                
             </div>
         </article>
     <?php endwhile;

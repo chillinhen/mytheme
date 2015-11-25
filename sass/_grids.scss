@@ -5,7 +5,7 @@
 
 $susy: (
 columns: 12,
-gutters: 1/4,
+gutters: 1/3,
 container-position: center,
 );
 .wrapper {
@@ -31,10 +31,11 @@ article{
         section {
             @include container(1170px);
             margin:0 auto;
+            
             blockquote{
                 @include span(last 4 of 12);
             }
-            > p, .panel {
+            > p, .panel, ul {
                 @include span(8 of 12);
                 display: inline-block;
             }
@@ -47,7 +48,9 @@ article{
     }
     &.buttons{
         section{
-            @include span(4 of 12);
+            > *{
+                @include span(5 of 12);
+            }
         }
     }
 }
