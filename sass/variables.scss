@@ -1,0 +1,47 @@
+/**** type ***/
+$baseHeadWeight:300;
+$baseFontstack:'Open Sans', Arial, Helvetica, sans-serif;
+$baseFontsize:12px;
+$baselineHeight:$baseFontsize * 1.33;
+
+$font-size-h1: 3.33em;
+$font-size-h2: 2em;
+$font-size-h3: $font-size-h1/2;
+$font-size-h4: $baseFontsize;
+$font-size-h5: $baseFontsize;
+$font-size-h6: $baseFontsize;
+
+$button-size:$baseFontsize * 1.5;
+
+/**** colors ***/
+$bgcolor: white;
+$blue:#558dbe;
+$basecolor:$blue;
+$brown:rgba(52,52,52,0.85);
+$beige:#c1a879;
+$textcolor:#4d575e;
+$headerSpan:#5d7677;
+
+/**** Mixins *****/
+@mixin border-panel($width,$style,$color){
+    border-width: $width;
+    border-style: $style;
+    border-color:$color;
+}
+
+//border-image
+@mixin border-image($imgURL,$width,$offset,$hrepeat, $vrepeat){
+    border-style: solid;
+    border-width: $width;
+    -moz-border-image: $imgURL $offset $hrepeat $vrepeat;
+    -webkit-border-image: $imgURL $offset $hrepeat $vrepeat;
+    -o-border-image: $imgURL $offset $hrepeat $vrepeat;
+    border-image: $imgURL $offset fill $hrepeat $vrepeat;
+}
+// rotate
+@mixin rotate($dg){
+    -moz-transform: rotate($dg);
+    -webkit-transform: rotate($dg);
+    -o-transform: rotate($dg);
+    -ms-transform: rotate($dg);
+}

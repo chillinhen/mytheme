@@ -1,0 +1,472 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*@import "compass/css3/flexbox";*/
+/*@import "compass/css3/transform";*/
+/**** type ***/
+/**** colors ***/
+/**** Mixins *****/
+/* line 2, ../sass/typo.scss */
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 15.96px;
+  color: #4d575e;
+  background-color: white;
+}
+
+/* line 9, ../sass/typo.scss */
+a {
+  color: #558dbe;
+}
+/* line 11, ../sass/typo.scss */
+a:link {
+  color: #558dbe;
+}
+/* line 14, ../sass/typo.scss */
+a:focus, a:visited {
+  color: #7aa6cc;
+}
+/* line 17, ../sass/typo.scss */
+a:hover {
+  color: #c1a879;
+}
+
+/* line 21, ../sass/typo.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #558dbe;
+}
+
+/* line 27, ../sass/typo.scss */
+h1 {
+  font-size: 3.33em;
+}
+
+/* line 28, ../sass/typo.scss */
+h2 {
+  font-size: 2em;
+}
+
+/* line 29, ../sass/typo.scss */
+h3 {
+  font-size: 1.665em;
+}
+
+/* line 30, ../sass/typo.scss */
+h4 {
+  font-size: 12px;
+}
+
+/* line 31, ../sass/typo.scss */
+h5 {
+  font-size: 12px;
+}
+
+/* line 32, ../sass/typo.scss */
+h6 {
+  font-size: 12px;
+}
+
+/* line 35, ../sass/typo.scss */
+article h1 {
+  color: #558dbe;
+  font-weight: 700;
+  letter-spacing: -2px;
+  font-size: 3.33em;
+  text-transform: uppercase;
+}
+/* line 42, ../sass/typo.scss */
+article p {
+  color: #4d575e;
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 1.95em;
+}
+/* line 49, ../sass/typo.scss */
+article blockquote > * {
+  color: #558dbe;
+  font-size: 1.33em;
+  line-height: 1.33;
+  margin-bottom: 1.625em;
+}
+/* line 58, ../sass/typo.scss */
+article.buttons ul li {
+  display: block;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: bold;
+}
+
+/* line 68, ../sass/typo.scss */
+.header .nav {
+  margin-top: 25px;
+}
+/* line 70, ../sass/typo.scss */
+.header .nav a {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+/* line 11, ../sass/_grids.scss */
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 16, ../sass/_grids.scss */
+.header .container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
+.header .container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 19, ../sass/_grids.scss */
+.header .container > .navbar-toggle {
+  display: none;
+}
+/* line 20, ../sass/_grids.scss */
+.header .container > nav {
+  width: 74.57627%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 23, ../sass/_grids.scss */
+.header .container > .logo {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 31, ../sass/_grids.scss */
+article .container section {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
+article .container section:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 34, ../sass/_grids.scss */
+article .container section blockquote {
+  width: 32.20339%;
+  float: right;
+  margin-right: 0;
+}
+/* line 37, ../sass/_grids.scss */
+article .container section > p, article .container section .panel {
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline-block;
+}
+/* line 42, ../sass/_grids.scss */
+article .container footer {
+  clear: both;
+  margin-right: 33.89831%;
+}
+/* line 49, ../sass/_grids.scss */
+article.buttons section {
+  width: 32.20339%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 54, ../sass/_grids.scss */
+.conditions {
+  margin-top: 1em;
+}
+/* line 56, ../sass/_grids.scss */
+.conditions .row {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
+.conditions .row:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 58, ../sass/_grids.scss */
+.conditions .row > .label {
+  width: 26.47059%;
+  float: left;
+  margin-right: 2.94118%;
+}
+/* line 61, ../sass/_grids.scss */
+.conditions .row > .value {
+  width: 70.58824%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 1, ../sass/layout.scss */
+.header.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  background: white;
+  padding-top: 50px;
+  height: 110px;
+  z-index: 9999999;
+}
+/* line 13, ../sass/layout.scss */
+.header.fixed-top nav ul li {
+  float: left;
+  display: inline-block;
+  margin-right: 1.4em;
+}
+
+/* line 21, ../sass/layout.scss */
+.logo-img {
+  width: 200px;
+  height: auto;
+}
+
+/* line 26, ../sass/layout.scss */
+.wrapper .main {
+  margin-top: 110px;
+}
+
+/* line 31, ../sass/layout.scss */
+article.page > header {
+  height: 414px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 2em;
+}
+/* line 38, ../sass/layout.scss */
+article.page > header > hgroup {
+  background: url("../img/Bilderrahmen.svg") center center no-repeat;
+  background-size: 100%;
+  height: 510px;
+  width: 745px;
+  margin: 0 100px;
+  padding: 2px;
+  position: relative;
+  display: block;
+  -moz-transform: rotate(-1.25deg);
+  -webkit-transform: rotate(-1.25deg);
+  -o-transform: rotate(-1.25deg);
+  -ms-transform: rotate(-1.25deg);
+}
+/* line 48, ../sass/layout.scss */
+article.page > header > hgroup > .thumbnail {
+  border: 15px solid white;
+  overflow: hidden;
+}
+/* line 51, ../sass/layout.scss */
+article.page > header > hgroup > .thumbnail > img {
+  height: 476px;
+  width: auto;
+  max-width: none;
+}
+/* line 57, ../sass/layout.scss */
+article.page > header > hgroup .page-title {
+  position: absolute;
+  top: 3em;
+  left: 2em;
+  right: 2em;
+  text-align: center;
+}
+/* line 68, ../sass/layout.scss */
+article.page > .container {
+  padding-top: 160px;
+  background-color: white;
+  background-image: url("../img/Voegel.svg"), url("../img/Leuchtturm.svg");
+  background-repeat: no-repeat;
+  background-position: 5px 88px, 80% 30px;
+  background-size: auto 80px, auto 375px;
+}
+
+/* line 77, ../sass/layout.scss */
+.conditions, .panel {
+  /*        .row:before, .row:after{
+          content:' ';
+          display:block;
+          width:100%;
+          height:1px;
+          background: transparent url('../img/dots.svg') repeat-x left center;
+      }*/
+}
+/* line 78, ../sass/layout.scss */
+.conditions > header, .panel > header {
+  padding: .5em 0;
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: #558dbe;
+  position: relative;
+}
+/* line 82, ../sass/layout.scss */
+.conditions > header:hover, .panel > header:hover {
+  cursor: pointer;
+}
+/* line 85, ../sass/layout.scss */
+.conditions > header:after, .panel > header:after {
+  content: ' ';
+  background: transparent url("../img/arrow.svg") no-repeat right center/cover;
+  display: inline-block;
+  position: absolute;
+  top: .5em;
+  right: 0;
+  height: 9px;
+  width: 18px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+/* line 96, ../sass/layout.scss */
+.conditions > header.open:after, .panel > header.open:after {
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+}
+/* line 99, ../sass/layout.scss */
+.conditions > header > *, .panel > header > * {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+/* line 107, ../sass/layout.scss */
+.conditions .row, .panel .row {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: #558dbe;
+  padding: .75em 0;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
+.conditions .row:after, .panel .row:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 111, ../sass/layout.scss */
+.conditions .row > *, .panel .row > * {
+  color: #558dbe;
+}
+/* line 114, ../sass/layout.scss */
+.conditions .row > .value, .panel .row > .value {
+  font-weight: bold;
+}
+
+/* line 126, ../sass/layout.scss */
+.panel {
+  margin-top: -1px;
+}
+
+/* line 129, ../sass/layout.scss */
+.panel-content {
+  padding-top: 1em;
+}
+
+/* line 134, ../sass/layout.scss */
+.buttons ul li {
+  margin: 0 0 .2em 0;
+}
+/* line 136, ../sass/layout.scss */
+.buttons ul li a {
+  padding: 2.3em 1em;
+  color: white;
+  display: block;
+  background: #558dbe;
+}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23.11.2015, 20:30:59
+    Author     : chilliscope
+*/

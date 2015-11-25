@@ -1,0 +1,65 @@
+// Requirements
+// ============
+
+@import "susy";
+
+$susy: (
+columns: 12,
+gutters: 1/4,
+container-position: center,
+);
+.wrapper {
+    width:100%;
+    max-width:100%;
+}
+.header {
+    .container {
+        @include container(1170px);
+        margin:0 auto;
+        > .navbar-toggle{display: none;}
+        > nav{
+            @include span(9 of 12);
+        }
+        > .logo {
+            @include span(last 3 of 12);
+        }
+    }
+}
+article{
+    
+    .container{
+        section {
+            @include container(1170px);
+            margin:0 auto;
+            blockquote{
+                @include span(last 4 of 12);
+            }
+            > p, .panel {
+                @include span(8 of 12);
+                display: inline-block;
+            }
+        }
+        footer {
+            clear:both;
+            margin-right:span(4 wide of 12);
+        }
+
+    }
+    &.buttons{
+        section{
+            @include span(4 of 12);
+        }
+    }
+}
+.conditions {
+    margin-top:1em;
+    .row{
+        @include container;
+        > .label{
+           @include span(2 of 7); 
+        }
+         > .value{
+           @include span(last 5 of 7); 
+        }
+    }
+}

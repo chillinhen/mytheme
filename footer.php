@@ -1,39 +1,30 @@
-			<footer role="contentinfo" class="container">
-			
-				<div id="inner-footer" class="clearfix">
-		          <hr />
-		          <div id="widget-footer" class="clearfix row">
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-		            <?php endif; ?>
-		          </div>
-					
-					<nav class="clearfix">
-						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-					</nav>
-					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-				
-				</div> <!-- end #inner-footer -->
-				
-			</footer> <!-- end footer -->
-				
-		<!--[if lt IE 7 ]>
-  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-		<![endif]-->
-		
-		<?php wp_footer(); // js scripts are inserted using this function ?>
+			<!-- footer -->
+			<footer class="footer" role="contentinfo">
 
-		<!-- remove this for production -->
+				<!-- copyright -->
+				<p class="copyright">
+					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
+				</p>
+				<!-- /copyright -->
 
-		<script src="//localhost:35729/livereload.js"></script>
+			</footer>
+			<!-- /footer -->
+
+		</div>
+		<!-- /wrapper -->
+
+		<?php wp_footer(); ?>
+
+		<!-- analytics -->
+		<script>
+		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+		ga('send', 'pageview');
+		</script>
 
 	</body>
-
 </html>
