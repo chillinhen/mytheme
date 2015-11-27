@@ -44,7 +44,7 @@
                     </nav>
                     <!-- logo -->
                     <div class="logo">
-                        <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('description'); ?>">
+                        <a href="#start" title="<?php echo get_bloginfo('description'); ?>">
                             <!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.svg" alt="<?php bloginfo('name'); ?>" class="logo-img">
 

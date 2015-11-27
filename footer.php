@@ -1,18 +1,20 @@
-<!-- footer -->
+<!-- footer 
+<div id="wrapper-footer"></div>-->
 <footer class="footer" role="contentinfo">
     <?php
-            get_template_part('partials/button','back');
-            ?>
+    get_template_part('partials/scroll', 'top');
+    ?>
+    <div class="button contact">
+    <a href="mailto:a.bruders@trauer-aachen.de?subject=<?php _e("Kontaktanfrage über www.trauer-aachen.de", "html5blank");?>">
+        <?php _e("Kontakt", "html5blank"); ?>
+    </a>
+</div>
 </footer>
 <!-- /footer -->
 
 </div>
 <!-- /wrapper -->
-<div class="button contact">
-    <a href="mailto:a.bruders@trauer-aachen.de?subject=<?php _e("Kontaktanfrage über www.trauer-aachen.de", "html5blank");?>">
-        <?php _e("Kontakt", "html5blank"); ?>
-    </a>
-</div>
+
 
 <?php wp_footer(); ?>
 

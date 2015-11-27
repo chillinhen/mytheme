@@ -17,97 +17,97 @@ $location = get_field('adresse');
 $notes = get_field('notes');
 ?>
 <!-- ToDo:put in array -->
-<header id="heading-<?php the_ID(); ?>">
+<div class='conditions'>
+    <?php if ($time || $first_talk || $next_talk) : ?>
+        <div class="row">
 
-    <h3 role="button" data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="false" aria-controls="collapse-<?php the_ID(); ?>"><?php _e("Konditionen", "html5blank"); ?></h3>
-</header>
-<div class="collapse" id="collapse-<?php the_ID(); ?>">
-    <div class="row">
+            <?php if ($time) : ?>
+                <div class="label">
+                    <?php echo $label_time; ?>
+                </div>
+                <div class="value">
+                    <?php echo $time; ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($time) : ?>
-            <div class="label">
-                <?php echo $label_time; ?>
-            </div>
-            <div class="value">
-                <?php echo $time; ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($first_talk) : ?>
+                <div class="label">
+                    <?php echo $label_kosten_01; ?>
+                </div>
+                <div class="value">
+                    <?php echo $first_talk; ?>
+                    <?php if ($notes_costs) : ?>
+                        <i><?php echo($notes_costs); ?></i>
+                    <?php endif; ?><!-- lieber hier Texteditor?-->
+                </div>
+            <?php endif; ?>
 
-        <?php if ($first_talk) : ?>
-            <div class="label">
-                <?php echo $label_kosten_01; ?>
-            </div>
-            <div class="value">
-                <?php echo $first_talk; ?>
-                <?php if ($notes_costs) : ?>
-                    <i><?php echo($notes_costs); ?></i>
-                <?php endif; ?><!-- lieber hier Texteditor?-->
-            </div>
-        <?php endif; ?>
+            <?php if ($next_talk) : ?>
+                <div class="label">
+                    <?php echo $label_kosten_02; ?>
+                </div>
+                <div class="value">
+                    <?php echo $next_talk; ?>
+                    <?php if ($notes_costs) : ?>
+                        <i><?php echo($notes_costs); ?></i>
+                    <?php endif; ?><!-- lieber hier Texteditor?-->
+                </div>
+            <?php endif; ?>
 
-        <?php if ($next_talk) : ?>
-            <div class="label">
-                <?php echo $label_kosten_02; ?>
-            </div>
-            <div class="value">
-                <?php echo $next_talk; ?>
-                <?php if ($notes_costs) : ?>
-                    <i><?php echo($notes_costs); ?></i>
-                <?php endif; ?><!-- lieber hier Texteditor?-->
-            </div>
-        <?php endif; ?>
+            <?php if ($double_2) : ?>
+                <div class="label">
+                    <?php echo $double_2; ?>
+                </div>
+                <div class="value">
+                    <?php echo $double_2_costs; ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($double_2) : ?>
-            <div class="label">
-                <?php echo $double_2; ?>
-            </div>
-            <div class="value">
-                <?php echo $double_2_costs; ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($double_3) : ?>
+                <div class="label">
+                    <?php echo $double_3; ?>
+                </div>
+                <div class="value">
+                    <?php echo $double_3_costs; ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($double_3) : ?>
-            <div class="label">
-                <?php echo $double_3; ?>
-            </div>
-            <div class="value">
-                <?php echo $double_3_costs; ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($double_4) : ?>
+                <div class="label">
+                    <?php echo $double_4; ?>
+                </div>
+                <div class="value">
+                    <?php echo $double_4_costs; ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($double_4) : ?>
-            <div class="label">
-                <?php echo $double_4; ?>
-            </div>
-            <div class="value">
-                <?php echo $double_4_costs; ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($notes_double) : ?>
+                <div class="col-sm-offset-4 value">
+                    <?php echo $notes_double ?>
+                </div>
+            <?php endif; ?>
+            <!-- ToDo optimieren for-schleife o.ä. -->
+        </div>
+    <?php endif; ?>
+    <?php if ($location) : ?>
+        <div class="row">
 
-        <?php if ($notes_double) : ?>
-            <div class="col-sm-offset-4 value">
-                <?php echo $notes_double ?>
-            </div>
-        <?php endif; ?>
-        <!-- ToDo optimieren for-schleife o.ä. -->
-    </div>
-
-    <div class="row">
-        <?php if ($location) : ?>
             <div class="label">
                 <?php _e("Ort", "wpbootstrap"); ?>
             </div>
             <div class="value">
                 <?php echo $location; ?>
             </div>
-        <?php endif; ?>
-    </div>
 
-    <div class="row">
-        <?php if ($notes) : ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($notes) : ?>
+        <div class="row">
+
             <div class="col-sm-12">
                 <?php echo $notes; ?>
             </div>
-        <?php endif; ?>
-    </div>
+
+        </div>
+    <?php endif; ?>
 </div>

@@ -5,14 +5,6 @@
         <section class="post_content full">
             <div itemprop="articleBody">
                 <?php get_template_part('partials/contact'); ?>
-                <!-- Proof ob Konditionen oder nicht -->
-                <?php if (get_field('konditionen_eintragen')) : ?>
-                    <div class="conditions panel">
-                        <?php
-                        get_template_part('partials/conditions');
-                        ?>
-                    </div>
-                <?php endif; ?>
             </div>
         </section>
     </div>   

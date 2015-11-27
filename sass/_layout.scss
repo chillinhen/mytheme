@@ -1,3 +1,7 @@
+/*@include sticky-footer(72px, "#wrapper", "#wrapper-footer", ".footer");
+.footer{
+
+}*/
 .header{
     &.fixed-top{
         position: fixed;
@@ -38,9 +42,9 @@
     }
 }
 article.rubrik {
-    margin-bottom:$headerHeight;
+    padding-top:$headerHeight;
     > header{
-        height:414px;
+        height:460px;
         width: 100%;
         background-size:cover;
         background-repeat: no-repeat;
@@ -65,19 +69,11 @@ article.rubrik {
                     max-width: none;
                 }
             }
-            .page-title{
-                position: absolute;
-                top:3em;
-                left:2em;
-                right:2em;
-                text-align: center;
-            }
-
 
         }
     }
     > .container {
-        padding-top:160px;
+        padding-top:130px;
         background-color:white;
         background-image: url('../img/Voegel.svg'),url('../img/Leuchtturm.svg');
         background-repeat: no-repeat;
@@ -85,54 +81,153 @@ article.rubrik {
         background-size:auto 80px, auto 375px;
     }
     &.buttons{
-        @media screen and (max-width: $screen-md){
-           height:100vH;
-        }
-        @media screen and (min-width: $screen-md){
-           height:778px;
-        }
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size:cover;
-        
-        
-        display:block;
         > .container{
-            background-color: transparent;
-            background-image:none;
-            padding-top:430px;
+            height:inherit;
+            > section {
+                padding-top:350px; 
+            }
         }
 
     }
-    &#kontakt, #impressum{
-        background: $basecolor;
+    &#kontakt{
         > .container {
-             background-color: transparent;
-             background-image:none;
-             padding-bottom:$headerHeight;
-             .row{
-                 @include display-flex;
-                 
-             }
-             [class*="col"]{
-                 @include flex(1 0);
-                 padding:1.8em 3em 0;
-                 @include border-panel(0 1px,dotted,$bgcolor);
-             }
-              [class*="col"].last{
-                 padding-right: 0;
-                 border-right: 0;
-             }
-             [class*="col"].first{
-                 padding-left: 0;
-                 border-left: 0;
-             }
-             .page-title{
-                 display: none;
-             }
-         }
+            background-image:none;
         }
     }
+    &#kontakt, &#impressum{
+        padding-top:0;
+        background: $basecolor;
+        > .container {
+            background-color: transparent;
+            padding-bottom:$headerHeight;
+
+            [class*="col"]{
+                @include border-panel(0 1px,dotted,$bgcolor);
+                width:33%;
+                > div {
+                    padding:0 3em;
+                }
+                > div:first-child {
+                    padding-top:1.8em;
+                }
+            }
+            [class*="col"].last{
+                padding-right: 0;
+                border-right: 0;
+            }
+            [class*="col"].first{
+                padding-left: 0;
+                border-left: 0;
+            }
+            [class*="col"].full{
+                @include flex-grow(3);
+                width:100%;
+                @include border-panel(1px 0,dotted,$bgcolor);
+                margin-top:2em;
+                text-align:left;
+                > div{padding:1em 0 !important;}
+                > div{padding-top:1em !important;}
+            }
+            [class*="col"].full:last-child{
+                border:0;
+                margin:0;
+            }
+        }
+    }
+    &#impressum{
+        margin-bottom: 0;
+        > .container {
+            > .small-wrapper{
+                background: $basecolor;
+                margin-top: 370px;
+                padding-bottom: $headerHeight * 2;
+            }
+        }
+    }
+}
+article#start{
+    margin-top:0;
+     > .container{
+         padding-top:50px;
+     }
+}
+article.buttons, article#impressum{
+    @media screen and (max-width: $screen-md){
+        height:100vH;
+    }
+    @media screen and (min-width: $screen-md){
+        height:778px;
+    }
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+
+
+    display:block;
+    > .container{
+        height:inherit;
+        background-color: transparent;
+        background-image:url('../img/tags.svg');
+        background-position: 50% 10%;
+        background-size:70%;
+    }
+}
+article#impressum{
+    @media screen and (min-width: $screen-md){
+        height:500px;
+    }
+    > .container{
+        background-size:80%;
+        background-position: 50% 50%;
+    }
+}
+
+.page-title{
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position:center center;
+    text-indent:-9999999px;
+    #trauer-und-abschied &{
+        background-image: url('../img/bg-trauer-abschied.svg');
+        width:284px;
+        height:74px;
+        top: 10%;
+        left: 50%;
+        margin-left: -142px;
+    }
+    #so-begleite-ich-sie &{
+        background-image: url('../img/bg-so-begleite-ich-sie.svg');
+        width:285px;
+        height:71px;
+        left: 10%;
+        bottom: 20%;
+    }
+    #fuer-trauerende &{
+        background-image: url('../img/bg-fuer-trauernde.svg');
+        width:230px;
+        height:80px;
+        top: 25%;
+        right: 15%;
+    }
+    #fuer-eltern &{
+        background-image: url('../img/bg-fuer-eltern.svg');
+        width:178px;
+        height:78px;
+        top: 40%;
+        left: 15%;
+
+    }
+    #fuer-kitas-und-schulen &{
+        background-image: url('../img/bg-fuer-kitas-schulen.svg');
+        width:239px;
+        height:121px;
+        top: 30%;
+        right:15%
+    }
+    &#ueber-mich,#kontakt,#impressum{display: none;}
+}
 
 .conditions, .panel {
     > header {
@@ -147,7 +242,8 @@ article.rubrik {
             background:transparent url('../img/arrow.svg') no-repeat right center / cover;
             display:inline-block;
             position:absolute;
-            top:.5em;
+            top:50%;
+            margin-top:-.5em;
             right:0;
             height:9px;
             width:18px;
@@ -159,10 +255,10 @@ article.rubrik {
         > * {
             font-size:$baseFontsize;
             font-weight:bold;
-            line-height: 1;
+            line-height: 1.4;
             margin:0;
         }
-        
+
     }
     .row{
         @include container;
@@ -178,13 +274,16 @@ article.rubrik {
 }
 .panel {
     margin-top:-1px;
+    > header {
+        padding-top:1em;
+    }
 }
 .panel-content{
     padding-top: 1em;
 }
 .buttons{
     ul{ 
-        
+
         li{
             margin:0 0 .2em 0;
             @include alpha-background-color(rgba($blue, 0.75), white);
@@ -214,5 +313,14 @@ article.rubrik {
     > *{
         color:$bgcolor !important;
 
+    }
+}
+.scroll-to-top{
+    position:fixed;
+    bottom:1em;
+    right:5%;
+    z-index:999999999;
+    &:hover{
+        cursor: pointer;
     }
 }
