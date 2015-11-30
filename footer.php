@@ -1,15 +1,13 @@
 <!-- footer 
-<div id="wrapper-footer"></div>-->
+--><div id="wrapper-footer"></div>
 <footer class="footer" role="contentinfo">
+    <div class="container">©2015 Andrea Bruders trauer-aachen.de</div>
+</footer>
     <?php
     get_template_part('partials/scroll', 'top');
     ?>
-    <div class="button contact">
-    <a href="mailto:a.bruders@trauer-aachen.de?subject=<?php _e("Kontaktanfrage über www.trauer-aachen.de", "html5blank");?>">
-        <?php _e("Kontakt", "html5blank"); ?>
-    </a>
 </div>
-</footer>
+
 <!-- /footer -->
 
 </div>

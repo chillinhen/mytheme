@@ -34,12 +34,17 @@ h4 { font-size: $font-size-h4; }
 h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
 
-    .scroll-to-top a.back{
+    .scroll-to-top a{
         text-transform: uppercase;
         font-size:$baseFontsizeMiddle;
         color:$beige;
-
-        display:block;
+        display:inline-block;
+        float: right;
+        padding:0 1em;
+        border-left:1px solid currentColor;
+        &:last-child{
+            border:0;
+        }
         &:hover{
             text-decoration: none;
             opacity: .5;
@@ -55,7 +60,7 @@ article{
         text-transform:uppercase;
     }
     b, strong{
-        font-weight:bold;
+        font-weight:600;
     }
     p{
         color:$textcolor;
@@ -74,16 +79,19 @@ article{
     ul {
         margin-bottom:2.3em;
         li{
-            margin:.5em 0 .5em 2em;
-        }
-    }
-    &#ueber-mich{
-        li {
+            /* margin:.5em 0 .5em 2em;*/
             @include bullets(url('../img/bullets_beige.svg'),$button-size); 
             @include clearfix;
             margin:0;
         }
     }
+/*    &#ueber-mich{
+        li {
+            @include bullets(url('../img/bullets_beige.svg'),$button-size); 
+            @include clearfix;
+            margin:0;
+        }
+    }*/
     &.buttons{
         ul{
             margin:0;
@@ -92,6 +100,7 @@ article{
                 font-size:$button-size;
                 line-height:1.33;
                 font-weight:bold;
+                min-height:82px;
                 &:before{
                     background-image:none !important;
                     margin:0;
@@ -151,13 +160,26 @@ article{
         li.active a{color:$beige};
     }
 }
-.button.contact{
+.footer{
+    font-size: 1.5em;
+    line-height: 2em;
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+header .nav li.kontakt{
     > a{
         font-size: 1.167em;
         text-transform: uppercase;
         font-weight:bold;
+        color:white !important;
     }
     > a:hover{
         text-decoration:none;
+    }
+    &:hover,
+    &.current-menu-item{
+        background:$beige;
     }
 }

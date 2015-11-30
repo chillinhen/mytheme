@@ -74,6 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /**** colors ***/
 /**** Mixins *****/
 /*** bullets***/
+/*** Thumbnail Sie ***/
 /* line 2, ../sass/_typo.scss */
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -143,19 +144,36 @@ h6 {
 }
 
 /* line 37, ../sass/_typo.scss */
-.scroll-to-top a.back {
+.scroll-to-top a {
   text-transform: uppercase;
   font-size: 15.96px;
   color: #c1a879;
-  display: block;
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  border-left: 1px solid currentColor;
 }
-/* line 43, ../sass/_typo.scss */
-.scroll-to-top a.back:hover {
+/* line 45, ../sass/_typo.scss */
+.scroll-to-top a:last-child {
+  border: 0;
+}
+/* line 48, ../sass/_typo.scss */
+.scroll-to-top a:hover {
   text-decoration: none;
   opacity: .5;
 }
 
-/* line 50, ../sass/_typo.scss */
+/* line 54, ../sass/_typo.scss */
+article {
+  /*    &#ueber-mich{
+          li {
+              @include bullets(url('../img/bullets_beige.svg'),$button-size); 
+              @include clearfix;
+              margin:0;
+          }
+      }*/
+}
+/* line 55, ../sass/_typo.scss */
 article h1 {
   color: #558dbe;
   font-weight: 700;
@@ -163,40 +181,37 @@ article h1 {
   font-size: 3.33em;
   text-transform: uppercase;
 }
-/* line 57, ../sass/_typo.scss */
+/* line 62, ../sass/_typo.scss */
 article b, article strong {
-  font-weight: bold;
+  font-weight: 600;
 }
-/* line 60, ../sass/_typo.scss */
+/* line 65, ../sass/_typo.scss */
 article p {
   color: #4d575e;
   font-size: 1em;
   line-height: 1.3;
   margin-bottom: 1.95em;
 }
-/* line 67, ../sass/_typo.scss */
+/* line 72, ../sass/_typo.scss */
 article blockquote > * {
   color: #558dbe;
   font-size: 15.96px;
   line-height: 1.33;
   margin-bottom: 1.625em;
 }
-/* line 74, ../sass/_typo.scss */
+/* line 79, ../sass/_typo.scss */
 article ul {
   margin-bottom: 2.3em;
 }
-/* line 76, ../sass/_typo.scss */
-article ul li {
-  margin: .5em 0 .5em 2em;
-}
 /* line 81, ../sass/_typo.scss */
-article#ueber-mich li {
+article ul li {
+  /* margin:.5em 0 .5em 2em;*/
   overflow: hidden;
   *zoom: 1;
   margin: 0;
 }
 /* line 78, ../sass/_variables.scss */
-article#ueber-mich li:before {
+article ul li:before {
   content: ' ';
   background: transparent url("../img/bullets_beige.svg") left center no-repeat;
   height: 18px;
@@ -205,87 +220,103 @@ article#ueber-mich li:before {
   margin: 0 1em 1em 0;
   width: 16px;
 }
-/* line 88, ../sass/_typo.scss */
+/* line 96, ../sass/_typo.scss */
 article.buttons ul {
   margin: 0;
 }
-/* line 90, ../sass/_typo.scss */
+/* line 98, ../sass/_typo.scss */
 article.buttons ul li {
   display: block;
   font-size: 18px;
   line-height: 1.33;
   font-weight: bold;
+  min-height: 82px;
 }
-/* line 95, ../sass/_typo.scss */
+/* line 104, ../sass/_typo.scss */
 article.buttons ul li:before {
   background-image: none !important;
   margin: 0;
 }
-/* line 102, ../sass/_typo.scss */
+/* line 111, ../sass/_typo.scss */
 article#kontakt {
   font-size: 1.5em;
   line-height: 2em;
 }
-/* line 105, ../sass/_typo.scss */
+/* line 114, ../sass/_typo.scss */
 article#kontakt strong {
   color: #dacbaf;
 }
-/* line 109, ../sass/_typo.scss */
+/* line 118, ../sass/_typo.scss */
 article#impressum {
   font-size: inherit;
   line-height: inherit;
   text-align: center;
 }
-/* line 113, ../sass/_typo.scss */
+/* line 122, ../sass/_typo.scss */
 article#impressum strong, article#impressum .label {
   font-size: 1.5em;
   line-height: 1.2em;
 }
-/* line 119, ../sass/_typo.scss */
+/* line 128, ../sass/_typo.scss */
 article#kontakt, article#impressum {
   color: white;
   font-weight: 600;
 }
-/* line 123, ../sass/_typo.scss */
+/* line 132, ../sass/_typo.scss */
 article#kontakt p, article#kontakt li, article#impressum p, article#impressum li {
   color: inherit;
 }
-/* line 127, ../sass/_typo.scss */
+/* line 136, ../sass/_typo.scss */
 article#kontakt a, article#impressum a {
   color: white !important;
   text-decoration: underline;
 }
-/* line 131, ../sass/_typo.scss */
+/* line 140, ../sass/_typo.scss */
 article#kontakt strong, article#kontakt .label, article#impressum strong, article#impressum .label {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 1em;
 }
 
-/* line 142, ../sass/_typo.scss */
+/* line 151, ../sass/_typo.scss */
 .header .nav li a {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1em;
 }
-/* line 146, ../sass/_typo.scss */
+/* line 155, ../sass/_typo.scss */
 .header .nav li a:hover, .header .nav li a:focus {
   text-decoration: none;
 }
-/* line 151, ../sass/_typo.scss */
+/* line 160, ../sass/_typo.scss */
 .header .nav li.active a {
   color: #c1a879;
 }
 
-/* line 155, ../sass/_typo.scss */
-.button.contact > a {
+/* line 163, ../sass/_typo.scss */
+.footer {
+  font-size: 1.5em;
+  line-height: 2em;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* line 172, ../sass/_typo.scss */
+header .nav li.kontakt > a {
   font-size: 1.167em;
   text-transform: uppercase;
   font-weight: bold;
+  color: white !important;
 }
-/* line 160, ../sass/_typo.scss */
-.button.contact > a:hover {
+/* line 178, ../sass/_typo.scss */
+header .nav li.kontakt > a:hover {
   text-decoration: none;
+}
+/* line 181, ../sass/_typo.scss */
+header .nav li.kontakt:hover, header .nav li.kontakt.current-menu-item {
+  background: #c1a879;
 }
 
 /* line 11, ../sass/_grids.scss */
@@ -343,7 +374,7 @@ article .container .post_content > div {
   float: left;
   margin-right: 2.85714%;
 }
-/* line 37, ../sass/_grids.scss */
+/* line 38, ../sass/_grids.scss */
 article .container .post_content.full > div {
   width: 100%;
   float: left;
@@ -351,31 +382,35 @@ article .container .post_content.full > div {
   margin-right: 0;
 }
 /* line 41, ../sass/_grids.scss */
+article .container .post_content.full .row {
+  padding: 3em 0;
+}
+/* line 47, ../sass/_grids.scss */
 article .container .quote {
   width: 31.42857%;
   float: right;
   margin-right: 0;
 }
-/* line 44, ../sass/_grids.scss */
+/* line 50, ../sass/_grids.scss */
 article .container footer {
   clear: both;
 }
-/* line 51, ../sass/_grids.scss */
+/* line 57, ../sass/_grids.scss */
 article.buttons section > * {
   width: 40%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 57, ../sass/_grids.scss */
+/* line 63, ../sass/_grids.scss */
 .conditions {
   margin-top: 1em;
 }
-/* line 59, ../sass/_grids.scss */
+/* line 65, ../sass/_grids.scss */
 .unterrubriken .conditions {
   padding-bottom: 2em;
 }
-/* line 62, ../sass/_grids.scss */
+/* line 68, ../sass/_grids.scss */
 .conditions .row {
   max-width: 100%;
   margin-left: auto;
@@ -387,78 +422,99 @@ article.buttons section > * {
   display: block;
   clear: both;
 }
-/* line 64, ../sass/_grids.scss */
+/* line 70, ../sass/_grids.scss */
 .conditions .row > .label {
   width: 25%;
   float: left;
   margin-right: 5%;
 }
-/* line 67, ../sass/_grids.scss */
+/* line 73, ../sass/_grids.scss */
 .conditions .row > .value {
   width: 70%;
   float: right;
   margin-right: 0;
 }
 
-/* line 73, ../sass/_grids.scss */
+/* line 79, ../sass/_grids.scss */
 #impressum .row {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: wrap;
   flex-flow: wrap;
 }
-/* line 77, ../sass/_grids.scss */
+/* line 83, ../sass/_grids.scss */
 #impressum .row > .container [class*="col"] {
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }
 
-/* line 84, ../sass/_grids.scss */
+/* line 90, ../sass/_grids.scss */
 #kontakt .row {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: wrap;
   flex-flow: wrap;
 }
-/* line 88, ../sass/_grids.scss */
+/* line 94, ../sass/_grids.scss */
 #kontakt .row > .container [class*="col"] {
   -webkit-flex: 1 0;
   flex: 1 0;
 }
 
-/*@include sticky-footer(72px, "#wrapper", "#wrapper-footer", ".footer");
-.footer{
+/* line 10, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+html, body {
+  height: 100%;
+}
 
-}*/
-/* line 5, ../sass/_layout.scss */
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#wrapper {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -72px;
+}
+/* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#wrapper #wrapper-footer {
+  height: 72px;
+}
+
+/* line 20, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+.footer {
+  clear: both;
+  position: relative;
+  height: 72px;
+}
+
+/* line 2, ../sass/_layout.scss */
 .header {
   width: 100%;
   display: block;
   background: white;
   height: 110px;
 }
-/* line 6, ../sass/_layout.scss */
+/* line 3, ../sass/_layout.scss */
 .header.fixed-top {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999999;
 }
-/* line 16, ../sass/_layout.scss */
+/* line 13, ../sass/_layout.scss */
 .header nav {
   margin-top: 75px;
 }
-/* line 19, ../sass/_layout.scss */
+/* line 16, ../sass/_layout.scss */
 .header nav ul li {
   float: left;
   display: inline-block;
   margin-right: 1.4em;
 }
-/* line 26, ../sass/_layout.scss */
+/* line 23, ../sass/_layout.scss */
 .header .logo {
   position: relative;
 }
-/* line 29, ../sass/_layout.scss */
+/* line 26, ../sass/_layout.scss */
 .header .logo .logo-img {
   width: 200px;
   height: auto;
@@ -467,51 +523,37 @@ article.buttons section > * {
   left: 0;
 }
 
-/* line 40, ../sass/_layout.scss */
+/* line 37, ../sass/_layout.scss */
 .wrapper .main {
   margin-top: 110px;
 }
 
-/* line 44, ../sass/_layout.scss */
+/* line 41, ../sass/_layout.scss */
+.footer {
+  background: #558dbe;
+}
+/* line 43, ../sass/_layout.scss */
+.footer > .container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0;
+  border-width: 1px 0 0 0;
+  border-style: dotted;
+  border-color: white;
+}
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
+.footer > .container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 49, ../sass/_layout.scss */
 article.rubrik {
   padding-top: 110px;
 }
-/* line 46, ../sass/_layout.scss */
-article.rubrik > header {
-  height: 460px;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding-top: 2em;
-}
-/* line 53, ../sass/_layout.scss */
-article.rubrik > header > hgroup {
-  background: url("../img/Bilderrahmen.svg") center center no-repeat;
-  background-size: 100%;
-  height: 510px;
-  width: 745px;
-  margin: 0 100px;
-  padding: 2px;
-  position: relative;
-  display: block;
-  -moz-transform: rotate(-1.25deg);
-  -webkit-transform: rotate(-1.25deg);
-  -o-transform: rotate(-1.25deg);
-  -ms-transform: rotate(-1.25deg);
-}
-/* line 63, ../sass/_layout.scss */
-article.rubrik > header > hgroup > .thumbnail {
-  border: 15px solid white;
-  overflow: hidden;
-}
-/* line 66, ../sass/_layout.scss */
-article.rubrik > header > hgroup > .thumbnail > img {
-  height: 476px;
-  width: auto;
-  max-width: none;
-}
-/* line 75, ../sass/_layout.scss */
+/* line 52, ../sass/_layout.scss */
 article.rubrik > .container {
   padding-top: 130px;
   background-color: white;
@@ -520,138 +562,170 @@ article.rubrik > .container {
   background-position: 5px 88px, 80% 30px;
   background-size: auto 80px, auto 375px;
 }
-/* line 84, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 article.rubrik.buttons > .container {
   height: inherit;
 }
-/* line 86, ../sass/_layout.scss */
+/* line 63, ../sass/_layout.scss */
 article.rubrik.buttons > .container > section {
-  padding-top: 350px;
+  padding-top: 280px;
 }
-/* line 93, ../sass/_layout.scss */
+/* line 70, ../sass/_layout.scss */
 article.rubrik#kontakt > .container {
   background-image: none;
 }
-/* line 97, ../sass/_layout.scss */
+/* line 74, ../sass/_layout.scss */
 article.rubrik#kontakt, article.rubrik#impressum {
   padding-top: 0;
   background: #558dbe;
 }
-/* line 100, ../sass/_layout.scss */
+/* line 77, ../sass/_layout.scss */
 article.rubrik#kontakt > .container, article.rubrik#impressum > .container {
   background-color: transparent;
   padding-bottom: 110px;
 }
-/* line 104, ../sass/_layout.scss */
+/* line 81, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"], article.rubrik#impressum > .container [class*="col"] {
   border-width: 0 1px;
   border-style: dotted;
   border-color: white;
   width: 33%;
 }
-/* line 107, ../sass/_layout.scss */
+/* line 84, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"] > div, article.rubrik#impressum > .container [class*="col"] > div {
   padding: 0 3em;
 }
-/* line 110, ../sass/_layout.scss */
+/* line 87, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"] > div:first-child, article.rubrik#impressum > .container [class*="col"] > div:first-child {
   padding-top: 1.8em;
 }
-/* line 114, ../sass/_layout.scss */
+/* line 91, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"].last, article.rubrik#impressum > .container [class*="col"].last {
   padding-right: 0;
   border-right: 0;
 }
-/* line 118, ../sass/_layout.scss */
+/* line 95, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"].first, article.rubrik#impressum > .container [class*="col"].first {
   padding-left: 0;
   border-left: 0;
 }
-/* line 122, ../sass/_layout.scss */
+/* line 99, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"].full, article.rubrik#impressum > .container [class*="col"].full {
   -webkit-flex-grow: 3;
   flex-grow: 3;
   width: 100%;
-  border-width: 1px 0;
+  border-width: 1px 0 0 0;
   border-style: dotted;
   border-color: white;
-  margin-top: 2em;
+  margin-top: 3em;
   text-align: left;
 }
-/* line 128, ../sass/_layout.scss */
+/* line 105, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"].full > div, article.rubrik#impressum > .container [class*="col"].full > div {
   padding: 1em 0 !important;
 }
-/* line 129, ../sass/_layout.scss */
+/* line 106, ../sass/_layout.scss */
 article.rubrik#kontakt > .container [class*="col"].full > div, article.rubrik#impressum > .container [class*="col"].full > div {
   padding-top: 1em !important;
 }
-/* line 131, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].full:last-child, article.rubrik#impressum > .container [class*="col"].full:last-child {
-  border: 0;
-  margin: 0;
-}
-/* line 137, ../sass/_layout.scss */
+/* line 110, ../sass/_layout.scss */
 article.rubrik#impressum {
   margin-bottom: 0;
 }
-/* line 140, ../sass/_layout.scss */
+/* line 113, ../sass/_layout.scss */
 article.rubrik#impressum > .container > .small-wrapper {
   background: #558dbe;
   margin-top: 370px;
   padding-bottom: 220px;
 }
 
-/* line 148, ../sass/_layout.scss */
+/* line 122, ../sass/_layout.scss */
+article.rubrik .article-header {
+  height: 460px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 40%;
+  padding-top: 2.4em;
+}
+/* line 129, ../sass/_layout.scss */
+article.rubrik .article-header > hgroup {
+  background: transparent url("../img/Bilderrahmen.svg") top center no-repeat;
+  background-size: 100%;
+  height: 510px;
+  width: 745px;
+  margin: 0 100px;
+  padding: 3px;
+  position: relative;
+  display: block;
+  -moz-transform: rotate(-1.25deg);
+  -webkit-transform: rotate(-1.25deg);
+  -o-transform: rotate(-1.25deg);
+  -ms-transform: rotate(-1.25deg);
+}
+/* line 138, ../sass/_layout.scss */
+article.rubrik .article-header > hgroup > .thumbnail {
+  border: 20px solid white;
+  overflow: hidden;
+  background: white;
+  height: 510px;
+  width: 745px;
+}
+/* line 143, ../sass/_layout.scss */
+article.rubrik .article-header > hgroup > .thumbnail > img {
+  height: 470px;
+  width: auto;
+  max-width: none;
+}
+
+/* line 153, ../sass/_layout.scss */
 article#start {
   margin-top: 0;
 }
-/* line 150, ../sass/_layout.scss */
+/* line 155, ../sass/_layout.scss */
 article#start > .container {
   padding-top: 50px;
 }
 
-/* line 154, ../sass/_layout.scss */
-article.buttons, article#impressum {
+/* line 160, ../sass/_layout.scss */
+article#start, article#impressum {
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: top center;
+  background-size: cover !important;
   display: block;
 }
 @media screen and (max-width: 992px) {
-  /* line 154, ../sass/_layout.scss */
-  article.buttons, article#impressum {
+  /* line 160, ../sass/_layout.scss */
+  article#start, article#impressum {
     height: 100vH;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 154, ../sass/_layout.scss */
-  article.buttons, article#impressum {
+  /* line 160, ../sass/_layout.scss */
+  article#start, article#impressum {
     height: 778px;
   }
 }
-/* line 167, ../sass/_layout.scss */
-article.buttons > .container, article#impressum > .container {
+/* line 173, ../sass/_layout.scss */
+article#start > .container, article#impressum > .container {
   height: inherit;
   background-color: transparent;
-  background-image: url("../img/tags.svg");
-  background-position: 50% 10%;
-  background-size: 70%;
+  background-image: none;
 }
 
 @media screen and (min-width: 992px) {
-  /* line 175, ../sass/_layout.scss */
+  /* line 179, ../sass/_layout.scss */
   article#impressum {
     height: 500px;
   }
 }
-/* line 179, ../sass/_layout.scss */
+/* line 183, ../sass/_layout.scss */
 article#impressum > .container {
-  background-size: 80%;
-  background-position: 50% 50%;
+  background-position: top center;
+  background-size: cover !important;
 }
 
-/* line 185, ../sass/_layout.scss */
+/* line 189, ../sass/_layout.scss */
 .page-title {
   position: absolute;
   display: block;
@@ -660,7 +734,7 @@ article#impressum > .container {
   background-position: center center;
   text-indent: -9999999px;
 }
-/* line 192, ../sass/_layout.scss */
+/* line 196, ../sass/_layout.scss */
 #trauer-und-abschied .page-title {
   background-image: url("../img/bg-trauer-abschied.svg");
   width: 284px;
@@ -669,7 +743,7 @@ article#impressum > .container {
   left: 50%;
   margin-left: -142px;
 }
-/* line 200, ../sass/_layout.scss */
+/* line 204, ../sass/_layout.scss */
 #so-begleite-ich-sie .page-title {
   background-image: url("../img/bg-so-begleite-ich-sie.svg");
   width: 285px;
@@ -677,7 +751,7 @@ article#impressum > .container {
   left: 10%;
   bottom: 20%;
 }
-/* line 207, ../sass/_layout.scss */
+/* line 211, ../sass/_layout.scss */
 #fuer-trauerende .page-title {
   background-image: url("../img/bg-fuer-trauernde.svg");
   width: 230px;
@@ -685,7 +759,7 @@ article#impressum > .container {
   top: 25%;
   right: 15%;
 }
-/* line 214, ../sass/_layout.scss */
+/* line 218, ../sass/_layout.scss */
 #fuer-eltern .page-title {
   background-image: url("../img/bg-fuer-eltern.svg");
   width: 178px;
@@ -693,7 +767,7 @@ article#impressum > .container {
   top: 40%;
   left: 15%;
 }
-/* line 222, ../sass/_layout.scss */
+/* line 226, ../sass/_layout.scss */
 #fuer-kitas-und-schulen .page-title {
   background-image: url("../img/bg-fuer-kitas-schulen.svg");
   width: 239px;
@@ -701,12 +775,12 @@ article#impressum > .container {
   top: 30%;
   right: 15%;
 }
-/* line 229, ../sass/_layout.scss */
+/* line 233, ../sass/_layout.scss */
 .page-title#ueber-mich, .page-title #kontakt, .page-title #impressum {
   display: none;
 }
 
-/* line 233, ../sass/_layout.scss */
+/* line 237, ../sass/_layout.scss */
 .conditions > header, .panel > header {
   padding: .5em 0;
   border-width: 1px 0;
@@ -714,11 +788,11 @@ article#impressum > .container {
   border-color: #558dbe;
   position: relative;
 }
-/* line 237, ../sass/_layout.scss */
+/* line 241, ../sass/_layout.scss */
 .conditions > header:hover, .panel > header:hover {
   cursor: pointer;
 }
-/* line 240, ../sass/_layout.scss */
+/* line 244, ../sass/_layout.scss */
 .conditions > header:after, .panel > header:after {
   content: ' ';
   background: transparent url("../img/arrow.svg") no-repeat right center/cover;
@@ -734,21 +808,21 @@ article#impressum > .container {
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
 }
-/* line 252, ../sass/_layout.scss */
+/* line 256, ../sass/_layout.scss */
 .conditions > header.open:after, .panel > header.open:after {
   -moz-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
 }
-/* line 255, ../sass/_layout.scss */
+/* line 259, ../sass/_layout.scss */
 .conditions > header > *, .panel > header > * {
   font-size: 12px;
   font-weight: bold;
   line-height: 1.4;
   margin: 0;
 }
-/* line 263, ../sass/_layout.scss */
+/* line 267, ../sass/_layout.scss */
 .conditions .row, .panel .row {
   max-width: 100%;
   margin-left: auto;
@@ -764,40 +838,40 @@ article#impressum > .container {
   display: block;
   clear: both;
 }
-/* line 267, ../sass/_layout.scss */
+/* line 271, ../sass/_layout.scss */
 .conditions .row > *, .panel .row > * {
   color: #558dbe;
 }
-/* line 270, ../sass/_layout.scss */
+/* line 274, ../sass/_layout.scss */
 .conditions .row > .value, .panel .row > .value {
   font-weight: bold;
 }
 
-/* line 275, ../sass/_layout.scss */
+/* line 279, ../sass/_layout.scss */
 .panel {
   margin-top: -1px;
 }
-/* line 277, ../sass/_layout.scss */
+/* line 281, ../sass/_layout.scss */
 .panel > header {
   padding-top: 1em;
 }
 
-/* line 281, ../sass/_layout.scss */
+/* line 285, ../sass/_layout.scss */
 .panel-content {
   padding-top: 1em;
 }
 
-/* line 287, ../sass/_layout.scss */
+/* line 291, ../sass/_layout.scss */
 .buttons ul li {
   margin: 0 0 .2em 0;
   background-color: #80aace;
   background-color: rgba(85, 141, 190, 0.75);
 }
-/* line 290, ../sass/_layout.scss */
+/* line 294, ../sass/_layout.scss */
 .buttons ul li:hover {
   opacity: .8;
 }
-/* line 293, ../sass/_layout.scss */
+/* line 297, ../sass/_layout.scss */
 .buttons ul li a {
   padding: 1em;
   color: white;
@@ -813,13 +887,13 @@ article#impressum > .container {
   margin: 0 1em 1em 0;
   width: 16px;
 }
-/* line 298, ../sass/_layout.scss */
+/* line 302, ../sass/_layout.scss */
 .buttons ul li a:hover {
   text-decoration: none;
 }
 
-/* line 305, ../sass/_layout.scss */
-.button.contact {
+/* line 309, ../sass/_layout.scss */
+header .nav li.kontakt {
   position: fixed;
   top: 170px;
   left: -30px;
@@ -830,10 +904,6 @@ article#impressum > .container {
   -o-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   background: #558dbe;
-}
-/* line 313, ../sass/_layout.scss */
-.button.contact > * {
-  color: white !important;
 }
 
 /* line 318, ../sass/_layout.scss */
@@ -857,3 +927,18 @@ and open the template in the editor.
     Created on : 23.11.2015, 20:30:59
     Author     : chilliscope
 */
+/*.wrapper {
+    :after{
+        content: ' ';
+        background: transparent url('../img/grid.png') no-repeat top center !important;
+        opacity: .1;
+        width:100%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        right:0;
+        display: block;
+        border:1px solid red;
+        z-index:99999999999999999999999999;
+    }
+}*/

@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
     });
 
     //Click event to scroll to top
-    jQuery('.scroll-to-top').click(function () {
+    jQuery('.scroll-to-top a.back').click(function () {
         jQuery('html, body').animate({scrollTop: 0}, 800);
         return false;
     });

@@ -58,12 +58,4 @@ $value_copyright = get_field("text-copyright");
             </div>
         </div>
     <?php endif; ?>
-        <!-- copyright -->
-    <?php if ($value_copyright) : ?>
-        <div class="col-05 full">
-            <div class="value">
-                <?php echo $value_copyright; ?>
-            </div>
-        </div>
-    <?php endif; ?>
 </div>

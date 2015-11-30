@@ -85,3 +85,8 @@ $headerHeight:110px;
                     width:16px;
                 }
 }
+/*** Thumbnail Sie ***/
+@mixin thumbnails{
+     height:510px;
+     width: 745px;
+}

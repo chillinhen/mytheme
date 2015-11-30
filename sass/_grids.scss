@@ -34,9 +34,15 @@ article{
         .post_content > div{
             @include span(8 of 12); 
         }
-        .post_content.full > div{
-            @include span(12); 
+        .post_content.full {
+            > div{
+                @include span(12); 
+            }
+            .row{
+                padding:3em 0;
+            }
         }
+        
 
         .quote{
             @include span(last 4 of 12); 

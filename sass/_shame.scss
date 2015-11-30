@@ -1,0 +1,15 @@
+/*.wrapper {
+    :after{
+        content: ' ';
+        background: transparent url('../img/grid.png') no-repeat top center !important;
+        opacity: .1;
+        width:100%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        right:0;
+        display: block;
+        border:1px solid red;
+        z-index:99999999999999999999999999;
+    }
+}*/

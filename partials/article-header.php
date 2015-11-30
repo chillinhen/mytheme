@@ -1,7 +1,7 @@
 <?php
 $banner = get_field('hintergrundbild');
 ?>	
-<header role="banner" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');">
+<header class="article-header" role="banner" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');">
     <hgroup>
         
         <?php if (has_post_thumbnail()) : ?>
