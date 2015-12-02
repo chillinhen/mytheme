@@ -71,9 +71,9 @@ article{
         background-color:white;
         background-image:url('../img/Voegel.svg'),url('../img/Leuchtturm.svg');
         background-repeat: no-repeat;
-        background-position: 60px 180px,85% 150px;
+        background-position: 0 60px,85% 20px;
         background-size: auto 80px, auto 375px;
-        background-attachment:fixed;
+/*        background-attachment:fixed;*/
     }
 }
 .page-title{
@@ -153,7 +153,7 @@ section{
         [class*="col"].full{
             @include flex-grow(3);
             width:100%;
-            @include border-panel(1px 0 0 0,dotted,$bgcolor);
+            @include border-panel(1px 0,dotted,$bgcolor);
             margin-top:3em;
             text-align:left;
             > div{padding:1em 0 !important;}
@@ -188,14 +188,16 @@ article#start .article-header{
 article#kontakt, article#impressum{
     background-color: $basecolor;
 }
+article#ueber-mich{
+    .post_content{
+        p {
+            padding:0 3em;
+        }
+    }
+}
 footer.footer{
     background: $basecolor;
     padding:1em 0;
-    article#kontakt &, article#impressum &{
-        > .container {
-            @include border-panel(1px 0 0 0,dotted,white); 
-        }
-    }
     body.home &{
         background-color: white !important;
         > * {color:$basecolor !important;}
@@ -205,7 +207,11 @@ footer.footer{
     }
 }
 
-.conditions, .panel {
+.panel {
+    .conditions{
+        padding-bottom: 2em;
+    }
+    margin-bottom:-1px;
     > header {
         padding:.5em 0;
         @include border-panel(1px 0,dotted,$blue);
@@ -234,26 +240,59 @@ footer.footer{
             line-height: 1.4;
             margin:0;
         }
+    }
+    table{
+            width:100%;
+            > * {
+                color:$blue;
+            }
+            td {
+                line-height:1.4;
+            }
+            tr:first-child td{
+                padding-top:.5em;
+            }
+            tr:last-child td{
+                padding-bottom:.5em;
+            }
+            tr{
+                td:first-child{
+                    width:auto;
+                    ~td {min-width:30%;}
+                }
+            }
+        }
+        &.parent{
+            padding-bottom:2em;
+            table{
+            @include border-panel(0 0 1px 0,dotted,$blue); 
+            
+            tr{
+                td:first-child{
+                    width:40%;
+                }
+            }
+            }
+        }
+    }
+.scroll-to-top {
+    background: $headerSpan url('../img/arrow-white.svg') no-repeat center center / 60%;
+    @include border-radius(4px);
+    border:0;
+    bottom: 1%;
+    position: fixed;
+    width:40px;
+    height:40px;
+    z-index: 9999;
+    right: 5%;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: all 0.1s linear 0s;
+    opacity: 0.8;
+    &:hover {
+        background-color: $beige;
+        opacity: 0.5;
+    }
 
-    }
-    .row{
-        @include container;
-        @include border-panel(0 0 1px 0,dotted,$blue);
-        padding:.75em 0;
-        > * {
-            color:$blue;
-        }
-        > .value{
-            font-weight:600;
-        }
-    }
-}
-.conditions{
-    padding-bottom:2em;
-}
-.panel {
-    margin-top:-1px;
-}
-.panel-content{
-    
 }

@@ -6,7 +6,14 @@
     </header><!-- end article header -->
     <div id="collapse-<?php the_ID(); ?>" class="panel-content panel-collapse collapse" role="tabpanel" itemprop="articleBody" aria-labelledby="heading-<?php the_ID(); ?>">
         <?php the_content(); ?>
-        <?php get_template_part('partials/conditions'); ?>
+        <div class="conditions">
+            <?php
+            $conditions = get_field('konditionen');
+            if ($conditions) :
+                echo $conditions;
+            endif;
+            ?>
+        </div>
     </div> <!-- end article section -->
     <footer><!-- Todo edit button --></footer> <!-- end article footer -->
 </div>

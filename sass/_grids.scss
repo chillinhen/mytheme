@@ -60,17 +60,6 @@ article{
         clear:both;
     }
 }
-.conditions {
-    .row{
-        @include container;
-        > .label{
-            @include span(2 of 7); 
-        }
-        > .value{
-            @include span(last 5 of 7); 
-        }
-    }
-}
 #impressum{
     .row{
         @include display-flex;

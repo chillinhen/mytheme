@@ -21,6 +21,10 @@ a{
         color:$beige;
     }
 }
+p.small{
+    font-size:smaller;
+    margin-top:2em;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: $baseFontstack;
     font-weight: $baseHeadWeight;
@@ -50,7 +54,9 @@ h6 { font-size: $font-size-h6; }
             opacity: .5;
         }
     }
-
+    b, strong{
+        font-weight:600 !important;
+    }
 article{
     h1 {
         color:$blue;
@@ -60,9 +66,7 @@ article{
         text-transform:uppercase;
     }
     i, em {font-style: italic;}
-    b, strong{
-        font-weight:600;
-    }
+
     p{
         color:$textcolor;
         font-size: 1em;

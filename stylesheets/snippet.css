@@ -1,39 +1,26 @@
 /*
-Error: Undefined mixin 'border-panel'.
-        on line 15 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss, in `border-panel'
-        from line 15 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss
+Error: Undefined mixin 'container'.
+        on line 4 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss, in `container'
+        from line 4 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss
 
-10:         background-color: transparent;
-11:         min-height: 500px;
-12:     }
-13:     article#kontakt &, article#impressum &{
-14:           [class*="col"]{
-15:                 @include border-panel(0 0 0 1px,dotted,$bgcolor);
-16:                 width:33%;
-17:                 > div {
-18:                     padding:0 3em;
-19:                 }
-20:                 > div:first-child {
+1: .conditions, .panel {
+2: 
+3:     .row{
+4:         @include container;
+5:         
+6:         
+7:         > .value{
+8:             font-weight:600;
+9:         }
 
 Backtrace:
-/Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss:15:in `border-panel'
-/Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss:15
+/Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss:4:in `container'
+/Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss:4
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `block in with_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `with_mixin'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
@@ -96,4 +83,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'border-panel'.\A         on line 15 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss, in `border-panel'\A         from line 15 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss\A \A 10:         background-color: transparent;\A 11:         min-height: 500px;\A 12:     }\A 13:     article#kontakt &, article#impressum &{\A 14:           [class*=\"col\"]{\A 15:                 @include border-panel(0 0 0 1px,dotted,$bgcolor);\A 16:                 width:33%;\A 17:                 > div {\A 18:                     padding:0 3em;\A 19:                 }\A 20:                 > div:first-child {"; }
+  content: "Error: Undefined mixin 'container'.\A         on line 4 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss, in `container'\A         from line 4 of /Users/chilliscope/Documents/Webseiten/trauer-aachen/wp-content/themes/mytheme/sass/snippet.scss\A \A 1: .conditions, .panel {\A 2: \A 3:     .row{\A 4:         @include container;\A 5:         \A 6:         \A 7:         > .value{\A 8:             font-weight:600;\A 9:         }"; }
