@@ -1,0 +1,66 @@
+
+
+
+.conditions, .panel {
+    > header {
+        padding:.5em 0;
+        @include border-panel(1px 0,dotted,$blue);
+        position:relative;
+        &:hover{
+            cursor: pointer;
+        }
+        &:after {
+            content: ' ';
+            background:transparent url('../img/arrow.svg') no-repeat right center / cover;
+            display:inline-block;
+            position:absolute;
+            top:50%;
+            margin-top:-.5em;
+            right:0;
+            height:9px;
+            width:18px;
+            @include rotate(180deg);
+        }
+        &.open:after{
+            @include rotate(0deg);
+        }
+        > * {
+            font-size:$baseFontsize;
+            font-weight:bold;
+            line-height: 1.4;
+            margin:0;
+        }
+
+    }
+    .row{
+        @include container;
+        @include border-panel(0 0 1px 0,dotted,$blue);
+        padding:.75em 0;
+        > * {
+            color:$blue;
+        }
+        > .value{
+            font-weight:bold;
+        }
+    }
+}
+.panel {
+    margin-top:-1px;
+    > header {
+        padding-top:1em;
+    }
+}
+.panel-content{
+    padding-top: 1em;
+}
+
+
+.scroll-to-top{
+    position:fixed;
+    bottom:1em;
+    right:5%;
+    z-index:999999999;
+    &:hover{
+        cursor: pointer;
+    }
+}

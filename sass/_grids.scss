@@ -8,63 +8,59 @@ columns: 12,
 gutters: 1/2,
 container-position: center,
 );
+
+/**
+ * Global styles
+ */
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+/* sticky footer and main width */
+.wrapper {
+    @include display-flex(flex);
+    min-height: 100vh;
+    @include flex-direction(column);
+    > #content{
+        @include flex(1 0);
+    }
+}
 .wrapper {
     width:100%;
     max-width:100%;
 }
+.container {
+    @include container(1015px);
+}
 .header {
-    .container {
-        @include container(1170px);
-        margin:0 auto;
-        > .navbar-toggle{display: none;}
-        > nav{
-            @include span(9 of 12);
-        }
-        > .logo {
-            @include span(last 3 of 12);
-        }
+    nav{
+        @include span(8 of 10);
+    }
+    .logo {
+        @include span(last 2 of 10);
     }
 }
 article{
-    .container{
-        section {
-            @include container(1170px);
-            margin:0 auto;
-        }
-        .post_content > div{
-            @include span(8 of 12); 
-        }
-        .post_content.full {
-            > div{
-                @include span(12); 
-            }
-            .row{
-                padding:3em 0;
-            }
-        }
-        
-
-        .quote{
-            @include span(last 4 of 12); 
-        }
-        footer {
-            clear:both;
-        }
-
+    section {
+        margin:0 auto;
     }
-    &.buttons{
-        section{
-            > *{
-                @include span(5 of 12);
-            }
+    .post_content{
+        @include span(7 of 10); 
+        &.full{
+           @include span(10 of 10); 
         }
+    }
+    .zitate{
+        @include span(last 3 of 10); 
+    }
+    footer {
+        clear:both;
     }
 }
 .conditions {
-    margin-top:1em;
-    .unterrubriken & {
-        padding-bottom: 2em;
-    }
     .row{
         @include container;
         > .label{
@@ -79,21 +75,18 @@ article{
     .row{
         @include display-flex;
         @include flex-flow(wrap);
-        > .container {
-            [class*="col"]{
-                @include flex-grow(1);
-            }
+        
+        [class*="col"]{
+            @include flex-grow(1);
         }
     }
 }
 #kontakt{
     .row{
         @include display-flex;
-        @include flex-flow(wrap);
-        > .container {
-            [class*="col"]{
-                 @include flex(1 0);
-            }
+        @include align-items(flex-start);
+        [class*="col"]{
+            @include flex(1 0);
+        }
     }
-}
 }

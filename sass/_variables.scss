@@ -16,9 +16,9 @@ $screen-lg: 1200px;
 /**** type ***/
 $baseHeadWeight:300;
 $baseFontstack:'Open Sans', Arial, Helvetica, sans-serif;
-$baseFontsize:12px;
-$baselineHeight:$baseFontsize * 1.33;
-$baseFontsizeMiddle:$baseFontsize * 1.33;
+$baseFontsize:14px;
+$baselineHeight:$baseFontsize * 1.13;
+$baseFontsizeMiddle:$baseFontsize * 1.13;
 
 $font-size-h1: 3.33em;
 $font-size-h2: 2em;
@@ -40,7 +40,7 @@ $textcolor:#4d575e;
 $headerSpan:#5d7677;
 
 //*** misc. measuremts ****/
-$headerHeight:110px;
+$headerHeight:90px;
 
 /**** Mixins *****/
 @mixin border-panel($width,$style,$color){
@@ -60,10 +60,11 @@ $headerHeight:110px;
 }
 // rotate
 @mixin rotate($dg){
-    -moz-transform: rotate($dg);
-    -webkit-transform: rotate($dg);
-    -o-transform: rotate($dg);
-    -ms-transform: rotate($dg);
+-moz-transform: rotate($dg);
+-webkit-transform: rotate($dg);
+-o-transform: rotate($dg);
+-ms-transform: rotate($dg);
+transform: rotate($dg);
 }
 ///alpha background
 @mixin alpha-background-color($color, $background) {
@@ -73,17 +74,13 @@ $headerHeight:110px;
   background-color: $solid-color;
   background-color: $color;
 }
+/*@include alpha-background-color(rgba($blue, 0.75), white);*/
 /*** bullets***/
-@mixin bullets($url,$size){
-    &:before{
-                    content: ' ';
-                    background: transparent $url left center no-repeat;
-                    height:$size;
-                    display:inline-block;
-                    float:left;
-                    margin:0 1em 1em 0;
-                    width:16px;
-                }
+@mixin bullets($url, $pos, $size){
+    background-image:$url;
+    background-repeat: no-repeat;
+    background-position: $pos;
+    background-size: $size;
 }
 /*** Thumbnail Sie ***/
 @mixin thumbnails{

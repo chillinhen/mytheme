@@ -34,7 +34,7 @@ h4 { font-size: $font-size-h4; }
 h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
 
-    .scroll-to-top a{
+    .scroll-to-top{
         text-transform: uppercase;
         font-size:$baseFontsizeMiddle;
         color:$beige;
@@ -59,6 +59,7 @@ article{
         font-size:$font-size-h1; 
         text-transform:uppercase;
     }
+    i, em {font-style: italic;}
     b, strong{
         font-weight:600;
     }
@@ -80,27 +81,21 @@ article{
         margin-bottom:2.3em;
         li{
             /* margin:.5em 0 .5em 2em;*/
-            @include bullets(url('../img/bullets_beige.svg'),$button-size); 
-            @include clearfix;
-            margin:0;
+            background:transparent url('../img/bullets_beige.svg') no-repeat 0px 2px / auto 1em;
+            margin: 0 0 1em 0;
+            padding-left: 2em;
+            line-height: 1.4;
         }
     }
-/*    &#ueber-mich{
-        li {
-            @include bullets(url('../img/bullets_beige.svg'),$button-size); 
-            @include clearfix;
-            margin:0;
-        }
-    }*/
-    &.buttons{
+    &#start{
         ul{
             margin:0;
             li{
                 display:block;
-                font-size:$button-size;
+                font-size:$baseFontsize * 1.1;
                 line-height:1.33;
                 font-weight:bold;
-                min-height:82px;
+                min-height:68px;
                 &:before{
                     background-image:none !important;
                     margin:0;
@@ -109,10 +104,17 @@ article{
         }
     }
     &#kontakt{
-        font-size: 1.5em;
+        font-size: $baseFontsize * 1.1;
         line-height: 2em;
         strong{
             color:$lightbeige;
+           
+        }
+        strong, .label{
+             line-height: 1;
+        }
+        p {
+            margin-top:0;
         }
     }
     &#impressum{
@@ -120,7 +122,7 @@ article{
         line-height: inherit;
         text-align: center;
         strong, .label{
-           font-size: 1.5em;
+           font-size: $baseFontsize * 1.29;
            line-height: 1.2em;
         }
     }
@@ -149,9 +151,9 @@ article{
     .nav{
         li{
             a {
-                font-weight: 700;
+                font-weight: 600;
                 text-transform: uppercase;
-                font-size: 1em; 
+                font-size: 0.93em; 
                 &:hover, &:focus{
                     text-decoration: none;
                 }
@@ -161,12 +163,12 @@ article{
     }
 }
 .footer{
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 2em;
     color:white;
     text-align: center;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: normal;
 }
 header .nav li.kontakt{
     > a{

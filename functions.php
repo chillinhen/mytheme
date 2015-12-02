@@ -27,7 +27,7 @@ function myTheme_setup() {
 
                 wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/stylesheets/bootstrap.css', 'style', '1.0', 'screen');
 
-                wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic', 'style', '1.0', 'screen');
+                wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,600,400italic,600italic,700,700italic', 'style', '1.0', 'screen');
 
                 wp_register_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'screen');
                 wp_enqueue_style('fontawesome');

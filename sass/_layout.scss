@@ -1,236 +1,208 @@
-@include sticky-footer(72px, "#wrapper", "#wrapper-footer", ".footer");
-.header{
-    &.fixed-top{
-        position: fixed;
-        top:0;
-        left:0;
-        z-index:9999999;
+.container{
+    position:relative;
+}
+.navbar-toggle{
+    @media screen and (min-width:$screen-sm){
+        display:none;
     }
-    width: 100%;
-    display: block;
-    background: $bgcolor;
+}
+.wrapper{}
+header.header{
     height:$headerHeight;
     nav {
-        margin-top:75px;
+        margin-top:50px;
         ul {
             li {
                 float:left;
                 display: inline-block;
-                margin-right: 1.4em;
+                margin-right: 1em;
             }
         }
     }
     .logo{
-
-        position: relative;
-        .logo-img {
-            width:200px;
-            height:auto;
-            position: absolute;
-            top:50px;
-            left:0;
+        position: absolute;
+        top:25px;
+        right:0;
+        right:0;
+        z-index:9999;
+        width:200px;
+        > img {
+            max-width: 100%;
+            height: auto;
         }
     }
 }
-
-.wrapper{
-    .main {
-        margin-top: 110px;
-    }
+header .nav li.kontakt{
+    position: fixed;
+    top:170px;
+    left:-40px;
+    z-index: 9999999999999;
+    padding:1em 1em .5em 1em;
+    @include rotate(-90deg);
+    background: $basecolor;
 }
-.footer{
-    background: $blue;
-    > .container{
-          @include container(1170px);
-          padding:1em 0;
-          @include border-panel(1px 0 0 0,dotted,white);
-    }
-}
-article.rubrik {
-    padding-top:$headerHeight;
-    
-    > .container {
-        padding-top:130px;
-        background-color:white;
-        background-image: url('../img/Voegel.svg'),url('../img/Leuchtturm.svg');
-        background-repeat: no-repeat;
-        background-position: 5px 88px, 80% 30px;
-        background-size:auto 80px, auto 375px;
-    }
-    &.buttons{
-        > .container{
-            height:inherit;
-            > section {
-                padding-top:280px; 
-            }
-        }
-
-    }
-    &#kontakt{
-        > .container {
-            background-image:none;
-        }
-    }
-    &#kontakt, &#impressum{
-        padding-top:0;
-        background: $basecolor;
-        > .container {
-            background-color: transparent;
-            padding-bottom:$headerHeight;
-
-            [class*="col"]{
-                @include border-panel(0 1px,dotted,$bgcolor);
-                width:33%;
-                > div {
-                    padding:0 3em;
-                }
-                > div:first-child {
-                    padding-top:1.8em;
-                }
-            }
-            [class*="col"].last{
-                padding-right: 0;
-                border-right: 0;
-            }
-            [class*="col"].first{
-                padding-left: 0;
-                border-left: 0;
-            }
-            [class*="col"].full{
-                @include flex-grow(3);
-                width:100%;
-                @include border-panel(1px 0 0 0,dotted,$bgcolor);
-                margin-top:3em;
-                text-align:left;
-                > div{padding:1em 0 !important;}
-                > div{padding-top:1em !important;}
-            }
-        }
-    }
-    &#impressum{
-        margin-bottom: 0;
-        > .container {
-            > .small-wrapper{
-                background: $basecolor;
-                margin-top: 370px;
-                padding-bottom: $headerHeight * 2;
-            }
-        }
-    }
-}
-.article-header{
-    article.rubrik &{
-        height:460px;
-        width: 100%;
+article{
+    > header{
+        height: 350px;
+        background-position:0 40%;
         background-size:cover;
-        background-repeat: no-repeat;
-        background-position: 0 40%;
-        padding-top:2.4em;
-        > hgroup{
+        position:relative;
+        .thumbnail{
             background: transparent url('../img/Bilderrahmen.svg') top center no-repeat;
-            background-size: 100%;
-            @include thumbnails;
-            margin:0 100px;
+            width: span(7);
+            position:absolute;
+            top:2em;
+            left:2em;
+            z-index:99;
             padding:3px;
-            position: relative;
-            display:block;
             @include rotate(-1.25deg);
-            > .thumbnail{
-                border:20px solid white;
-                overflow:hidden;
-                background:white;
-                @include thumbnails;
-                > img {
-                    height:470px;
-                    width:auto;
-                    max-width: none;
-                }
-            }
 
+            img{
+                border:.7em solid white;
+                max-width: 100%;
+                height:auto;
+            }
         }
     }
-}
-article#start{
-    margin-top:0;
-     > .container{
-         padding-top:50px;
-     }
-}
-
-article#start, article#impressum{
-    @media screen and (max-width: $screen-md){
-        height:100vH;
-    }
-    @media screen and (min-width: $screen-md){
-        height:778px;
-    }
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size:cover !important;
-
-
-    display:block;
-    > .container{
-        height:inherit;
-         background-color:transparent;
-         background-image:none;
+    > section {
+        min-height: 500px;
+        @include container(1170px);
+        padding-top:120px;
+        background-color:white;
+        background-image:url('../img/Voegel.svg'),url('../img/Leuchtturm.svg');
+        background-repeat: no-repeat;
+        background-position: 60px 180px,85% 150px;
+        background-size: auto 80px, auto 375px;
+        background-attachment:fixed;
     }
 }
-article#impressum{
-    @media screen and (min-width: $screen-md){
-        height:500px;
-    }
-    > .container{
-        background-position: top center;
-        background-size:cover !important;
-    }
-}
-
 .page-title{
     position: absolute;
-    display: block;
+    top: 0;
+    left: 0;
+    text-indent:-100%;
+    display:inline-block;
+    overflow:hidden;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position:center center;
-    text-indent:-9999999px;
     #trauer-und-abschied &{
         background-image: url('../img/bg-trauer-abschied.svg');
-        width:284px;
-        height:74px;
+        width:242px;
+        height:58px;
         top: 10%;
         left: 50%;
-        margin-left: -142px;
+        margin-left: -121px;
     }
     #so-begleite-ich-sie &{
         background-image: url('../img/bg-so-begleite-ich-sie.svg');
-        width:285px;
-        height:71px;
+        width:244px;
+        height:69px;
         left: 10%;
-        bottom: 20%;
+        top: 65%;
     }
     #fuer-trauerende &{
         background-image: url('../img/bg-fuer-trauernde.svg');
-        width:230px;
-        height:80px;
+        width:190px;
+        height:70px;
         top: 25%;
-        right: 15%;
+        left: 55%;
     }
     #fuer-eltern &{
         background-image: url('../img/bg-fuer-eltern.svg');
-        width:178px;
-        height:78px;
-        top: 40%;
-        left: 15%;
+        width:145px;
+        height:59px;
+        top: 35%;
+        left: 10%;
 
     }
     #fuer-kitas-und-schulen &{
         background-image: url('../img/bg-fuer-kitas-schulen.svg');
-        width:239px;
-        height:121px;
+        width:191px;
+        height:97px;
         top: 30%;
-        right:15%
+        left:55%
     }
     &#ueber-mich,#kontakt,#impressum{display: none;}
+}
+section{
+    article#start &, article#kontakt &, article#impressum &{
+        background-image: none;
+        background-color: transparent;
+    }
+    article#kontakt &, article#impressum &{
+
+        [class*="col"]{
+            @include border-panel(0 0 0 1px,dotted,$bgcolor);
+            width:33%;
+            min-height: 100px;
+            padding:1em 2em;
+            > div:first-child {
+                border:0;
+            }
+        }
+        [class*="col"].last{
+            border-right: 0;
+            padding-right: 0;
+        }
+        [class*="col"].first{
+            border-left: 0;
+            padding-left: 0;
+
+        }
+        [class*="col"].full{
+            @include flex-grow(3);
+            width:100%;
+            @include border-panel(1px 0 0 0,dotted,$bgcolor);
+            margin-top:3em;
+            text-align:left;
+            > div{padding:1em 0 !important;}
+            > div{padding-top:1em !important;}
+        }
+
+    }
+    article#start &{
+        padding-top: 0;
+        margin-top: -300px;
+        min-height:315px;
+        ul{ 
+            max-width:450px;
+            li{
+                margin:0 0 .2em 0;
+                @include alpha-background-color(rgba($basecolor, 0.75), white);
+                @include bullets(url('../img/bullets.svg'), 1em 1em, auto 1em);
+                padding:1em 1em 1em 3em;
+                color:white;
+                display:block;
+                &:hover{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}
+article#start .article-header{
+    min-height:800px;   
+    background-position: 0 0;
+}
+article#kontakt, article#impressum{
+    background-color: $basecolor;
+}
+footer.footer{
+    background: $basecolor;
+    padding:1em 0;
+    article#kontakt &, article#impressum &{
+        > .container {
+            @include border-panel(1px 0 0 0,dotted,white); 
+        }
+    }
+    body.home &{
+        background-color: white !important;
+        > * {color:$basecolor !important;}
+    }
+    body:not(.home) & *{
+        color:white !important;
+    }
 }
 
 .conditions, .panel {
@@ -247,7 +219,7 @@ article#impressum{
             display:inline-block;
             position:absolute;
             top:50%;
-            margin-top:-.5em;
+            margin-top:-.25em;
             right:0;
             height:9px;
             width:18px;
@@ -258,7 +230,7 @@ article#impressum{
         }
         > * {
             font-size:$baseFontsize;
-            font-weight:bold;
+            font-weight:600;
             line-height: 1.4;
             margin:0;
         }
@@ -272,55 +244,16 @@ article#impressum{
             color:$blue;
         }
         > .value{
-            font-weight:bold;
+            font-weight:600;
         }
     }
+}
+.conditions{
+    padding-bottom:2em;
 }
 .panel {
     margin-top:-1px;
-    > header {
-        padding-top:1em;
-    }
 }
 .panel-content{
-    padding-top: 1em;
-}
-.buttons{
-    ul{ 
-
-        li{
-            margin:0 0 .2em 0;
-            @include alpha-background-color(rgba($blue, 0.75), white);
-            &:hover{
-                opacity: .8;
-            }
-            a{
-                padding:1em;
-                color:white;
-                display:block;
-                @include bullets(url('../img/bullets.svg'),$button-size);
-                &:hover{
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-}
-header .nav li.kontakt{
-    position: fixed;
-    top:170px;
-    left:-30px;
-    z-index: 9999999999999;
-    padding:1em 1em .5em 1em;
-    @include rotate(-90deg);
-    background: $basecolor;
-}
-.scroll-to-top{
-    position:fixed;
-    bottom:1em;
-    right:5%;
-    z-index:999999999;
-    &:hover{
-        cursor: pointer;
-    }
+    
 }

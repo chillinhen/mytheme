@@ -67,19 +67,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/*@import "compass/css3/transform";*/
 /**** Debugging ***/
 /**** Breakpoints ***/
 /**** type ***/
 /**** colors ***/
 /**** Mixins *****/
+/*@include alpha-background-color(rgba($blue, 0.75), white);*/
 /*** bullets***/
 /*** Thumbnail Sie ***/
 /* line 2, ../sass/_typo.scss */
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 15.96px;
+  font-size: 14px;
+  line-height: 15.82px;
   color: #4d575e;
   background-color: white;
 }
@@ -130,23 +130,23 @@ h3 {
 
 /* line 33, ../sass/_typo.scss */
 h4 {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* line 34, ../sass/_typo.scss */
 h5 {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* line 35, ../sass/_typo.scss */
 h6 {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* line 37, ../sass/_typo.scss */
-.scroll-to-top a {
+.scroll-to-top {
   text-transform: uppercase;
-  font-size: 15.96px;
+  font-size: 15.82px;
   color: #c1a879;
   display: inline-block;
   float: right;
@@ -154,25 +154,15 @@ h6 {
   border-left: 1px solid currentColor;
 }
 /* line 45, ../sass/_typo.scss */
-.scroll-to-top a:last-child {
+.scroll-to-top:last-child {
   border: 0;
 }
 /* line 48, ../sass/_typo.scss */
-.scroll-to-top a:hover {
+.scroll-to-top:hover {
   text-decoration: none;
   opacity: .5;
 }
 
-/* line 54, ../sass/_typo.scss */
-article {
-  /*    &#ueber-mich{
-          li {
-              @include bullets(url('../img/bullets_beige.svg'),$button-size); 
-              @include clearfix;
-              margin:0;
-          }
-      }*/
-}
 /* line 55, ../sass/_typo.scss */
 article h1 {
   color: #558dbe;
@@ -182,235 +172,236 @@ article h1 {
   text-transform: uppercase;
 }
 /* line 62, ../sass/_typo.scss */
+article i, article em {
+  font-style: italic;
+}
+/* line 63, ../sass/_typo.scss */
 article b, article strong {
   font-weight: 600;
 }
-/* line 65, ../sass/_typo.scss */
+/* line 66, ../sass/_typo.scss */
 article p {
   color: #4d575e;
   font-size: 1em;
   line-height: 1.3;
   margin-bottom: 1.95em;
 }
-/* line 72, ../sass/_typo.scss */
+/* line 73, ../sass/_typo.scss */
 article blockquote > * {
   color: #558dbe;
-  font-size: 15.96px;
+  font-size: 15.82px;
   line-height: 1.33;
   margin-bottom: 1.625em;
 }
-/* line 79, ../sass/_typo.scss */
+/* line 80, ../sass/_typo.scss */
 article ul {
   margin-bottom: 2.3em;
 }
-/* line 81, ../sass/_typo.scss */
+/* line 82, ../sass/_typo.scss */
 article ul li {
   /* margin:.5em 0 .5em 2em;*/
-  overflow: hidden;
-  *zoom: 1;
+  background: transparent url("../img/bullets_beige.svg") no-repeat 0px 2px/auto 1em;
+  margin: 0 0 1em 0;
+  padding-left: 2em;
+  line-height: 1.4;
+}
+/* line 91, ../sass/_typo.scss */
+article#start ul {
   margin: 0;
 }
-/* line 78, ../sass/_variables.scss */
-article ul li:before {
-  content: ' ';
-  background: transparent url("../img/bullets_beige.svg") left center no-repeat;
-  height: 18px;
-  display: inline-block;
-  float: left;
-  margin: 0 1em 1em 0;
-  width: 16px;
-}
-/* line 96, ../sass/_typo.scss */
-article.buttons ul {
-  margin: 0;
-}
-/* line 98, ../sass/_typo.scss */
-article.buttons ul li {
+/* line 93, ../sass/_typo.scss */
+article#start ul li {
   display: block;
-  font-size: 18px;
+  font-size: 15.4px;
   line-height: 1.33;
   font-weight: bold;
-  min-height: 82px;
+  min-height: 68px;
 }
-/* line 104, ../sass/_typo.scss */
-article.buttons ul li:before {
+/* line 99, ../sass/_typo.scss */
+article#start ul li:before {
   background-image: none !important;
   margin: 0;
 }
-/* line 111, ../sass/_typo.scss */
+/* line 106, ../sass/_typo.scss */
 article#kontakt {
-  font-size: 1.5em;
+  font-size: 15.4px;
   line-height: 2em;
 }
-/* line 114, ../sass/_typo.scss */
+/* line 109, ../sass/_typo.scss */
 article#kontakt strong {
   color: #dacbaf;
 }
-/* line 118, ../sass/_typo.scss */
+/* line 113, ../sass/_typo.scss */
+article#kontakt strong, article#kontakt .label {
+  line-height: 1;
+}
+/* line 116, ../sass/_typo.scss */
+article#kontakt p {
+  margin-top: 0;
+}
+/* line 120, ../sass/_typo.scss */
 article#impressum {
   font-size: inherit;
   line-height: inherit;
   text-align: center;
 }
-/* line 122, ../sass/_typo.scss */
+/* line 124, ../sass/_typo.scss */
 article#impressum strong, article#impressum .label {
-  font-size: 1.5em;
+  font-size: 18.06px;
   line-height: 1.2em;
 }
-/* line 128, ../sass/_typo.scss */
+/* line 130, ../sass/_typo.scss */
 article#kontakt, article#impressum {
   color: white;
   font-weight: 600;
 }
-/* line 132, ../sass/_typo.scss */
+/* line 134, ../sass/_typo.scss */
 article#kontakt p, article#kontakt li, article#impressum p, article#impressum li {
   color: inherit;
 }
-/* line 136, ../sass/_typo.scss */
+/* line 138, ../sass/_typo.scss */
 article#kontakt a, article#impressum a {
   color: white !important;
   text-decoration: underline;
 }
-/* line 140, ../sass/_typo.scss */
+/* line 142, ../sass/_typo.scss */
 article#kontakt strong, article#kontakt .label, article#impressum strong, article#impressum .label {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 1em;
 }
 
-/* line 151, ../sass/_typo.scss */
+/* line 153, ../sass/_typo.scss */
 .header .nav li a {
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.93em;
 }
-/* line 155, ../sass/_typo.scss */
+/* line 157, ../sass/_typo.scss */
 .header .nav li a:hover, .header .nav li a:focus {
   text-decoration: none;
 }
-/* line 160, ../sass/_typo.scss */
+/* line 162, ../sass/_typo.scss */
 .header .nav li.active a {
   color: #c1a879;
 }
 
-/* line 163, ../sass/_typo.scss */
+/* line 165, ../sass/_typo.scss */
 .footer {
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 2em;
   color: white;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: normal;
 }
 
-/* line 172, ../sass/_typo.scss */
+/* line 174, ../sass/_typo.scss */
 header .nav li.kontakt > a {
   font-size: 1.167em;
   text-transform: uppercase;
   font-weight: bold;
   color: white !important;
 }
-/* line 178, ../sass/_typo.scss */
+/* line 180, ../sass/_typo.scss */
 header .nav li.kontakt > a:hover {
   text-decoration: none;
 }
-/* line 181, ../sass/_typo.scss */
+/* line 183, ../sass/_typo.scss */
 header .nav li.kontakt:hover, header .nav li.kontakt.current-menu-item {
   background: #c1a879;
 }
 
-/* line 11, ../sass/_grids.scss */
+/**
+ * Global styles
+ */
+/* line 15, ../sass/_grids.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 18, ../sass/_grids.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* sticky footer and main width */
+/* line 23, ../sass/_grids.scss */
+.wrapper {
+  display: -webkit-flex;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+/* line 27, ../sass/_grids.scss */
+.wrapper > #content {
+  -webkit-flex: 1 0;
+  flex: 1 0;
+}
+
+/* line 31, ../sass/_grids.scss */
 .wrapper {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 16, ../sass/_grids.scss */
-.header .container {
-  max-width: 1170px;
+/* line 35, ../sass/_grids.scss */
+.container {
+  max-width: 1015px;
   margin-left: auto;
   margin-right: auto;
-  margin: 0 auto;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
-.header .container:after {
+.container:after {
   content: " ";
   display: block;
   clear: both;
 }
-/* line 19, ../sass/_grids.scss */
-.header .container > .navbar-toggle {
-  display: none;
-}
-/* line 20, ../sass/_grids.scss */
-.header .container > nav {
-  width: 74.28571%;
+
+/* line 39, ../sass/_grids.scss */
+.header nav {
+  width: 79.31034%;
   float: left;
-  margin-right: 2.85714%;
+  margin-right: 3.44828%;
 }
-/* line 23, ../sass/_grids.scss */
-.header .container > .logo {
-  width: 22.85714%;
+/* line 42, ../sass/_grids.scss */
+.header .logo {
+  width: 17.24138%;
   float: right;
   margin-right: 0;
 }
 
-/* line 30, ../sass/_grids.scss */
-article .container section {
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
+/* line 47, ../sass/_grids.scss */
+article section {
   margin: 0 auto;
 }
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
-article .container section:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 34, ../sass/_grids.scss */
-article .container .post_content > div {
-  width: 65.71429%;
+/* line 50, ../sass/_grids.scss */
+article .post_content {
+  width: 68.96552%;
   float: left;
-  margin-right: 2.85714%;
+  margin-right: 3.44828%;
 }
-/* line 38, ../sass/_grids.scss */
-article .container .post_content.full > div {
+/* line 52, ../sass/_grids.scss */
+article .post_content.full {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 41, ../sass/_grids.scss */
-article .container .post_content.full .row {
-  padding: 3em 0;
-}
-/* line 47, ../sass/_grids.scss */
-article .container .quote {
-  width: 31.42857%;
+/* line 56, ../sass/_grids.scss */
+article .zitate {
+  width: 27.58621%;
   float: right;
   margin-right: 0;
 }
-/* line 50, ../sass/_grids.scss */
-article .container footer {
+/* line 59, ../sass/_grids.scss */
+article footer {
   clear: both;
 }
-/* line 57, ../sass/_grids.scss */
-article.buttons section > * {
-  width: 40%;
-  float: left;
-  margin-right: 2.85714%;
-}
 
-/* line 63, ../sass/_grids.scss */
-.conditions {
-  margin-top: 1em;
-}
-/* line 65, ../sass/_grids.scss */
-.unterrubriken .conditions {
-  padding-bottom: 2em;
-}
-/* line 68, ../sass/_grids.scss */
+/* line 64, ../sass/_grids.scss */
 .conditions .row {
   max-width: 100%;
   margin-left: auto;
@@ -422,195 +413,238 @@ article.buttons section > * {
   display: block;
   clear: both;
 }
-/* line 70, ../sass/_grids.scss */
+/* line 66, ../sass/_grids.scss */
 .conditions .row > .label {
   width: 25%;
   float: left;
   margin-right: 5%;
 }
-/* line 73, ../sass/_grids.scss */
+/* line 69, ../sass/_grids.scss */
 .conditions .row > .value {
   width: 70%;
   float: right;
   margin-right: 0;
 }
 
-/* line 79, ../sass/_grids.scss */
+/* line 75, ../sass/_grids.scss */
 #impressum .row {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: wrap;
   flex-flow: wrap;
 }
-/* line 83, ../sass/_grids.scss */
-#impressum .row > .container [class*="col"] {
+/* line 79, ../sass/_grids.scss */
+#impressum .row [class*="col"] {
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }
 
-/* line 90, ../sass/_grids.scss */
+/* line 85, ../sass/_grids.scss */
 #kontakt .row {
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: wrap;
-  flex-flow: wrap;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
-/* line 94, ../sass/_grids.scss */
-#kontakt .row > .container [class*="col"] {
+/* line 88, ../sass/_grids.scss */
+#kontakt .row [class*="col"] {
   -webkit-flex: 1 0;
   flex: 1 0;
 }
 
-/* line 10, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
-#wrapper {
-  clear: both;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -72px;
-}
-/* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
-#wrapper #wrapper-footer {
-  height: 72px;
-}
-
-/* line 20, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
-.footer {
-  clear: both;
+/* line 1, ../sass/_layout.scss */
+.container {
   position: relative;
-  height: 72px;
 }
 
-/* line 2, ../sass/_layout.scss */
-.header {
-  width: 100%;
-  display: block;
-  background: white;
-  height: 110px;
+@media screen and (min-width: 768px) {
+  /* line 4, ../sass/_layout.scss */
+  .navbar-toggle {
+    display: none;
+  }
 }
-/* line 3, ../sass/_layout.scss */
-.header.fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999999;
+
+/* line 10, ../sass/_layout.scss */
+header.header {
+  height: 90px;
 }
-/* line 13, ../sass/_layout.scss */
-.header nav {
-  margin-top: 75px;
+/* line 12, ../sass/_layout.scss */
+header.header nav {
+  margin-top: 50px;
 }
-/* line 16, ../sass/_layout.scss */
-.header nav ul li {
+/* line 15, ../sass/_layout.scss */
+header.header nav ul li {
   float: left;
   display: inline-block;
-  margin-right: 1.4em;
+  margin-right: 1em;
 }
-/* line 23, ../sass/_layout.scss */
-.header .logo {
-  position: relative;
-}
-/* line 26, ../sass/_layout.scss */
-.header .logo .logo-img {
-  width: 200px;
-  height: auto;
+/* line 22, ../sass/_layout.scss */
+header.header .logo {
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 25px;
+  right: 0;
+  right: 0;
+  z-index: 9999;
+  width: 200px;
+}
+/* line 29, ../sass/_layout.scss */
+header.header .logo > img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* line 37, ../sass/_layout.scss */
-.wrapper .main {
-  margin-top: 110px;
-}
-
-/* line 41, ../sass/_layout.scss */
-.footer {
+/* line 35, ../sass/_layout.scss */
+header .nav li.kontakt {
+  position: fixed;
+  top: 170px;
+  left: -40px;
+  z-index: 9999999999999;
+  padding: 1em 1em .5em 1em;
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   background: #558dbe;
 }
-/* line 43, ../sass/_layout.scss */
-.footer > .container {
+
+/* line 45, ../sass/_layout.scss */
+article > header {
+  height: 350px;
+  background-position: 0 40%;
+  background-size: cover;
+  position: relative;
+}
+/* line 50, ../sass/_layout.scss */
+article > header .thumbnail {
+  background: transparent url("../img/Bilderrahmen.svg") top center no-repeat;
+  width: 57.14286%;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  z-index: 99;
+  padding: 3px;
+  -moz-transform: rotate(-1.25deg);
+  -webkit-transform: rotate(-1.25deg);
+  -o-transform: rotate(-1.25deg);
+  -ms-transform: rotate(-1.25deg);
+  transform: rotate(-1.25deg);
+}
+/* line 60, ../sass/_layout.scss */
+article > header .thumbnail img {
+  border: .7em solid white;
+  max-width: 100%;
+  height: auto;
+}
+/* line 67, ../sass/_layout.scss */
+article > section {
+  min-height: 500px;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1em 0;
-  border-width: 1px 0 0 0;
-  border-style: dotted;
-  border-color: white;
+  padding-top: 120px;
+  background-color: white;
+  background-image: url("../img/Voegel.svg"), url("../img/Leuchtturm.svg");
+  background-repeat: no-repeat;
+  background-position: 60px 180px,85% 150px;
+  background-size: auto 80px, auto 375px;
+  background-attachment: fixed;
 }
 /* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.6/sass/susy/output/support/_clearfix.scss */
-.footer > .container:after {
+article > section:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 49, ../sass/_layout.scss */
-article.rubrik {
-  padding-top: 110px;
-}
-/* line 52, ../sass/_layout.scss */
-article.rubrik > .container {
-  padding-top: 130px;
-  background-color: white;
-  background-image: url("../img/Voegel.svg"), url("../img/Leuchtturm.svg");
-  background-repeat: no-repeat;
-  background-position: 5px 88px, 80% 30px;
-  background-size: auto 80px, auto 375px;
-}
-/* line 61, ../sass/_layout.scss */
-article.rubrik.buttons > .container {
-  height: inherit;
-}
-/* line 63, ../sass/_layout.scss */
-article.rubrik.buttons > .container > section {
-  padding-top: 280px;
-}
-/* line 70, ../sass/_layout.scss */
-article.rubrik#kontakt > .container {
-  background-image: none;
-}
-/* line 74, ../sass/_layout.scss */
-article.rubrik#kontakt, article.rubrik#impressum {
-  padding-top: 0;
-  background: #558dbe;
-}
-/* line 77, ../sass/_layout.scss */
-article.rubrik#kontakt > .container, article.rubrik#impressum > .container {
+/* line 79, ../sass/_layout.scss */
+.page-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -100%;
+  display: inline-block;
+  overflow: hidden;
   background-color: transparent;
-  padding-bottom: 110px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-/* line 81, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"], article.rubrik#impressum > .container [class*="col"] {
-  border-width: 0 1px;
+/* line 89, ../sass/_layout.scss */
+#trauer-und-abschied .page-title {
+  background-image: url("../img/bg-trauer-abschied.svg");
+  width: 242px;
+  height: 58px;
+  top: 10%;
+  left: 50%;
+  margin-left: -121px;
+}
+/* line 97, ../sass/_layout.scss */
+#so-begleite-ich-sie .page-title {
+  background-image: url("../img/bg-so-begleite-ich-sie.svg");
+  width: 244px;
+  height: 69px;
+  left: 10%;
+  top: 65%;
+}
+/* line 104, ../sass/_layout.scss */
+#fuer-trauerende .page-title {
+  background-image: url("../img/bg-fuer-trauernde.svg");
+  width: 190px;
+  height: 70px;
+  top: 25%;
+  left: 55%;
+}
+/* line 111, ../sass/_layout.scss */
+#fuer-eltern .page-title {
+  background-image: url("../img/bg-fuer-eltern.svg");
+  width: 145px;
+  height: 59px;
+  top: 35%;
+  left: 10%;
+}
+/* line 119, ../sass/_layout.scss */
+#fuer-kitas-und-schulen .page-title {
+  background-image: url("../img/bg-fuer-kitas-schulen.svg");
+  width: 191px;
+  height: 97px;
+  top: 30%;
+  left: 55%;
+}
+/* line 126, ../sass/_layout.scss */
+.page-title#ueber-mich, .page-title #kontakt, .page-title #impressum {
+  display: none;
+}
+
+/* line 129, ../sass/_layout.scss */
+article#start section, article#kontakt section, article#impressum section {
+  background-image: none;
+  background-color: transparent;
+}
+/* line 135, ../sass/_layout.scss */
+article#kontakt section [class*="col"], article#impressum section [class*="col"] {
+  border-width: 0 0 0 1px;
   border-style: dotted;
   border-color: white;
   width: 33%;
+  min-height: 100px;
+  padding: 1em 2em;
 }
-/* line 84, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"] > div, article.rubrik#impressum > .container [class*="col"] > div {
-  padding: 0 3em;
+/* line 140, ../sass/_layout.scss */
+article#kontakt section [class*="col"] > div:first-child, article#impressum section [class*="col"] > div:first-child {
+  border: 0;
 }
-/* line 87, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"] > div:first-child, article.rubrik#impressum > .container [class*="col"] > div:first-child {
-  padding-top: 1.8em;
-}
-/* line 91, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].last, article.rubrik#impressum > .container [class*="col"].last {
-  padding-right: 0;
+/* line 144, ../sass/_layout.scss */
+article#kontakt section [class*="col"].last, article#impressum section [class*="col"].last {
   border-right: 0;
+  padding-right: 0;
 }
-/* line 95, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].first, article.rubrik#impressum > .container [class*="col"].first {
-  padding-left: 0;
+/* line 148, ../sass/_layout.scss */
+article#kontakt section [class*="col"].first, article#impressum section [class*="col"].first {
   border-left: 0;
+  padding-left: 0;
 }
-/* line 99, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].full, article.rubrik#impressum > .container [class*="col"].full {
+/* line 153, ../sass/_layout.scss */
+article#kontakt section [class*="col"].full, article#impressum section [class*="col"].full {
   -webkit-flex-grow: 3;
   flex-grow: 3;
   width: 100%;
@@ -620,167 +654,78 @@ article.rubrik#kontakt > .container [class*="col"].full, article.rubrik#impressu
   margin-top: 3em;
   text-align: left;
 }
-/* line 105, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].full > div, article.rubrik#impressum > .container [class*="col"].full > div {
+/* line 159, ../sass/_layout.scss */
+article#kontakt section [class*="col"].full > div, article#impressum section [class*="col"].full > div {
   padding: 1em 0 !important;
 }
-/* line 106, ../sass/_layout.scss */
-article.rubrik#kontakt > .container [class*="col"].full > div, article.rubrik#impressum > .container [class*="col"].full > div {
+/* line 160, ../sass/_layout.scss */
+article#kontakt section [class*="col"].full > div, article#impressum section [class*="col"].full > div {
   padding-top: 1em !important;
 }
-/* line 110, ../sass/_layout.scss */
-article.rubrik#impressum {
-  margin-bottom: 0;
+/* line 164, ../sass/_layout.scss */
+article#start section {
+  padding-top: 0;
+  margin-top: -300px;
+  min-height: 315px;
 }
-/* line 113, ../sass/_layout.scss */
-article.rubrik#impressum > .container > .small-wrapper {
+/* line 168, ../sass/_layout.scss */
+article#start section ul {
+  max-width: 450px;
+}
+/* line 170, ../sass/_layout.scss */
+article#start section ul li {
+  margin: 0 0 .2em 0;
+  background-color: #80aace;
+  background-color: rgba(85, 141, 190, 0.75);
+  background-image: url("../img/bullets.svg");
+  background-repeat: no-repeat;
+  background-position: 1em 1em;
+  background-size: auto 1em;
+  padding: 1em 1em 1em 3em;
+  color: white;
+  display: block;
+}
+/* line 177, ../sass/_layout.scss */
+article#start section ul li:hover {
+  opacity: .8;
+}
+
+/* line 184, ../sass/_layout.scss */
+article#start .article-header {
+  min-height: 800px;
+  background-position: 0 0;
+}
+
+/* line 188, ../sass/_layout.scss */
+article#kontakt, article#impressum {
+  background-color: #558dbe;
+}
+
+/* line 191, ../sass/_layout.scss */
+footer.footer {
   background: #558dbe;
-  margin-top: 370px;
-  padding-bottom: 220px;
+  padding: 1em 0;
+}
+/* line 195, ../sass/_layout.scss */
+article#kontakt footer.footer > .container, article#impressum footer.footer > .container {
+  border-width: 1px 0 0 0;
+  border-style: dotted;
+  border-color: white;
+}
+/* line 199, ../sass/_layout.scss */
+body.home footer.footer {
+  background-color: white !important;
+}
+/* line 201, ../sass/_layout.scss */
+body.home footer.footer > * {
+  color: #558dbe !important;
+}
+/* line 203, ../sass/_layout.scss */
+body:not(.home) footer.footer * {
+  color: white !important;
 }
 
-/* line 122, ../sass/_layout.scss */
-article.rubrik .article-header {
-  height: 460px;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 40%;
-  padding-top: 2.4em;
-}
-/* line 129, ../sass/_layout.scss */
-article.rubrik .article-header > hgroup {
-  background: transparent url("../img/Bilderrahmen.svg") top center no-repeat;
-  background-size: 100%;
-  height: 510px;
-  width: 745px;
-  margin: 0 100px;
-  padding: 3px;
-  position: relative;
-  display: block;
-  -moz-transform: rotate(-1.25deg);
-  -webkit-transform: rotate(-1.25deg);
-  -o-transform: rotate(-1.25deg);
-  -ms-transform: rotate(-1.25deg);
-}
-/* line 138, ../sass/_layout.scss */
-article.rubrik .article-header > hgroup > .thumbnail {
-  border: 20px solid white;
-  overflow: hidden;
-  background: white;
-  height: 510px;
-  width: 745px;
-}
-/* line 143, ../sass/_layout.scss */
-article.rubrik .article-header > hgroup > .thumbnail > img {
-  height: 470px;
-  width: auto;
-  max-width: none;
-}
-
-/* line 153, ../sass/_layout.scss */
-article#start {
-  margin-top: 0;
-}
-/* line 155, ../sass/_layout.scss */
-article#start > .container {
-  padding-top: 50px;
-}
-
-/* line 160, ../sass/_layout.scss */
-article#start, article#impressum {
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover !important;
-  display: block;
-}
-@media screen and (max-width: 992px) {
-  /* line 160, ../sass/_layout.scss */
-  article#start, article#impressum {
-    height: 100vH;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 160, ../sass/_layout.scss */
-  article#start, article#impressum {
-    height: 778px;
-  }
-}
-/* line 173, ../sass/_layout.scss */
-article#start > .container, article#impressum > .container {
-  height: inherit;
-  background-color: transparent;
-  background-image: none;
-}
-
-@media screen and (min-width: 992px) {
-  /* line 179, ../sass/_layout.scss */
-  article#impressum {
-    height: 500px;
-  }
-}
-/* line 183, ../sass/_layout.scss */
-article#impressum > .container {
-  background-position: top center;
-  background-size: cover !important;
-}
-
-/* line 189, ../sass/_layout.scss */
-.page-title {
-  position: absolute;
-  display: block;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-indent: -9999999px;
-}
-/* line 196, ../sass/_layout.scss */
-#trauer-und-abschied .page-title {
-  background-image: url("../img/bg-trauer-abschied.svg");
-  width: 284px;
-  height: 74px;
-  top: 10%;
-  left: 50%;
-  margin-left: -142px;
-}
-/* line 204, ../sass/_layout.scss */
-#so-begleite-ich-sie .page-title {
-  background-image: url("../img/bg-so-begleite-ich-sie.svg");
-  width: 285px;
-  height: 71px;
-  left: 10%;
-  bottom: 20%;
-}
-/* line 211, ../sass/_layout.scss */
-#fuer-trauerende .page-title {
-  background-image: url("../img/bg-fuer-trauernde.svg");
-  width: 230px;
-  height: 80px;
-  top: 25%;
-  right: 15%;
-}
-/* line 218, ../sass/_layout.scss */
-#fuer-eltern .page-title {
-  background-image: url("../img/bg-fuer-eltern.svg");
-  width: 178px;
-  height: 78px;
-  top: 40%;
-  left: 15%;
-}
-/* line 226, ../sass/_layout.scss */
-#fuer-kitas-und-schulen .page-title {
-  background-image: url("../img/bg-fuer-kitas-schulen.svg");
-  width: 239px;
-  height: 121px;
-  top: 30%;
-  right: 15%;
-}
-/* line 233, ../sass/_layout.scss */
-.page-title#ueber-mich, .page-title #kontakt, .page-title #impressum {
-  display: none;
-}
-
-/* line 237, ../sass/_layout.scss */
+/* line 209, ../sass/_layout.scss */
 .conditions > header, .panel > header {
   padding: .5em 0;
   border-width: 1px 0;
@@ -788,18 +733,18 @@ article#impressum > .container {
   border-color: #558dbe;
   position: relative;
 }
-/* line 241, ../sass/_layout.scss */
+/* line 213, ../sass/_layout.scss */
 .conditions > header:hover, .panel > header:hover {
   cursor: pointer;
 }
-/* line 244, ../sass/_layout.scss */
+/* line 216, ../sass/_layout.scss */
 .conditions > header:after, .panel > header:after {
   content: ' ';
   background: transparent url("../img/arrow.svg") no-repeat right center/cover;
   display: inline-block;
   position: absolute;
   top: 50%;
-  margin-top: -.5em;
+  margin-top: -.25em;
   right: 0;
   height: 9px;
   width: 18px;
@@ -807,22 +752,24 @@ article#impressum > .container {
   -webkit-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-/* line 256, ../sass/_layout.scss */
+/* line 228, ../sass/_layout.scss */
 .conditions > header.open:after, .panel > header.open:after {
   -moz-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
-/* line 259, ../sass/_layout.scss */
+/* line 231, ../sass/_layout.scss */
 .conditions > header > *, .panel > header > * {
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.4;
   margin: 0;
 }
-/* line 267, ../sass/_layout.scss */
+/* line 239, ../sass/_layout.scss */
 .conditions .row, .panel .row {
   max-width: 100%;
   margin-left: auto;
@@ -838,107 +785,31 @@ article#impressum > .container {
   display: block;
   clear: both;
 }
-/* line 271, ../sass/_layout.scss */
+/* line 243, ../sass/_layout.scss */
 .conditions .row > *, .panel .row > * {
   color: #558dbe;
 }
-/* line 274, ../sass/_layout.scss */
+/* line 246, ../sass/_layout.scss */
 .conditions .row > .value, .panel .row > .value {
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* line 279, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
+.conditions {
+  padding-bottom: 2em;
+}
+
+/* line 254, ../sass/_layout.scss */
 .panel {
   margin-top: -1px;
 }
-/* line 281, ../sass/_layout.scss */
-.panel > header {
-  padding-top: 1em;
-}
 
-/* line 285, ../sass/_layout.scss */
-.panel-content {
-  padding-top: 1em;
-}
-
-/* line 291, ../sass/_layout.scss */
-.buttons ul li {
-  margin: 0 0 .2em 0;
-  background-color: #80aace;
-  background-color: rgba(85, 141, 190, 0.75);
-}
-/* line 294, ../sass/_layout.scss */
-.buttons ul li:hover {
-  opacity: .8;
-}
-/* line 297, ../sass/_layout.scss */
-.buttons ul li a {
-  padding: 1em;
-  color: white;
-  display: block;
-}
-/* line 78, ../sass/_variables.scss */
-.buttons ul li a:before {
-  content: ' ';
-  background: transparent url("../img/bullets.svg") left center no-repeat;
-  height: 18px;
-  display: inline-block;
-  float: left;
-  margin: 0 1em 1em 0;
-  width: 16px;
-}
-/* line 302, ../sass/_layout.scss */
-.buttons ul li a:hover {
-  text-decoration: none;
-}
-
-/* line 309, ../sass/_layout.scss */
-header .nav li.kontakt {
-  position: fixed;
-  top: 170px;
-  left: -30px;
-  z-index: 9999999999999;
-  padding: 1em 1em .5em 1em;
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  background: #558dbe;
-}
-
-/* line 318, ../sass/_layout.scss */
-.scroll-to-top {
-  position: fixed;
-  bottom: 1em;
-  right: 5%;
-  z-index: 999999999;
-}
-/* line 323, ../sass/_layout.scss */
-.scroll-to-top:hover {
-  cursor: pointer;
-}
-
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 23.11.2015, 20:30:59
-    Author     : chilliscope
-*/
-/*.wrapper {
-    :after{
-        content: ' ';
-        background: transparent url('../img/grid.png') no-repeat top center !important;
-        opacity: .1;
-        width:100%;
-        height: 100%;
-        position: fixed;
-        top:0;
-        right:0;
-        display: block;
-        border:1px solid red;
-        z-index:99999999999999999999999999;
+/*body {
+    background:transparent url('../img/grid.png') top center / 1280px auto;
+}*/
+/*.container {
+    border:1px solid red;
+    > * {
+        border:1px solid green;
     }
 }*/

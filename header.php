@@ -29,9 +29,9 @@
 
         <!-- wrapper -->
         <div class="wrapper">
-
+            <div id="content">
             <!-- header -->
-            <header class="header fixed-top">
+            <header class="header">
                 <div class="container">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                         <span class="icon-bar"></span>

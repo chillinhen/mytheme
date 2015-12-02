@@ -17,9 +17,11 @@ $value_copyright = get_field("text-copyright");
     <!-- contact data -->
     <?php if ($value_kontakt) : ?>
         <div class="col-01 first">
+            <?php if ($label_kontakt) : ?>
             <div class="label">
                 <?php echo $label_kontakt ?>
             </div>
+            <?php endif; ?>
             <div class="value">
                 <?php echo $value_kontakt ?>
             </div>
@@ -28,9 +30,11 @@ $value_copyright = get_field("text-copyright");
     <!-- availability -->
     <?php if ($value_available) : ?>
         <div class="col-02">
+            <?php if ($label_available) : ?>
             <div class="label">
                 <?php echo $label_available ?>
             </div>
+            <?php endif; ?>
             <div class="value">
                 <?php echo $value_available; ?>
             </div>
@@ -39,9 +43,11 @@ $value_copyright = get_field("text-copyright");
     <!-- location -->
     <?php if ($value_ort) : ?>
         <div class="col-03 last">
+            <?php if ($label_ort) : ?>
             <div class="label">
                 <?php echo $label_ort ?>
             </div>
+            <?php endif; ?>
             <div class="value">
                 <?php echo $value_ort; ?>
             </div>
@@ -50,9 +56,11 @@ $value_copyright = get_field("text-copyright");
     <!-- agb -->
     <?php if ($value_agb) : ?>
         <div class="col-04 full">
+            <?php if ($label_agb) : ?>
             <div class="label">
                 <?php echo $label_agb ?>
             </div>
+            <?php endif; ?>
             <div class="value">
                 <?php echo $value_agb; ?>
             </div>
