@@ -72,6 +72,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /**** type ***/
 /**** colors ***/
 /**** Mixins *****/
+/* line 46, ../sass/_variables.scss */
+.justify-text {
+  text-align: justify;
+  text-align-last: left;
+  max-width: 95%;
+}
+
 /*@include alpha-background-color(rgba($blue, 0.75), white);*/
 /*** bullets***/
 /*** Thumbnail Sie ***/
@@ -85,33 +92,41 @@ body {
 }
 
 /* line 9, ../sass/_typo.scss */
+hr {
+  height: 1px;
+  border-width: 1px 0 0 0;
+  border-style: dotted;
+  border-color: #558dbe;
+  margin: 2em 0;
+}
+
+/* line 14, ../sass/_typo.scss */
 a {
   color: #558dbe;
 }
-/* line 11, ../sass/_typo.scss */
+/* line 16, ../sass/_typo.scss */
 a:link {
   color: #558dbe;
 }
-/* line 14, ../sass/_typo.scss */
+/* line 19, ../sass/_typo.scss */
 a:focus, a:visited {
   color: #7aa6cc;
 }
-/* line 17, ../sass/_typo.scss */
+/* line 22, ../sass/_typo.scss */
 a:active, a:focus {
   outline: none;
 }
-/* line 20, ../sass/_typo.scss */
+/* line 25, ../sass/_typo.scss */
 a:hover {
   color: #c1a879;
 }
 
-/* line 24, ../sass/_typo.scss */
+/* line 29, ../sass/_typo.scss */
 p.small {
   font-size: smaller;
-  margin-top: 2em;
 }
 
-/* line 28, ../sass/_typo.scss */
+/* line 32, ../sass/_typo.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: 300;
@@ -119,37 +134,37 @@ h1, h2, h3, h4, h5, h6 {
   color: #558dbe;
 }
 
-/* line 34, ../sass/_typo.scss */
+/* line 38, ../sass/_typo.scss */
 h1 {
   font-size: 3.33em;
 }
 
-/* line 35, ../sass/_typo.scss */
+/* line 39, ../sass/_typo.scss */
 h2 {
   font-size: 2em;
 }
 
-/* line 36, ../sass/_typo.scss */
+/* line 40, ../sass/_typo.scss */
 h3 {
   font-size: 1.665em;
 }
 
-/* line 37, ../sass/_typo.scss */
+/* line 41, ../sass/_typo.scss */
 h4 {
   font-size: 14px;
 }
 
-/* line 38, ../sass/_typo.scss */
+/* line 42, ../sass/_typo.scss */
 h5 {
   font-size: 14px;
 }
 
-/* line 39, ../sass/_typo.scss */
+/* line 43, ../sass/_typo.scss */
 h6 {
   font-size: 14px;
 }
 
-/* line 41, ../sass/_typo.scss */
+/* line 45, ../sass/_typo.scss */
 .scroll-to-top {
   text-transform: uppercase;
   font-size: 15.82px;
@@ -159,22 +174,26 @@ h6 {
   padding: 0 1em;
   border-left: 1px solid currentColor;
 }
-/* line 49, ../sass/_typo.scss */
+/* line 53, ../sass/_typo.scss */
 .scroll-to-top:last-child {
   border: 0;
 }
-/* line 52, ../sass/_typo.scss */
+/* line 56, ../sass/_typo.scss */
 .scroll-to-top:hover {
   text-decoration: none;
   opacity: .5;
 }
 
-/* line 57, ../sass/_typo.scss */
+/* line 61, ../sass/_typo.scss */
 b, strong {
   font-weight: 600 !important;
 }
 
-/* line 61, ../sass/_typo.scss */
+/* line 65, ../sass/_typo.scss */
+article .post_content {
+  /*        @extend .justify-text;*/
+}
+/* line 68, ../sass/_typo.scss */
 article h1 {
   color: #558dbe;
   font-weight: 700;
@@ -182,29 +201,33 @@ article h1 {
   font-size: 3.33em;
   text-transform: uppercase;
 }
-/* line 68, ../sass/_typo.scss */
+/* line 75, ../sass/_typo.scss */
 article i, article em {
   font-style: italic;
 }
-/* line 70, ../sass/_typo.scss */
+/* line 77, ../sass/_typo.scss */
 article p {
   color: #4d575e;
   font-size: 1em;
   line-height: 1.3;
   margin-bottom: 1.95em;
 }
-/* line 77, ../sass/_typo.scss */
+/* line 82, ../sass/_typo.scss */
+article p:last-child {
+  margin-bottom: 0;
+}
+/* line 85, ../sass/_typo.scss */
 article blockquote > * {
   color: #558dbe;
   font-size: 15.82px;
   line-height: 1.33;
   margin-bottom: 1.625em;
 }
-/* line 84, ../sass/_typo.scss */
+/* line 92, ../sass/_typo.scss */
 article ul {
   margin-bottom: 2.3em;
 }
-/* line 86, ../sass/_typo.scss */
+/* line 94, ../sass/_typo.scss */
 article ul li {
   /* margin:.5em 0 .5em 2em;*/
   background: transparent url("../img/bullets_beige.svg") no-repeat 0px 2px/auto 1em;
@@ -212,88 +235,88 @@ article ul li {
   padding-left: 2em;
   line-height: 1.4;
 }
-/* line 95, ../sass/_typo.scss */
+/* line 103, ../sass/_typo.scss */
 article#start ul {
   margin: 0;
 }
-/* line 97, ../sass/_typo.scss */
+/* line 105, ../sass/_typo.scss */
 article#start ul li {
   display: block;
   font-size: 15.4px;
   line-height: 1.33;
-  font-weight: bold;
-  min-height: 68px;
+  font-weight: 600;
+  letter-spacing: .015em;
 }
-/* line 103, ../sass/_typo.scss */
+/* line 111, ../sass/_typo.scss */
 article#start ul li:before {
   background-image: none !important;
   margin: 0;
 }
-/* line 110, ../sass/_typo.scss */
+/* line 118, ../sass/_typo.scss */
 article#kontakt {
   font-size: 15.4px;
   line-height: 2em;
 }
-/* line 113, ../sass/_typo.scss */
+/* line 121, ../sass/_typo.scss */
 article#kontakt strong {
   color: #dacbaf;
 }
-/* line 117, ../sass/_typo.scss */
+/* line 125, ../sass/_typo.scss */
 article#kontakt strong, article#kontakt .label {
   line-height: 1;
 }
-/* line 120, ../sass/_typo.scss */
+/* line 128, ../sass/_typo.scss */
 article#kontakt p {
   margin-top: 0;
 }
-/* line 124, ../sass/_typo.scss */
+/* line 132, ../sass/_typo.scss */
 article#impressum {
   font-size: inherit;
   line-height: inherit;
   text-align: center;
 }
-/* line 128, ../sass/_typo.scss */
+/* line 136, ../sass/_typo.scss */
 article#impressum strong, article#impressum .label {
   font-size: 18.06px;
   line-height: 1.2em;
 }
-/* line 134, ../sass/_typo.scss */
+/* line 142, ../sass/_typo.scss */
 article#kontakt, article#impressum {
   color: white;
   font-weight: 600;
 }
-/* line 138, ../sass/_typo.scss */
+/* line 146, ../sass/_typo.scss */
 article#kontakt p, article#kontakt li, article#impressum p, article#impressum li {
   color: inherit;
 }
-/* line 142, ../sass/_typo.scss */
+/* line 150, ../sass/_typo.scss */
 article#kontakt a, article#impressum a {
   color: white !important;
   text-decoration: underline;
 }
-/* line 146, ../sass/_typo.scss */
+/* line 154, ../sass/_typo.scss */
 article#kontakt strong, article#kontakt .label, article#impressum strong, article#impressum .label {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 1em;
 }
 
-/* line 157, ../sass/_typo.scss */
+/* line 165, ../sass/_typo.scss */
 .header .nav li a {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.93em;
 }
-/* line 161, ../sass/_typo.scss */
+/* line 169, ../sass/_typo.scss */
 .header .nav li a:hover, .header .nav li a:focus {
   text-decoration: none;
 }
-/* line 166, ../sass/_typo.scss */
-.header .nav li.active a {
-  color: #c1a879;
+/* line 174, ../sass/_typo.scss */
+.header .nav li.current_page_item a {
+  color: #c1a879 !important;
 }
 
-/* line 169, ../sass/_typo.scss */
+/* line 177, ../sass/_typo.scss */
 .footer {
   font-size: 1em;
   line-height: 2em;
@@ -303,20 +326,25 @@ article#kontakt strong, article#kontakt .label, article#impressum strong, articl
   font-weight: normal;
 }
 
-/* line 178, ../sass/_typo.scss */
+/* line 186, ../sass/_typo.scss */
 header .nav li.kontakt > a {
   font-size: 1.167em;
   text-transform: uppercase;
-  font-weight: bold;
+  letter-spacing: .5px;
+  font-weight: 600;
   color: white !important;
 }
-/* line 184, ../sass/_typo.scss */
+/* line 193, ../sass/_typo.scss */
 header .nav li.kontakt > a:hover {
   text-decoration: none;
 }
-/* line 187, ../sass/_typo.scss */
+/* line 196, ../sass/_typo.scss */
 header .nav li.kontakt:hover, header .nav li.kontakt.current-menu-item {
   background: #c1a879;
+}
+/* line 199, ../sass/_typo.scss */
+header .nav li.kontakt:hover > a, header .nav li.kontakt.current-menu-item > a {
+  color: white !important;
 }
 
 /**
@@ -479,7 +507,7 @@ header.header .logo > img {
 header .nav li.kontakt {
   position: fixed;
   top: 170px;
-  left: -40px;
+  left: -45px;
   z-index: 9999999999999;
   padding: 1em 1em .5em 1em;
   -moz-transform: rotate(-90deg);
@@ -490,14 +518,18 @@ header .nav li.kontakt {
   background: #558dbe;
 }
 
-/* line 45, ../sass/_layout.scss */
+/* line 44, ../sass/_layout.scss */
+article {
+  position: relative;
+}
+/* line 46, ../sass/_layout.scss */
 article > header {
   height: 350px;
   background-position: 0 40%;
   background-size: cover;
   position: relative;
 }
-/* line 50, ../sass/_layout.scss */
+/* line 51, ../sass/_layout.scss */
 article > header .thumbnail {
   background: transparent url("../img/Bilderrahmen.svg") top center no-repeat;
   width: 57.14286%;
@@ -512,15 +544,15 @@ article > header .thumbnail {
   -ms-transform: rotate(-1.25deg);
   transform: rotate(-1.25deg);
 }
-/* line 60, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 article > header .thumbnail img {
   border: .7em solid white;
   max-width: 100%;
   height: auto;
 }
-/* line 67, ../sass/_layout.scss */
+/* line 69, ../sass/_layout.scss */
 article > section {
-  min-height: 500px;
+  min-height: 410px;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
@@ -538,8 +570,12 @@ article > section:after {
   display: block;
   clear: both;
 }
+/* line 80, ../sass/_layout.scss */
+article#ueber-mich header {
+  background-position-y: 30%;
+}
 
-/* line 79, ../sass/_layout.scss */
+/* line 82, ../sass/_layout.scss */
 .page-title {
   position: absolute;
   top: 0;
@@ -551,7 +587,7 @@ article > section:after {
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 89, ../sass/_layout.scss */
+/* line 92, ../sass/_layout.scss */
 #trauer-und-abschied .page-title {
   background-image: url("../img/bg-trauer-abschied.svg");
   width: 242px;
@@ -560,7 +596,7 @@ article > section:after {
   left: 50%;
   margin-left: -121px;
 }
-/* line 97, ../sass/_layout.scss */
+/* line 100, ../sass/_layout.scss */
 #so-begleite-ich-sie .page-title {
   background-image: url("../img/bg-so-begleite-ich-sie.svg");
   width: 244px;
@@ -568,7 +604,7 @@ article > section:after {
   left: 10%;
   top: 65%;
 }
-/* line 104, ../sass/_layout.scss */
+/* line 107, ../sass/_layout.scss */
 #fuer-trauerende .page-title {
   background-image: url("../img/bg-fuer-trauernde.svg");
   width: 190px;
@@ -576,7 +612,7 @@ article > section:after {
   top: 25%;
   left: 55%;
 }
-/* line 111, ../sass/_layout.scss */
+/* line 114, ../sass/_layout.scss */
 #fuer-eltern .page-title {
   background-image: url("../img/bg-fuer-eltern.svg");
   width: 145px;
@@ -584,7 +620,7 @@ article > section:after {
   top: 35%;
   left: 10%;
 }
-/* line 119, ../sass/_layout.scss */
+/* line 122, ../sass/_layout.scss */
 #fuer-kitas-und-schulen .page-title {
   background-image: url("../img/bg-fuer-kitas-schulen.svg");
   width: 191px;
@@ -592,17 +628,17 @@ article > section:after {
   top: 30%;
   left: 55%;
 }
-/* line 126, ../sass/_layout.scss */
+/* line 129, ../sass/_layout.scss */
 .page-title#ueber-mich, .page-title #kontakt, .page-title #impressum {
   display: none;
 }
 
-/* line 129, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 article#start section, article#kontakt section, article#impressum section {
   background-image: none;
   background-color: transparent;
 }
-/* line 135, ../sass/_layout.scss */
+/* line 138, ../sass/_layout.scss */
 article#kontakt section [class*="col"], article#impressum section [class*="col"] {
   border-width: 0 0 0 1px;
   border-style: dotted;
@@ -611,21 +647,21 @@ article#kontakt section [class*="col"], article#impressum section [class*="col"]
   min-height: 100px;
   padding: 1em 2em;
 }
-/* line 140, ../sass/_layout.scss */
+/* line 143, ../sass/_layout.scss */
 article#kontakt section [class*="col"] > div:first-child, article#impressum section [class*="col"] > div:first-child {
   border: 0;
 }
-/* line 144, ../sass/_layout.scss */
+/* line 147, ../sass/_layout.scss */
 article#kontakt section [class*="col"].last, article#impressum section [class*="col"].last {
   border-right: 0;
   padding-right: 0;
 }
-/* line 148, ../sass/_layout.scss */
+/* line 151, ../sass/_layout.scss */
 article#kontakt section [class*="col"].first, article#impressum section [class*="col"].first {
   border-left: 0;
   padding-left: 0;
 }
-/* line 153, ../sass/_layout.scss */
+/* line 156, ../sass/_layout.scss */
 article#kontakt section [class*="col"].full, article#impressum section [class*="col"].full {
   -webkit-flex-grow: 3;
   flex-grow: 3;
@@ -636,85 +672,92 @@ article#kontakt section [class*="col"].full, article#impressum section [class*="
   margin-top: 3em;
   text-align: left;
 }
-/* line 159, ../sass/_layout.scss */
+/* line 162, ../sass/_layout.scss */
 article#kontakt section [class*="col"].full > div, article#impressum section [class*="col"].full > div {
   padding: 1em 0 !important;
 }
-/* line 160, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 article#kontakt section [class*="col"].full > div, article#impressum section [class*="col"].full > div {
   padding-top: 1em !important;
 }
-/* line 164, ../sass/_layout.scss */
-article#start section {
-  padding-top: 0;
-  margin-top: -300px;
-  min-height: 315px;
-}
+
 /* line 168, ../sass/_layout.scss */
-article#start section ul {
-  max-width: 450px;
+article#start {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vH;
 }
-/* line 170, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
+article#start header {
+  height: 0;
+  line-height: 0;
+  visibility: none;
+}
+/* line 178, ../sass/_layout.scss */
+article#start section {
+  padding-top: 480px;
+}
+/* line 180, ../sass/_layout.scss */
+article#start section ul {
+  max-width: 400px;
+}
+/* line 182, ../sass/_layout.scss */
 article#start section ul li {
   margin: 0 0 .2em 0;
+  min-height: 60px;
   background-color: #80aace;
   background-color: rgba(85, 141, 190, 0.75);
   background-image: url("../img/bullets.svg");
   background-repeat: no-repeat;
   background-position: 1em 1em;
-  background-size: auto 1em;
-  padding: 1em 1em 1em 3em;
+  background-size: auto 12px;
+  padding: .75em .75em .75em 3em;
   color: white;
   display: block;
 }
-/* line 177, ../sass/_layout.scss */
+/* line 190, ../sass/_layout.scss */
 article#start section ul li:hover {
   opacity: .8;
 }
 
-/* line 184, ../sass/_layout.scss */
-article#start .article-header {
-  min-height: 800px;
-  background-position: 0 0;
-}
-
-/* line 188, ../sass/_layout.scss */
+/* line 197, ../sass/_layout.scss */
 article#kontakt, article#impressum {
   background-color: #558dbe;
 }
 
-/* line 193, ../sass/_layout.scss */
-article#ueber-mich .post_content p {
-  padding: 0 3em;
-}
-
-/* line 198, ../sass/_layout.scss */
+/* line 200, ../sass/_layout.scss */
 footer.footer {
   background: #558dbe;
   padding: 1em 0;
 }
-/* line 201, ../sass/_layout.scss */
+/* line 204, ../sass/_layout.scss */
 body.home footer.footer {
   background-color: white !important;
+  /*        z-index:10;*/
 }
-/* line 203, ../sass/_layout.scss */
+/* line 207, ../sass/_layout.scss */
 body.home footer.footer > * {
   color: #558dbe !important;
 }
-/* line 205, ../sass/_layout.scss */
+/* line 209, ../sass/_layout.scss */
+body:not(.home) footer.footer {
+  margin-top: 2em;
+}
+/* line 211, ../sass/_layout.scss */
 body:not(.home) footer.footer * {
   color: white !important;
 }
 
-/* line 210, ../sass/_layout.scss */
+/* line 217, ../sass/_layout.scss */
 .panel {
   margin-bottom: -1px;
 }
-/* line 211, ../sass/_layout.scss */
+/* line 218, ../sass/_layout.scss */
 .panel .conditions {
   padding-bottom: 2em;
 }
-/* line 215, ../sass/_layout.scss */
+/* line 222, ../sass/_layout.scss */
 .panel > header {
   padding: .5em 0;
   border-width: 1px 0;
@@ -722,11 +765,11 @@ body:not(.home) footer.footer * {
   border-color: #558dbe;
   position: relative;
 }
-/* line 219, ../sass/_layout.scss */
+/* line 226, ../sass/_layout.scss */
 .panel > header:hover {
   cursor: pointer;
 }
-/* line 222, ../sass/_layout.scss */
+/* line 229, ../sass/_layout.scss */
 .panel > header:after {
   content: ' ';
   background: transparent url("../img/arrow.svg") no-repeat right center/cover;
@@ -743,7 +786,7 @@ body:not(.home) footer.footer * {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 234, ../sass/_layout.scss */
+/* line 241, ../sass/_layout.scss */
 .panel > header.open:after {
   -moz-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
@@ -751,67 +794,93 @@ body:not(.home) footer.footer * {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
 }
-/* line 237, ../sass/_layout.scss */
+/* line 244, ../sass/_layout.scss */
 .panel > header > * {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
   margin: 0;
 }
-/* line 244, ../sass/_layout.scss */
+/* line 251, ../sass/_layout.scss */
+.panel .panel-content {
+  margin-top: .75em;
+}
+/* line 254, ../sass/_layout.scss */
 .panel table {
   width: 100%;
+  margin-bottom: 2em;
 }
-/* line 246, ../sass/_layout.scss */
+/* line 257, ../sass/_layout.scss */
 .panel table > * {
   color: #558dbe;
 }
-/* line 249, ../sass/_layout.scss */
-.panel table td {
-  line-height: 1.4;
-}
-/* line 252, ../sass/_layout.scss */
-.panel table tr:first-child td {
-  padding-top: .5em;
-}
-/* line 255, ../sass/_layout.scss */
-.panel table tr:last-child td {
-  padding-bottom: .5em;
-}
-/* line 259, ../sass/_layout.scss */
-.panel table tr td:first-child {
-  width: auto;
-}
-/* line 261, ../sass/_layout.scss */
-.panel table tr td:first-child ~ td {
-  min-width: 30%;
-}
-/* line 265, ../sass/_layout.scss */
-.panel.parent {
-  padding-bottom: 2em;
-}
-/* line 267, ../sass/_layout.scss */
-.panel.parent table {
+/* line 260, ../sass/_layout.scss */
+.panel table tr {
   border-width: 0 0 1px 0;
   border-style: dotted;
   border-color: #558dbe;
 }
+/* line 262, ../sass/_layout.scss */
+.panel table tr td {
+  padding: .5em 0;
+}
+/* line 265, ../sass/_layout.scss */
+.panel table tr td:first-child {
+  width: 180px;
+}
+/* line 269, ../sass/_layout.scss */
+.panel table tr:last-child {
+  border: 0;
+}
 /* line 271, ../sass/_layout.scss */
-.panel.parent table tr td:first-child {
-  width: 40%;
+.panel.parent {
+  padding-bottom: 2em;
+}
+/* line 273, ../sass/_layout.scss */
+.panel.parent table {
+  margin: -1px 0;
+}
+/* line 275, ../sass/_layout.scss */
+.panel.parent table tr:first-child {
+  border-width: 1px 0 0 0;
+  border-style: dotted;
+  border-color: #558dbe;
+}
+/* line 277, ../sass/_layout.scss */
+.panel.parent table tr:first-child td {
+  padding-top: .5em;
+}
+/* line 281, ../sass/_layout.scss */
+.panel.parent table tr:last-child {
+  border-width: 0 0 1px 0;
+  border-style: dotted;
+  border-color: #558dbe;
+}
+/* line 283, ../sass/_layout.scss */
+.panel.parent table tr:last-child td {
+  padding-bottom: .5em;
+}
+/* line 287, ../sass/_layout.scss */
+.panel.parent table tr {
+  border: 0;
+}
+/* line 289, ../sass/_layout.scss */
+.panel.parent table tr td {
+  padding: .25em 0;
+}
+/* line 294, ../sass/_layout.scss */
+.panel.parent table ~ p.small {
+  margin-top: 2em;
 }
 
-/* line 278, ../sass/_layout.scss */
+/* line 300, ../sass/_layout.scss */
 .scroll-to-top {
-  background: #5d7677 url("../img/arrow-white.svg") no-repeat center center/60%;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  background: #5d7677 url("../img/arrow-white.svg") no-repeat center center/50%;
   border: 0;
-  bottom: 1%;
+  bottom: .75em;
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   z-index: 9999;
   right: 5%;
   color: white;
@@ -820,10 +889,10 @@ body:not(.home) footer.footer * {
   transition: all 0.1s linear 0s;
   opacity: 0.8;
 }
-/* line 293, ../sass/_layout.scss */
+/* line 314, ../sass/_layout.scss */
 .scroll-to-top:hover {
   background-color: #c1a879;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 /*body {

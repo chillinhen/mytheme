@@ -35,13 +35,14 @@ header.header{
 header .nav li.kontakt{
     position: fixed;
     top:170px;
-    left:-40px;
+    left:-45px;
     z-index: 9999999999999;
     padding:1em 1em .5em 1em;
     @include rotate(-90deg);
     background: $basecolor;
 }
 article{
+    position:relative;
     > header{
         height: 350px;
         background-position:0 40%;
@@ -63,9 +64,10 @@ article{
                 height:auto;
             }
         }
+
     }
     > section {
-        min-height: 500px;
+        min-height: 410px;
         @include container(1170px);
         padding-top:120px;
         background-color:white;
@@ -73,8 +75,9 @@ article{
         background-repeat: no-repeat;
         background-position: 0 60px,85% 20px;
         background-size: auto 80px, auto 375px;
-/*        background-attachment:fixed;*/
+        /*        background-attachment:fixed;*/
     }
+    &#ueber-mich header {background-position-y: 30%;}
 }
 .page-title{
     position: absolute;
@@ -161,17 +164,27 @@ section{
         }
 
     }
-    article#start &{
-        padding-top: 0;
-        margin-top: -300px;
-        min-height:315px;
+}
+article#start{
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vH;
+    header {
+        height:0;
+        line-height: 0;
+        visibility: none;
+    }
+    section {
+        padding-top:480px;
         ul{ 
-            max-width:450px;
+            max-width:400px;
             li{
                 margin:0 0 .2em 0;
+                min-height:60px;
                 @include alpha-background-color(rgba($basecolor, 0.75), white);
-                @include bullets(url('../img/bullets.svg'), 1em 1em, auto 1em);
-                padding:1em 1em 1em 3em;
+                @include bullets(url('../img/bullets.svg'), 1em 1em, auto 12px);
+                padding:.75em .75em .75em 3em;
                 color:white;
                 display:block;
                 &:hover{
@@ -181,29 +194,23 @@ section{
         }
     }
 }
-article#start .article-header{
-    min-height:800px;   
-    background-position: 0 0;
-}
 article#kontakt, article#impressum{
     background-color: $basecolor;
-}
-article#ueber-mich{
-    .post_content{
-        p {
-            padding:0 3em;
-        }
-    }
 }
 footer.footer{
     background: $basecolor;
     padding:1em 0;
+
     body.home &{
         background-color: white !important;
+        /*        z-index:10;*/
         > * {color:$basecolor !important;}
     }
-    body:not(.home) & *{
-        color:white !important;
+    body:not(.home) & {
+        margin-top: 2em;
+        *{
+            color:white !important;
+        }
     }
 }
 
@@ -241,48 +248,62 @@ footer.footer{
             margin:0;
         }
     }
+    .panel-content{
+        margin-top:.75em;
+    }
     table{
-            width:100%;
-            > * {
-                color:$blue;
-            }
+        width:100%;
+        margin-bottom:2em;
+        > * {
+            color:$blue;
+        }
+        tr {
+            @include border-panel(0 0 1px 0,dotted,$blue);
             td {
-                line-height:1.4;
+                padding:.5em 0;
             }
-            tr:first-child td{
-                padding-top:.5em;
-            }
-            tr:last-child td{
-                padding-bottom:.5em;
-            }
-            tr{
-                td:first-child{
-                    width:auto;
-                    ~td {min-width:30%;}
-                }
+            td:first-child{
+                width:180px;
             }
         }
-        &.parent{
-            padding-bottom:2em;
-            table{
-            @include border-panel(0 0 1px 0,dotted,$blue); 
-            
-            tr{
-                td:first-child{
-                    width:40%;
+        tr:last-child{border:0;}
+    }
+    &.parent{
+        padding-bottom:2em;
+        table{
+            margin:-1px 0;
+            tr:first-child {
+                @include border-panel(1px 0 0 0,dotted,$blue);
+                td{
+                    padding-top:.5em;
                 }
             }
+            tr:last-child {
+                @include border-panel(0 0 1px 0,dotted,$blue);
+                td{
+                    padding-bottom:.5em;
+                }
+            }
+            tr{
+                border:0;
+                td{
+                    padding:.25em 0;
+                }
+                
+            }
+            ~p.small{
+                margin-top:2em;
             }
         }
     }
+}
 .scroll-to-top {
-    background: $headerSpan url('../img/arrow-white.svg') no-repeat center center / 60%;
-    @include border-radius(4px);
+    background: $headerSpan url('../img/arrow-white.svg') no-repeat center center / 50%;
     border:0;
-    bottom: 1%;
+    bottom: .75em;
     position: fixed;
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     z-index: 9999;
     right: 5%;
     color: white;
@@ -292,7 +313,7 @@ footer.footer{
     opacity: 0.8;
     &:hover {
         background-color: $beige;
-        opacity: 0.5;
+        opacity: 1;
     }
 
 }

@@ -43,6 +43,11 @@ $headerSpan:#5d7677;
 $headerHeight:90px;
 
 /**** Mixins *****/
+.justify-text{
+    text-align:justify;
+    text-align-last:left;
+    max-width: 95%;
+}
 @mixin border-panel($width,$style,$color){
     border-width: $width;
     border-style: $style;
