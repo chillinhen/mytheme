@@ -53,17 +53,4 @@ $value_copyright = get_field("text-copyright");
             </div>
         </div>
     <?php endif; ?>
-    <!-- agb -->
-    <?php if ($value_agb) : ?>
-        <div class="col-04 full">
-            <?php if ($label_agb) : ?>
-            <div class="label">
-                <?php echo $label_agb ?>
-            </div>
-            <?php endif; ?>
-            <div class="value">
-                <?php echo $value_agb; ?>
-            </div>
-        </div>
-    <?php endif; ?>
 </div>

@@ -5,12 +5,16 @@ body {
     line-height: $baselineHeight;
     color: $textcolor;
     background-color: $bgcolor;
+    &.page-template-page-full-width{
+        background-color: $basecolor;
+    }
 }
 hr {
     height:1px;
     @include border-panel(1px 0 0 0, dotted, $basecolor);
     margin:2em 0;
 }
+*:hover, *:focus {outline:none;}
 a{
     color:$blue;
     &:link{
@@ -42,28 +46,28 @@ h4 { font-size: $font-size-h4; }
 h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
 
-    .scroll-to-top{
-        text-transform: uppercase;
-        font-size:$baseFontsizeMiddle;
-        color:$beige;
-        display:inline-block;
-        float: right;
-        padding:0 1em;
-        border-left:1px solid currentColor;
-        &:last-child{
-            border:0;
-        }
-        &:hover{
-            text-decoration: none;
-            opacity: .5;
-        }
+.scroll-to-top{
+    text-transform: uppercase;
+    font-size:$baseFontsizeMiddle;
+    color:$beige;
+    display:inline-block;
+    float: right;
+    padding:0 1em;
+    border-left:1px solid currentColor;
+    &:last-child{
+        border:0;
     }
-    b, strong{
-        font-weight:600 !important;
+    &:hover{
+        text-decoration: none;
+        opacity: .5;
     }
+}
+b, strong{
+    font-weight:600 !important;
+}
 article{
-        .post_content{
-/*        @extend .justify-text;*/
+    .post_content{
+        /*        @extend .justify-text;*/
     }
     h1 {
         color:$blue;
@@ -81,13 +85,14 @@ article{
         margin-bottom: 1.95em;
         &:last-child{margin-bottom: 0;}
     }
-    blockquote{
-        > *{
+    aside[id*="quote"]{
+        p{
             color:$basecolor;
             font-size:$baseFontsizeMiddle;
             line-height: 1.33;
             margin-bottom: 1.625em;
         }
+
     }
     ul {
         margin-bottom:2.3em;
@@ -120,10 +125,10 @@ article{
         line-height: 2em;
         strong{
             color:$lightbeige;
-           
+
         }
         strong, .label{
-             line-height: 1;
+            line-height: 1;
         }
         p {
             margin-top:0;
@@ -134,8 +139,8 @@ article{
         line-height: inherit;
         text-align: center;
         strong, .label{
-           font-size: $baseFontsize * 1.29;
-           line-height: 1.2em;
+            font-size: $baseFontsize * 1.29;
+            line-height: 1.2em;
         }
     }
 
@@ -182,20 +187,18 @@ article{
     text-transform: uppercase;
     font-weight: normal;
 }
-header .nav li.kontakt{
-    > a{
-        font-size: 1.167em;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        font-weight:600;
-        color:white !important;
-    }
-    > a:hover{
+#bt-kontakt {
+    a{
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight:600;
+    color:white !important;
+    text-decoration:none;
+}
+&:hover, body.kontakt &{
         text-decoration:none;
-    }
-    &:hover,
-    &.current-menu-item{
         background:$beige;
+        
         > a {
             color:white !important;
         }

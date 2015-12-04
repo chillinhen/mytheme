@@ -3,3 +3,25 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+.logo{
+    a, .logo-img {
+            width: 200px;
+            display: block;
+            max-width: none;
+        }
+}
+article.page{
+    > section {
+        width:1170px;
+    }
+    > section {
+        min-height: 410px;
+        @include container(1170px);
+        padding-top:120px;
+        background:white url('../img/Voegel.svg') no-repeat 0 80px / auto 80px;
+        /*        background-attachment:fixed;*/
+        aside {
+        background:transparent url('../img/Leuchtturm.svg') no-repeat 0 20px / auto 375px;
+        }
+    }
+}

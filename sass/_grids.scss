@@ -15,19 +15,6 @@ container-position: center,
 * {
     box-sizing: border-box;
 }
-html,
-body {
-    height: 100%;
-}
-/* sticky footer and main width */
-.wrapper {
-    @include display-flex(flex);
-    min-height: 100vh;
-    @include flex-direction(column);
-    > #content{
-        @include flex(1 0);
-    }
-}
 .wrapper {
     width:100%;
     max-width:100%;
@@ -36,11 +23,18 @@ body {
     @include container(1015px);
 }
 .header {
-    nav{
-        @include span(8 of 10);
+    @media screen and (max-width:$screen-xs){
+        .logo {
+            display:none;
+        }
     }
-    .logo {
-        @include span(last 2 of 10);
+    @media screen and (min-width:$screen-sm){
+        nav{
+            @include span(8 of 10);
+        }
+        .logo {
+            @include span(last 2 of 10);
+        }
     }
 }
 article{
@@ -60,22 +54,14 @@ article{
         clear:both;
     }
 }
-#impressum{
+#impressum, #kontakt{
     .row{
-        @include display-flex;
-        @include flex-flow(wrap);
-        
-        [class*="col"]{
-            @include flex-grow(1);
+        @include container;
+        > [class*="col"]{
+            @include span(4 of 12);
         }
-    }
-}
-#kontakt{
-    .row{
-        @include display-flex;
-        @include align-items(flex-start);
-        [class*="col"]{
-            @include flex(1 0);
+        > [class*="col"]:last-child{
+            @include last;
         }
     }
 }

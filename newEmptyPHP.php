@@ -1,7 +1,1 @@
-<table>
-    <tbody>
-        <tr>
-            <td>Kosten:</td>
-            <td><strong>60,- € pro Stunde zuzüglich Fahrtkosten</strong></td>
-    </tbody>
-</table>
+<blockquote><p>Gefangen in der Trauer.<br /> Eingeschlossen in einem leidvollen, einsamen Raum.<br/>Leugnen? Fliehen? – nützt nichts.<br /> Gefangen in der Trauer.</p><p>Dieser Raum ist jetzt für dich die Wahrheit.<br /> Niemand weiß, ob sich jemals ein Weg heraus öffnen wird.</p> <p>Auch ich nicht.<br /> Dieser Raum ist jetzt für dich die Wahrheit.</p><p>Ich möchte dich besuchen,wenn ich darf,<br /> in deinem Raum des Schmerzes.<br /> Vielleicht kann ich ein Licht sein.<br /> Ich möchte dich besuchen, wenn ich darf.</p></blockquote>

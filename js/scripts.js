@@ -1,16 +1,17 @@
 jQuery(document).ready(function ($) {
     //alert('hallo');
 
-    $('.conditions header, .panel header').each(function () {
+    $('.conditions header, .panel header span').each(function () {
         $(this).click(function () {
             $(this).toggleClass('open');
+//            $(this).parent().parent().parent().siblings().removeClass('open');
         });
     });
 
     //external links
-    $('a').filter(function () {
-        return this.hostname && this.hostname !== location.hostname;
-    }).attr("target", "_blank");
+//    $('a').filter(function () {
+//        return this.hostname && this.hostname !== location.hostname;
+//    }).attr("target", "_blank");
 
 });
 jQuery(document).ready(function () {

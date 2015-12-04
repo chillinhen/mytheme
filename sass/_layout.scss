@@ -8,9 +8,13 @@
 }
 .wrapper{}
 header.header{
-    height:$headerHeight;
+    background-color: white;
+    @media screen and (min-width:$screen-sm){
+        height:$headerHeight;
+    }
+    
     nav {
-        margin-top:50px;
+        margin-top:$headerHeight/2;
         ul {
             li {
                 float:left;
@@ -20,25 +24,29 @@ header.header{
         }
     }
     .logo{
-        position: absolute;
-        top:25px;
-        right:0;
-        right:0;
-        z-index:9999;
-        width:200px;
+        @media screen and (min-width:$screen-sm){
+            position: absolute;
+            top:25px;
+            right:0;
+            right:0;
+            z-index:9999;
+            width:200px; 
+        }
+
         > img {
             max-width: 100%;
             height: auto;
         }
     }
 }
-header .nav li.kontakt{
+#bt-kontakt{
     position: fixed;
-    top:170px;
-    left:-45px;
+    top:250px;
+    left:0;
     z-index: 9999999999999;
-    padding:1em 1em .5em 1em;
+    padding:.5em 1em;
     @include rotate(-90deg);
+    @include transform-origin(0%,0%);
     background: $basecolor;
 }
 article{
@@ -48,23 +56,22 @@ article{
         background-position:0 40%;
         background-size:cover;
         position:relative;
-        .thumbnail{
-            background: transparent url('../img/Bilderrahmen.svg') top center no-repeat;
-            width: span(7);
-            position:absolute;
-            top:2em;
-            left:2em;
-            z-index:99;
-            padding:3px;
-            @include rotate(-1.25deg);
+    }
+    .thumbnail{
+        background: transparent url('../img/Bilderrahmen.svg') top center no-repeat;
+        width: span(7);
+        position:absolute;
+        top:2em;
+        left:2em;
+        z-index:99;
+        padding:3px;
+        @include rotate(-1.25deg);
 
-            img{
-                border:.7em solid white;
-                max-width: 100%;
-                height:auto;
-            }
+        img{
+            border:12px solid white;
+            max-width: 100%;
+            height:auto;
         }
-
     }
     > section {
         min-height: 410px;
@@ -75,7 +82,6 @@ article{
         background-repeat: no-repeat;
         background-position: 0 60px,85% 20px;
         background-size: auto 80px, auto 375px;
-        /*        background-attachment:fixed;*/
     }
     &#ueber-mich header {background-position-y: 30%;}
 }
@@ -83,7 +89,7 @@ article{
     position: absolute;
     top: 0;
     left: 0;
-    text-indent:-100%;
+    text-indent:-999999999px;
     display:inline-block;
     overflow:hidden;
     background-color: transparent;
@@ -166,7 +172,7 @@ section{
     }
 }
 article#start{
-    background-position: 0 0;
+    background-position: 0 50%;
     background-repeat: no-repeat;
     background-size: cover;
     height:100vH;
@@ -176,7 +182,7 @@ article#start{
         visibility: none;
     }
     section {
-        padding-top:480px;
+        padding-top:420px;
         ul{ 
             max-width:400px;
             li{
@@ -187,15 +193,9 @@ article#start{
                 padding:.75em .75em .75em 3em;
                 color:white;
                 display:block;
-                &:hover{
-                    opacity: .8;
-                }
             }
         }
     }
-}
-article#kontakt, article#impressum{
-    background-color: $basecolor;
 }
 footer.footer{
     background: $basecolor;
@@ -203,7 +203,6 @@ footer.footer{
 
     body.home &{
         background-color: white !important;
-        /*        z-index:10;*/
         > * {color:$basecolor !important;}
     }
     body:not(.home) & {
@@ -213,7 +212,6 @@ footer.footer{
         }
     }
 }
-
 .panel {
     .conditions{
         padding-bottom: 2em;
@@ -221,15 +219,15 @@ footer.footer{
     margin-bottom:-1px;
     > header {
         padding:.5em 0;
-        @include border-panel(1px 0,dotted,$blue);
         position:relative;
+        display:block;
         &:hover{
             cursor: pointer;
         }
-        &:after {
+        & span:after {
             content: ' ';
             background:transparent url('../img/arrow.svg') no-repeat right center / cover;
-            display:inline-block;
+            display:block;
             position:absolute;
             top:50%;
             margin-top:-.25em;
@@ -238,7 +236,7 @@ footer.footer{
             width:18px;
             @include rotate(180deg);
         }
-        &.open:after{
+        & span.open:after{
             @include rotate(0deg);
         }
         > * {
@@ -247,6 +245,15 @@ footer.footer{
             line-height: 1.4;
             margin:0;
         }
+    }
+    &.parent > header{
+        @include border-panel(1px 0,dotted,$blue);
+    }
+    #fuer-kitas-und-schulen & > header{
+        @include border-panel(1px 0 0 0,dotted,$blue);
+    }
+    #fuer-kitas-und-schulen &:last-child > header{
+        border-bottom-width: 1px;
     }
     .panel-content{
         margin-top:.75em;
@@ -261,12 +268,10 @@ footer.footer{
             @include border-panel(0 0 1px 0,dotted,$blue);
             td {
                 padding:.5em 0;
-            }
-            td:first-child{
-                width:180px;
+                vertical-align: top;
             }
         }
-        tr:last-child{border:0;}
+/*        tr:last-child{border:0;}*/
     }
     &.parent{
         padding-bottom:2em;
@@ -294,6 +299,26 @@ footer.footer{
             ~p.small{
                 margin-top:2em;
             }
+        }
+    }
+}
+table tr td:first-child{
+    
+   ~td{ 
+       padding-left: 1em;
+   }
+    #fuer-trauerende &, #fuer-eltern &, #collapse-39 &{
+        width:180px;
+    }
+    #fuer-kitas-und-schulen &{
+        width:50px;
+    }
+    #collapse-37 &{
+        width:240px;
+    }
+    #collapse-39 &{
+        ~td:nth-child(2) {
+            width:150px;
         }
     }
 }

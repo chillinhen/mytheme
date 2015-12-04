@@ -6,7 +6,7 @@
     </div>
 </footer>
 </div>
-
+<div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "html5blank"); ?></a></div>
 
 <?php wp_footer(); ?>
 
