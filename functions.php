@@ -3,10 +3,6 @@
 add_action('after_setup_theme', 'myTheme_setup');
 
 function myTheme_setup() {
-
-    //later
-    #add_image_size( 'wpbs-bg', 1024, 506, true);
-    #add_image_size( 'wpbs-header-thumb', 512, 300, true);
     // Adding Translation Option
     load_theme_textdomain('myTheme', get_stylesheet_directory_uri() . '/languages');
 
@@ -23,7 +19,6 @@ function myTheme_setup() {
         if (!is_admin()) {
 
             function my_styles() {
-                global $wp_styles;
                 wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
                 wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/stylesheets/bootstrap.css', 'style', '1.0', 'screen');
@@ -33,8 +28,6 @@ function myTheme_setup() {
                 wp_register_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'screen');
                 wp_enqueue_style('fontawesome');
                 wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/stylesheets/screen.css', 'style', '1.0', 'screen', array('bootstrap'));
-                wp_enqueue_style('my-theme-ie', get_stylesheet_directory_uri() . "/stylesheets/ie.css", array('mytheme'));
-                $wp_styles->add_data('my-theme-ie', 'conditional', 'IE');
             }
 
         }
@@ -53,6 +46,31 @@ function myTheme_setup() {
         }
     }
     add_action('wp_enqueue_scripts', 'my_scripts');
+    
+    function mv_browser_body_class($classes) {
+        global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+        if($is_lynx) $classes[] = 'lynx';
+        elseif($is_gecko) $classes[] = 'gecko';
+        elseif($is_opera) $classes[] = 'opera';
+        elseif($is_NS4) $classes[] = 'ns4';
+        elseif($is_safari) $classes[] = 'safari';
+        elseif($is_chrome) $classes[] = 'chrome';
+        elseif($is_IE) {
+                $classes[] = 'ie';
+                if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version))
+                $classes[] = 'ie'.$browser_version[1];
+        } else $classes[] = 'unknown';
+        if($is_iphone) $classes[] = 'iphone';
+        if ( stristr( $_SERVER['HTTP_USER_AGENT'],"mac") ) {
+                 $classes[] = 'osx';
+           } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"linux") ) {
+                 $classes[] = 'linux';
+           } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"windows") ) {
+                 $classes[] = 'windows';
+           }
+        return $classes;
+}
+add_filter('body_class','mv_browser_body_class');
 }
 
 ?>

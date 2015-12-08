@@ -182,9 +182,12 @@ article#start{
         visibility: none;
     }
     section {
-        padding-top:420px;
         ul{ 
+            position:absolute;
+            top:300px;
+            left:0;
             max-width:400px;
+            z-index:99;
             li{
                 margin:0 0 .2em 0;
                 min-height:60px;

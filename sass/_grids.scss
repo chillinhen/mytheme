@@ -42,7 +42,8 @@ article{
         margin:0 auto;
     }
     .post_content{
-        @include span(7 of 10); 
+        @include span(7 of 10);
+        position:relative;
         &.full{
            @include span(10 of 10); 
         }
