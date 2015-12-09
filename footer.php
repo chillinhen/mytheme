@@ -1,12 +1,12 @@
 <!-- footer -->
 <footer class="footer" role="contentinfo">
     <div class="container">
-        ©2015 Andrea Bruders trauer-aachen.de | <a class="impressum" href="<?php echo home_url(); ?>/impressum"><?php _e("Impressum", "html5blank"); ?></a>
-        <div class="scroll-to-top"> </div><!-- .scroll-to-top -->
+        <span class="copyright">©2015 Andrea Bruders trauer-aachen.de</span> <a class="impressum" href="<?php echo home_url(); ?>/impressum"><?php _e("Impressum", "html5blank"); ?></a>
+        <div class="scroll-to-top screen-layout"> </div><!-- .scroll-to-top -->
     </div>
 </footer>
 </div>
-<div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "html5blank"); ?></a></div>
+
 
 <?php wp_footer(); ?>
 

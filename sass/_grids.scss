@@ -19,27 +19,22 @@ container-position: center,
     width:100%;
     max-width:100%;
 }
+@media screen and (min-width:$screen-sm){
 .container {
     @include container(1015px);
 }
 .header {
-    @media screen and (max-width:$screen-xs){
-        .logo {
-            display:none;
-        }
-    }
-    @media screen and (min-width:$screen-sm){
         nav{
             @include span(8 of 10);
         }
         .logo {
             @include span(last 2 of 10);
         }
-    }
 }
 article{
     section {
         margin:0 auto;
+        @include container(1170px);
     }
     .post_content{
         @include span(7 of 10);
@@ -65,4 +60,5 @@ article{
             @include last;
         }
     }
+}
 }

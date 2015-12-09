@@ -9,9 +9,14 @@ jQuery(document).ready(function ($) {
     });
 
     //external links
-//    $('a').filter(function () {
-//        return this.hostname && this.hostname !== location.hostname;
-//    }).attr("target", "_blank");
+    $('a').filter(function () {
+        return this.hostname && this.hostname !== location.hostname;
+    }).attr("target", "_blank");
+    
+    //no Modernizer
+    if (!Modernizr.svg) {
+        $("img.logo-img").attr("src", "../img/logo.png");
+    }
 
 });
 jQuery(document).ready(function () {
@@ -19,9 +24,9 @@ jQuery(document).ready(function () {
     //Check to see if the window is top if not then display button
     jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 100) {
-            jQuery('.scroll-to-top').fadeIn();
+            jQuery('.screen-layout.scroll-to-top').fadeIn();
         } else {
-            jQuery('.scroll-to-top').fadeOut();
+            jQuery('.screen-layout.scroll-to-top').fadeOut();
         }
     });
 

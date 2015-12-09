@@ -8,9 +8,10 @@
         <link href="<?php #echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php #echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">-->
 
-<!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-<!--		<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
+		<meta name="keywords" content="Trauerbegleitung,Aachen,Trauerbewältigung,Beratung,Abschied,Eltern,Lehrer,Erzieher,Fortbildung,Elternabend,Kindertagesstätte,Schule" />
 
 		<?php wp_head(); ?>
 		<script>
@@ -28,19 +29,21 @@
 
         <!-- wrapper -->
         <div class="wrapper">
-            <div id="content">
             <!-- header -->
             <header class="header">
                 <div class="container">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <label class="navbar-toggle" for="navbar-toggle">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/menu-bars.svg" alt="toggle-menu" />
+                    </label>
+                    <input type="checkbox" id="navbar-toggle">
                     <!-- nav -->
                     <nav class="nav" role="navigation">
                         <?php html5blank_nav(); ?>
                     </nav>
+                    <div class="scroll-to-top mobile-layout">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/scroll-top-top-mobile.svg" alt="nach oben scrollen" />
+                    </div>
+                    <div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "html5blank"); ?></a></div>
                     <!-- logo -->
                     <div class="logo">
                         <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('description'); ?>">

@@ -66,5 +66,4 @@
        
     </section>
 
-</div>
 </article>
