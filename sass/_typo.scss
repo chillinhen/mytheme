@@ -168,6 +168,9 @@ article{
             a {
                 font-weight: 600;
                 text-transform: uppercase;
+                @media screen and (min-width:$screen-iPadlandscape) and (max-width:$screen-lg){
+                  font-size: 0.8em;   
+                }
                 font-size: 0.93em; 
                 &:hover, &:focus{
                     text-decoration: none;
