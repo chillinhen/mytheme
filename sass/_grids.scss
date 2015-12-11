@@ -54,7 +54,6 @@ body:not(.ie){
 }
 header.header {
     @media screen and (max-width:$screen-sm){
-        position:fixed;
         width:100%;
     }
     @media screen and (min-width:$screen-md){

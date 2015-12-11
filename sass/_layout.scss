@@ -1,5 +1,5 @@
 header.header{ 
-    z-index:999;
+    background:white !important;
     > .container {
         @media screen and (max-width:$screen-md - 1){
             height:100%;
@@ -12,28 +12,25 @@ header.header{
         }
     }
     @media screen and (min-width:$screen-md){
-        .navbar-toggle,#navbar-toggle, .scroll-to-top.mobile-layout{
+        .navbar-toggle,#navbar-toggle{
             display:none;
         }
     }
     @media screen and (max-width:$screen-md - 1){
-        .navbar-toggle,#navbar-toggle{
-            display:block;
-        }
-    }
-    @media screen and (max-width:$screen-md - 1){
-        .navbar-toggle, .scroll-to-top, #bt-kontakt{
-            position: absolute;
+        .navbar-toggle, .scroll-to-top{
+            position:fixed;
+            z-index:999;
             cursor: pointer;
             display:block;
-            top:0; 
-        }
-        .scroll-to-top {
-            padding:11px 12px;
-            > img {
-                height:22px;
-                width:auto;
+            top:0;
+            background:white;
+            padding:12px;
+            img {
+                height:20px;
             }
+        }
+        .scroll-to-top{
+            padding:12px 14px;
         }
         input[type=checkbox]#navbar-toggle {
             position: absolute;
@@ -44,10 +41,10 @@ header.header{
 /*            height:auto;*/
               display:block;
         }
-        input[type=checkbox]:checked ~ .logo {
-/*            height:auto;*/
+/*        input[type=checkbox]:checked ~ .logo {
+            height:auto;
               opacity: .2;
-        }
+        }*/
         /* Default State */
         nav.nav {
             position:absolute;
@@ -73,17 +70,9 @@ header.header{
     
     /** Header Look ***/
     @media screen and (max-width:$screen-xs){
-        height:46px;
-        .navbar-toggle, .scroll-to-top, #bt-kontakt {
-            height:44px;
-        }
+        height:44px;
         label.navbar-toggle { 
             right:0px;
-            padding:14px 9px;
-        }
-        .navbar-toggle, .scroll-to-top{
-            width:44px;
-            background:#fff;
         }
         .logo {
             width:120px;
@@ -112,22 +101,18 @@ header.header{
         }
     }
     @media screen and (min-width:533px) and (max-width:$screen-md){
-        height:74px;
+        height:44px;
         background:#fff;
-        .navbar-toggle, .scroll-to-top, #bt-kontakt {
-            height:70px;
-        }
         label.navbar-toggle { 
             left:0px;
-            padding:20px;
-            width:70px;
+            right:0;
             z-index:999;
         }
            nav.nav {
-            top:76px;
+            top:46px;
             width:50%;
             ul {
-                padding:0 20px;
+                padding:0 2em;
                 li:last-child{
                     border:0;
                 }
@@ -142,28 +127,30 @@ header.header{
 #bt-kontakt{
     cursor: pointer;
     display:block;
+    position:fixed;
+    z-index:998;
     a {
         display:block;
     }
-    @media screen and (max-width:$screen-xs){
+    @media screen and (max-width:$screen-xs){      
         top:0;
-        left:47px;
-        right:47px;
-        height:44px;
+        left: 0;
+        right: 0;
+        bottom:0;
         a{
             display:block;
             background: white;
-            padding:1em;
+            line-height: 46px;
+            padding: 0 0 0 60px;
         }
 
     }
-    @media screen and (min-width:$screen-sm){
-        position:fixed;
+    @media screen and (min-width:533px){
         @include rotate(-90deg);
         @include transform-origin(0%,0%);
         top:250px;
         left:0;
-        z-index:999;
+        z-index:99;
         a {
             padding:.5em 1em;
             background: $basecolor;
@@ -172,12 +159,21 @@ header.header{
 }
 .logo{
     position: absolute;
-    z-index:999;
-    top:25px;
+    z-index:99;
+    top:0;
     right:0;
     > img {
         max-width: 100%;
         height: auto;
+    }
+    header.header{
+/*        @media screen and (max-width:$screen-md){
+            display:none;
+        }*/
+        @media screen and (min-width:$screen-lg){
+            width:200px;
+            top:25px;
+        }
     }
     @media screen and (min-width:$screen-xs) and (max-width:$screen-md - 1){
         width:160px; 
@@ -186,9 +182,7 @@ header.header{
     @media screen and (min-width:$screen-md) and (max-width:$screen-lg -1){
         width:180px; 
     }
-    @media screen and (min-width:$screen-lg){
-        width:200px; 
-    }
+
 }
 nav.nav {
     @media screen and (min-width:$screen-md){
@@ -202,6 +196,30 @@ nav.nav {
         }
     }
 }
+
 section.main{
-    margin-top: 300px;
+    @media screen and (max-width:$screen-xs){
+        margin-top:44px;
+    }
+    @media screen and (min-width:533px) and (max-width:$screen-md){
+        margin-top:44px;
+    }
+    @media screen and (min-width:$screen-md){
+        margin-top:$headerHeight;
+    }
+    article{
+        position:relative;
+    }
+    .article-header{
+        position:relative;
+        @media screen and (max-width:$screen-xs){
+            min-height:180px;
+            background-size: 200%;
+            background-position: 0;
+        }
+    }
+}
+
+.thumbnail{
+    display: none;
 }

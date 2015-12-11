@@ -457,18 +457,17 @@ body:not(.ie) .wrapper > #content {
 @media screen and (max-width: 768px) {
   /* line 55, ../sass/_grids.scss */
   header.header {
-    position: fixed;
     width: 100%;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 61, ../sass/_grids.scss */
+  /* line 60, ../sass/_grids.scss */
   header.header nav {
     width: 79.31034%;
     float: left;
     margin-right: 3.44828%;
   }
-  /* line 64, ../sass/_grids.scss */
+  /* line 63, ../sass/_grids.scss */
   header.header .logo {
     width: 17.24138%;
     float: right;
@@ -477,14 +476,14 @@ body:not(.ie) .wrapper > #content {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 71, ../sass/_grids.scss */
+  /* line 70, ../sass/_grids.scss */
   article .post_content {
     width: 68.96552%;
     float: left;
     margin-right: 3.44828%;
     position: relative;
   }
-  /* line 76, ../sass/_grids.scss */
+  /* line 75, ../sass/_grids.scss */
   article .post_content.full {
     width: 100%;
     float: left;
@@ -493,7 +492,7 @@ body:not(.ie) .wrapper > #content {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 82, ../sass/_grids.scss */
+  /* line 81, ../sass/_grids.scss */
   article .zitate {
     width: 27.58621%;
     float: right;
@@ -503,7 +502,7 @@ body:not(.ie) .wrapper > #content {
 
 /* line 1, ../sass/_layout.scss */
 header.header {
-  z-index: 999;
+  background: white !important;
   /** Responsive Nav ***/
   /** Header Look ***/
 }
@@ -521,55 +520,50 @@ header.header {
 }
 @media screen and (min-width: 992px) {
   /* line 15, ../sass/_layout.scss */
-  header.header .navbar-toggle, header.header #navbar-toggle, header.header .scroll-to-top.mobile-layout {
-    display: none;
-  }
-}
-@media screen and (max-width: 991px) {
-  /* line 20, ../sass/_layout.scss */
   header.header .navbar-toggle, header.header #navbar-toggle {
-    display: block;
+    display: none;
   }
 }
 @media screen and (max-width: 991px) {
   /* line 1, ../sass/_layout.scss */
   header.header {
+    /*        input[type=checkbox]:checked ~ .logo {
+                height:auto;
+                  opacity: .2;
+            }*/
     /* Default State */
     /* Toggled State */
   }
-  /* line 25, ../sass/_layout.scss */
-  header.header .navbar-toggle, header.header .scroll-to-top, header.header #bt-kontakt {
-    position: absolute;
+  /* line 20, ../sass/_layout.scss */
+  header.header .navbar-toggle, header.header .scroll-to-top {
+    position: fixed;
+    z-index: 999;
     cursor: pointer;
     display: block;
     top: 0;
+    background: white;
+    padding: 12px;
   }
-  /* line 31, ../sass/_layout.scss */
+  /* line 28, ../sass/_layout.scss */
+  header.header .navbar-toggle img, header.header .scroll-to-top img {
+    height: 20px;
+  }
+  /* line 32, ../sass/_layout.scss */
   header.header .scroll-to-top {
-    padding: 11px 12px;
+    padding: 12px 14px;
   }
-  /* line 33, ../sass/_layout.scss */
-  header.header .scroll-to-top > img {
-    height: 22px;
-    width: auto;
-  }
-  /* line 38, ../sass/_layout.scss */
+  /* line 35, ../sass/_layout.scss */
   header.header input[type=checkbox]#navbar-toggle {
     position: absolute;
     top: -9999999px;
     left: -9999999px;
   }
-  /* line 43, ../sass/_layout.scss */
+  /* line 40, ../sass/_layout.scss */
   header.header input[type=checkbox]:checked ~ nav.nav {
     /*            height:auto;*/
     display: block;
   }
-  /* line 47, ../sass/_layout.scss */
-  header.header input[type=checkbox]:checked ~ .logo {
-    /*            height:auto;*/
-    opacity: .2;
-  }
-  /* line 52, ../sass/_layout.scss */
+  /* line 49, ../sass/_layout.scss */
   header.header nav.nav {
     position: absolute;
     left: 0;
@@ -579,7 +573,7 @@ header.header {
     overflow: hidden;
     display: none;
   }
-  /* line 65, ../sass/_layout.scss */
+  /* line 62, ../sass/_layout.scss */
   header.header nav ul li {
     display: block;
     padding: 1em;
@@ -591,49 +585,39 @@ header.header {
 @media screen and (max-width: 480px) {
   /* line 1, ../sass/_layout.scss */
   header.header {
-    height: 46px;
-  }
-  /* line 77, ../sass/_layout.scss */
-  header.header .navbar-toggle, header.header .scroll-to-top, header.header #bt-kontakt {
     height: 44px;
   }
-  /* line 80, ../sass/_layout.scss */
+  /* line 74, ../sass/_layout.scss */
   header.header label.navbar-toggle {
     right: 0px;
-    padding: 14px 9px;
   }
-  /* line 84, ../sass/_layout.scss */
-  header.header .navbar-toggle, header.header .scroll-to-top {
-    width: 44px;
-    background: #fff;
-  }
-  /* line 88, ../sass/_layout.scss */
+  /* line 77, ../sass/_layout.scss */
   header.header .logo {
     width: 120px;
     top: 55px;
   }
 }
 @media screen and (max-width: 480px) and (orientation: portrait) {
-  /* line 88, ../sass/_layout.scss */
+  /* line 77, ../sass/_layout.scss */
   header.header .logo {
     right: 50%;
     margin-right: -140px;
   }
 }
 @media screen and (max-width: 480px) and (orientation: landscape) {
-  /* line 88, ../sass/_layout.scss */
+  /* line 77, ../sass/_layout.scss */
   header.header .logo {
     right: 25%;
     margin-right: -12%;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 100, ../sass/_layout.scss */
+  /* line 89, ../sass/_layout.scss */
   header.header nav.nav {
     top: 46px;
     width: 100%;
   }
-  /* line 104, ../sass/_layout.scss */
+  /* line 93, ../sass/_layout.scss */
   header.header nav.nav ul:after {
     content: ' ';
     background: white url("../img/arrow-mobile.svg") no-repeat center center/2em auto;
@@ -645,30 +629,25 @@ header.header {
 @media screen and (min-width: 533px) and (max-width: 992px) {
   /* line 1, ../sass/_layout.scss */
   header.header {
-    height: 74px;
+    height: 44px;
     background: #fff;
   }
-  /* line 117, ../sass/_layout.scss */
-  header.header .navbar-toggle, header.header .scroll-to-top, header.header #bt-kontakt {
-    height: 70px;
-  }
-  /* line 120, ../sass/_layout.scss */
+  /* line 106, ../sass/_layout.scss */
   header.header label.navbar-toggle {
     left: 0px;
-    padding: 20px;
-    width: 70px;
+    right: 0;
     z-index: 999;
   }
-  /* line 126, ../sass/_layout.scss */
+  /* line 111, ../sass/_layout.scss */
   header.header nav.nav {
-    top: 76px;
+    top: 46px;
     width: 50%;
   }
-  /* line 129, ../sass/_layout.scss */
+  /* line 114, ../sass/_layout.scss */
   header.header nav.nav ul {
-    padding: 0 20px;
+    padding: 0 2em;
   }
-  /* line 131, ../sass/_layout.scss */
+  /* line 116, ../sass/_layout.scss */
   header.header nav.nav ul li:last-child {
     border: 0;
   }
@@ -681,34 +660,36 @@ header.header {
   }
 }
 
-/* line 142, ../sass/_layout.scss */
+/* line 127, ../sass/_layout.scss */
 #bt-kontakt {
   cursor: pointer;
   display: block;
+  position: fixed;
+  z-index: 998;
 }
-/* line 145, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 #bt-kontakt a {
   display: block;
 }
 @media screen and (max-width: 480px) {
-  /* line 142, ../sass/_layout.scss */
+  /* line 127, ../sass/_layout.scss */
   #bt-kontakt {
     top: 0;
-    left: 47px;
-    right: 47px;
-    height: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
-  /* line 153, ../sass/_layout.scss */
+  /* line 140, ../sass/_layout.scss */
   #bt-kontakt a {
     display: block;
     background: white;
-    padding: 1em;
+    line-height: 46px;
+    padding: 0 0 0 60px;
   }
 }
-@media screen and (min-width: 768px) {
-  /* line 142, ../sass/_layout.scss */
+@media screen and (min-width: 533px) {
+  /* line 127, ../sass/_layout.scss */
   #bt-kontakt {
-    position: fixed;
     -moz-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
@@ -720,53 +701,60 @@ header.header {
     transform-origin: 0% 0%;
     top: 250px;
     left: 0;
-    z-index: 999;
+    z-index: 99;
   }
-  /* line 167, ../sass/_layout.scss */
+  /* line 154, ../sass/_layout.scss */
   #bt-kontakt a {
     padding: .5em 1em;
     background: #558dbe;
   }
 }
 
-/* line 173, ../sass/_layout.scss */
+/* line 160, ../sass/_layout.scss */
 .logo {
   position: absolute;
-  z-index: 999;
-  top: 25px;
+  z-index: 99;
+  top: 0;
   right: 0;
 }
-/* line 178, ../sass/_layout.scss */
+/* line 165, ../sass/_layout.scss */
 .logo > img {
   max-width: 100%;
   height: auto;
 }
+/* line 169, ../sass/_layout.scss */
+.logo header.header {
+  /*        @media screen and (max-width:$screen-md){
+              display:none;
+          }*/
+}
+@media screen and (min-width: 1200px) {
+  /* line 169, ../sass/_layout.scss */
+  .logo header.header {
+    width: 200px;
+    top: 25px;
+  }
+}
 @media screen and (min-width: 480px) and (max-width: 991px) {
-  /* line 173, ../sass/_layout.scss */
+  /* line 160, ../sass/_layout.scss */
   .logo {
     width: 160px;
     right: 5%;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1200px -1) {
-  /* line 173, ../sass/_layout.scss */
+  /* line 160, ../sass/_layout.scss */
   .logo {
     width: 180px;
   }
 }
-@media screen and (min-width: 1200px) {
-  /* line 173, ../sass/_layout.scss */
-  .logo {
-    width: 200px;
-  }
-}
 
 @media screen and (min-width: 992px) {
-  /* line 193, ../sass/_layout.scss */
+  /* line 187, ../sass/_layout.scss */
   nav.nav {
     margin-top: 40px;
   }
-  /* line 197, ../sass/_layout.scss */
+  /* line 191, ../sass/_layout.scss */
   nav.nav ul li {
     float: left;
     display: inline-block;
@@ -774,9 +762,44 @@ header.header {
   }
 }
 
-/* line 205, ../sass/_layout.scss */
-section.main {
-  margin-top: 300px;
+@media screen and (max-width: 480px) {
+  /* line 200, ../sass/_layout.scss */
+  section.main {
+    margin-top: 44px;
+  }
+}
+@media screen and (min-width: 533px) and (max-width: 992px) {
+  /* line 200, ../sass/_layout.scss */
+  section.main {
+    margin-top: 44px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 200, ../sass/_layout.scss */
+  section.main {
+    margin-top: 80px;
+  }
+}
+/* line 210, ../sass/_layout.scss */
+section.main article {
+  position: relative;
+}
+/* line 213, ../sass/_layout.scss */
+section.main .article-header {
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  /* line 213, ../sass/_layout.scss */
+  section.main .article-header {
+    min-height: 180px;
+    background-size: 200%;
+    background-position: 0;
+  }
+}
+
+/* line 223, ../sass/_layout.scss */
+.thumbnail {
+  display: none;
 }
 
 /*** Ie hacks ***/
