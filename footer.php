@@ -1,3 +1,4 @@
+</div>
 <!-- footer -->
 <footer class="footer" role="contentinfo">
     <div class="container">
@@ -5,6 +6,7 @@
         <div class="scroll-to-top screen-layout"> </div><!-- .scroll-to-top -->
     </div>
 </footer>
+
 </div>
 
 

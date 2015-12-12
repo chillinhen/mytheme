@@ -107,13 +107,16 @@ article{
             margin:0;
             li{
                 display:block;
-                font-size:$baseFontsize * 1.1;
-                line-height:1.33;
-                font-weight:600;
-                letter-spacing: .015em;
                 &:before{
                     background-image:none !important;
                     margin:0;
+                }
+                * {
+                    
+                    color:white;
+                    line-height:1.33;
+                    font-weight:600;
+                    letter-spacing: .015em;
                 }
             }
         }
@@ -197,14 +200,16 @@ article{
         &:hover{
             text-decoration:none;
         }
-        @media screen and (min-width:$screen-xs){
-            color:white;
+        @media screen and (min-width:533px){
+            background: $basecolor;
+            color:white!important;
             &:hover, body.kontakt &{
-                background:$beige;  
+                background:$beige;
+                color:white !important;
             }
         }
-        @media screen and (max-width:$screen-xs){
-            color:$beige;
+        @media screen and (max-width:532px){
+            color:$beige !important;
         }
     }
 }

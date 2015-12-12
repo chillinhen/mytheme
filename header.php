@@ -30,6 +30,7 @@
         <!-- wrapper -->
         <div class="wrapper">
             <!-- header -->
+            <div id="content">
             <header class="header">
                 <div class="container">
                     <label class="navbar-toggle" for="navbar-toggle">

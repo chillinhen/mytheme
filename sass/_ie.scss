@@ -1,53 +1,54 @@
 /*** Ie hacks ***/
 
 .ie{
-
-    article{
-        ul{
-            margin-left:1em;
-            li {
-                background-image: none !important;
-                list-style: square;
-                list-style-position: inside;
-                padding-left:0;
+    @media screen and (min-width:$screen-sm){
+        article{
+            ul{
+                margin-left:1em;
+                li {
+                    background-image: none !important;
+                    list-style: square;
+                    list-style-position: inside;
+                    padding-left:0;
+                }
             }
         }
-    }
-    article#start {
-        ul{
-            margin:0;
-            li{
-                padding-left:2em;
-                list-style:none;
+        article#start {
+            ul{
+                margin:0;
+                li{
+                    padding-left:2em;
+                    list-style:none;
+                }
             }
         }
-    }
-    article:not(#start){
-        > section {
-            width:1170px;
-            background:white url('../img/Voegel.svg') no-repeat 0px 80px;
-            background-size: auto 80px;
-            .zitate {
-                background:transparent url('../img/Leuchtturm.svg') no-repeat center top;
-                background-size:auto 100%;
-                min-height: 375px;
+        article:not(#start){
+            > section {
+                width:1170px;
+                background:white url('../img/Voegel.svg') no-repeat 0px 80px;
+                background-size: auto 80px;
+                .zitate {
+                    background:transparent url('../img/Leuchtturm.svg') no-repeat center top;
+                    background-size:auto 100%;
+                    min-height: 375px;
+                }
             }
+            /*        > section {
+                        min-height: 410px;
+                        @include container(1170px);
+                        padding-top:120px;
+                        background:white url('../img/Voegel.svg') no-repeat 0 0;
+                        background-size: auto 80px;
+                        background-attachment:fixed;
+                        
+                    }*/
         }
-/*        > section {
-            min-height: 410px;
-            @include container(1170px);
-            padding-top:120px;
-            background:white url('../img/Voegel.svg') no-repeat 0 0;
-            background-size: auto 80px;
-            background-attachment:fixed;
-            
-        }*/
-    }
-    .logo{
-        a, .logo-img {
-            width: 200px;
-            display: block;
-            max-width: none;
+        .logo{
+            a, .logo-img {
+                width: 200px;
+                display: block;
+                max-width: none;
+            }
         }
     }
 }
