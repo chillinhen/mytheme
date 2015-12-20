@@ -41,6 +41,9 @@ function myTheme_setup() {
             function my_scripts() {
                 wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array('jquery'), '1.2', true);
                 wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery', 'bootstrap'), '1.2', true);
+                if (!(wp_is_mobile())) {
+                   wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array('jquery', 'scripts'), '1.2', true); 
+                }
             }
 
         }

@@ -33,10 +33,10 @@
             <div id="content">
             <header class="header">
                 <div class="container">
-                    <label class="navbar-toggle" for="navbar-toggle">
+                    <div class="navbar-toggle">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/menu-bars.svg" alt="toggle-menu" />
-                    </label>
-                    <input type="checkbox" id="navbar-toggle">
+                    </div>
+<!--                    <input type="checkbox" id="navbar-toggle">-->
                     <!-- nav -->
                     <nav class="nav" role="navigation">
                         <?php html5blank_nav(); ?>
