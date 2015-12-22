@@ -1,7 +1,7 @@
 <?php $anker = get_field('anker'); ?>
 <?php $banner = get_field('hintergrundbild'); ?>
 
-<article id="<?php echo ($anker) ? $anker : 'post' . the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');">
+<article id="<?php echo ($anker) ? $anker : 'post' . the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/img/tags.svg),url('<?php echo ($banner) ? $banner : ''; ?>');">
 
     <section>
         <div class="container">

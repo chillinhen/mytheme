@@ -36,15 +36,16 @@
                     <div class="navbar-toggle">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/menu-bars.svg" alt="toggle-menu" />
                     </div>
-<!--                    <input type="checkbox" id="navbar-toggle">-->
                     <!-- nav -->
                     <nav class="nav" role="navigation">
                         <?php html5blank_nav(); ?>
                     </nav>
-                    <div class="scroll-to-top mobile-layout">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/scroll-top-top-mobile.svg" alt="nach oben scrollen" />
+                    <div class="home-btn mobile-layout">
+                        <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('description'); ?>">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home-btn.svg" alt="Home" />
+                        </a>
                     </div>
-                    <div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "html5blank"); ?></a></div>
+                    <div id="brand"><a class="brand"href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('description'); ?>"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/brand.svg" alt="Andrea Bruders - Trauerbegleitung" /></a></div>
                     <!-- logo -->
                     <div class="logo">
                         <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo('description'); ?>">
