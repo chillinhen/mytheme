@@ -7,7 +7,7 @@
     <hgroup class="container">
         <?php if (has_post_thumbnail()) : ?>
             <div class="thumbnail">   
-                <?php the_post_thumbnail('large'); ?>
+                <?php the_post_thumbnail('thumbnail-size'); ?>
                 <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
             </div>
         <?php endif; ?>

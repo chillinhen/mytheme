@@ -1,40 +1,47 @@
 jQuery(document).ready(function ($) {
-    //alert('hallo');
+    // run test on initial page load
+    checkSize();
 
+    // run test on resize of the window
+    $(window).resize(checkSize);
+    //some tweaks for smaller windowa
+
+    function checkSize() {
+        if ($(".post_content").css("float") == "none") {
+                $('body:not(.kontakt):not(.impressum) .post_content br').remove();
+            }
+    }
+
+
+    //Navbar tweaks
+    $('.navbar-toggle').click(function () {
+        $('nav.nav').toggleClass('open').removeClass('closed');
+
+    });
+    $('li.close-menu').click(function () {
+        $('nav.nav').toggleClass('closed').removeClass('open');
+    });
     $('.conditions header, .panel header span').each(function () {
         $(this).click(function () {
             $(this).toggleClass('open');
-//            $(this).parent().parent().parent().siblings().removeClass('open');
         });
     });
+    // Tweaking the Headlines
+    var headlineHeight = $('.page-title').height();
+    if (headlineHeight <= 34){
+        $('article > section > .container').addClass('one-line');
+    } else {
+       $('article > section > .container').addClass('two-line');
+    }
 
     //external links
     $('a').filter(function () {
         return this.hostname && this.hostname !== location.hostname;
     }).attr("target", "_blank");
-    
+
     //no Modernizer
     if (!Modernizr.svg) {
         $("img.logo-img").attr("src", "../img/logo.png");
     }
-
-});
-jQuery(document).ready(function () {
-
-    //Check to see if the window is top if not then display button
-    jQuery(window).scroll(function () {
-        if (jQuery(this).scrollTop() > 100) {
-            jQuery('.screen-layout.scroll-to-top').fadeIn();
-        } else {
-            jQuery('.screen-layout.scroll-to-top').fadeOut();
-        }
-    });
-
-    //Click event to scroll to top
-    jQuery('.scroll-to-top').click(function () {
-        jQuery('html, body').animate({scrollTop: 0}, 800);
-        return false;
-    });
-
 
 });

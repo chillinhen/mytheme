@@ -7,7 +7,6 @@
 
     <section>
         <div class="container">
-            <?php get_template_part('partials/quote'); ?>
             <div class="post_content" itemprop="articleBody">
                 <?php the_content(); ?>
                 <!-- Proof ob Konditionen oder nicht -->
@@ -50,7 +49,7 @@
                 <?php endif; ?>
 
             </div>
-            
+            <?php get_template_part('partials/quote'); ?>
         </div>
 
         <!-- Prüfen ob Zusatztext-->

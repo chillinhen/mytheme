@@ -1,3 +1,211 @@
-/* Welcome to Compass. Use this file to define print styles.
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+@charset "UTF-8";
+/**** Debugging ***/
+/**** Breakpoints ***/
+/** Specials **/
+/**** type ***/
+/**** colors ***/
+/**** Mixins *****/
+/* line 52, ../sass/_variables.scss */
+.justify-text {
+  text-align: justify;
+  text-align-last: left;
+  max-width: 95%;
+}
+
+/*@include alpha-background-color(rgba($blue, 0.75), white);*/
+/*** bullets***/
+/*** Thumbnail Sie ***/
+@media print {
+  /*** --------------------------Global Setups -----------------------------***/
+  /*** remove clutter ***/
+  /* line 18, ../sass/print.scss */
+  .navbar-toggle,
+  .nav,
+  .home-btn,
+  #brand {
+    display: none !important;
+  }
+
+  /* line 25, ../sass/print.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 34, ../sass/print.scss */
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+
+  /* line 41, ../sass/print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+    font-style: italic;
+    color: #666;
+  }
+
+  /* line 47, ../sass/print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 52, ../sass/print.scss */
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 61, ../sass/print.scss */
+  table {
+    width: 100%;
+  }
+
+  /* line 64, ../sass/print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 67, ../sass/print.scss */
+  td, th {
+    text-align: left !important;
+    border-bottom: 1px dotted #ccc;
+    padding: .2em 0;
+  }
+
+  /* line 72, ../sass/print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 78, ../sass/print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 81, ../sass/print.scss */
+  img {
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    filter: grayscale(100%);
+  }
+  /* line 83, ../sass/print.scss */
+  img:not(.logo-img) {
+    max-width: 100% !important;
+  }
+
+  /* line 89, ../sass/print.scss */
+  .logo-img {
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    right: -1cm;
+    height: 4cm;
+    width: auto;
+  }
+  /* line 96, ../sass/print.scss */
+  .logo-img:after {
+    content: "www.trauer-aachen.de";
+  }
+
+  /* line 101, ../sass/print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 108, ../sass/print.scss */
+  ul {
+    list-style: none;
+  }
+
+  /* line 109, ../sass/print.scss */
+  li {
+    content: "» ";
+  }
+
+  /* line 113, ../sass/print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* line 118, ../sass/print.scss */
+  p a {
+    word-wrap: break-word;
+  }
+
+  /* line 121, ../sass/print.scss */
+  li {
+    list-style: square;
+    margin-bottom: 1em;
+  }
+
+  /* line 125, ../sass/print.scss */
+  blockquote {
+    border-width: 0 0 0 3px;
+    border-style: solid;
+    border-color: #ccc;
+    margin-left: 2em;
+    padding-left: 3em;
+    font-size: larger;
+    line-height: 1.4;
+  }
+
+  @page {
+    margin: 3cm 2cm;
+  }
+  /* line 138, ../sass/print.scss */
+  body {
+    font-family: "Open Sans", Arial, Verdana, Helvetica, sans-serif;
+    font-size: 1.4;
+    line-height: 15.82px;
+    color: #4d575e;
+  }
+
+  /* line 145, ../sass/print.scss */
+  h1, h2, h3, h4 {
+    line-height: 1.4;
+  }
+
+  /* line 148, ../sass/print.scss */
+  h1 {
+    font-size: 24pt;
+  }
+
+  /* line 152, ../sass/print.scss */
+  h2 {
+    font-size: 14pt;
+    margin-top: 2em;
+  }
+
+  /* line 157, ../sass/print.scss */
+  aside {
+    border: 0 !important;
+    margin-top: 2em;
+  }
+  /* line 160, ../sass/print.scss */
+  aside h2 {
+    font-size: 18pt;
+  }
+}
