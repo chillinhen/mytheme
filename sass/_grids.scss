@@ -22,7 +22,7 @@ container-position: center,
 
 /*** Sticky Footer ***/
 html,
-body:not(.ie) {
+body{
     height: 100%;
 }
 /* sticky footer and main width */
@@ -67,6 +67,11 @@ header.header {
 }
 section.main{}
 article{
+    > section {
+        @media screen and (max-width:$screen-md){
+            margin:0 1em;
+        }
+    }
     .post_content{
         @media screen and (min-width:$screen-sm){
             @include span(7 of 10);
@@ -76,9 +81,15 @@ article{
                 @include span(full); 
             }
         }
+        @media screen and (max-width:$screen-sm - 1){
+            float:none;
+        }
     }
-    @media screen and (min-width:$screen-sm){
-        .zitate{
+    .zitate{
+        @media screen and (max-width:$screen-sm){
+            margin-top:2em;
+        }
+        @media screen and (min-width:$screen-sm){
             @include span(last 3 of 10); 
         }
     }
