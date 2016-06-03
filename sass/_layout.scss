@@ -149,8 +149,8 @@ li.close-menu{
     display:block;
     position:fixed;
     z-index:99;
-    @include rotate(-90deg);
-    @include transform-origin(0%,0%);
+    @include transform(scale(1) rotate(-90deg));
+    @include transform-origin(0% 0%);
     left:0;
     top:250px;
     a {
@@ -218,6 +218,7 @@ nav.nav {
         margin-top:$headerHeight/2;
         margin-bottom:2em;
         ul {
+            padding:0;
             li {
                 float:left;
                 display: inline-block;
@@ -245,7 +246,7 @@ article{
     > section {
         margin-bottom:2em;
         @media screen and (min-width:$screen-lg){
-            @include container(90%);
+            @include outer-container(90%);
         }
         &:not(#start){
             /*** Background Image ***/
@@ -264,7 +265,7 @@ article{
                 background-position: 5% 70px,80% 20px;
             }
             @media screen and (min-width:1440px){
-                @include container(1280px);
+                @include outer-container(1280px);
             }
             @media screen and (max-width:$screen-Iphone6-landscape){
                 background-image:none;
@@ -326,6 +327,7 @@ article{
         }
         @media screen and (min-width:$screen-lg){
             padding-top:120px;
+            .single & {padding-top: 40px;}
         }
         /** specials **/
                 @media screen and (max-width:$screen-mini) and (orientation:portrait){
@@ -419,7 +421,7 @@ article{
                     top: 45%;
                     left: 3em;
                     ul {
-                        max-width:400px;  
+                        max-width:420px;  
                     }
                     li > * {
                         font-size:$baseFontsize * 1.1;
@@ -470,7 +472,7 @@ article{
         }
         @media screen and (min-width:$screen-sm){
             .row {
-                @include display-flex;
+                @include display(flex);
             }
             [class*="col"]{
                 @include border-panel(0 0 0 1px,dotted,$bgcolor);
@@ -627,9 +629,16 @@ article{
         }
     }
     @media screen and (min-width:$screen-md + 1){
-        width: span(7);
         left:2em;
         top:3em;
+        &.blog-image{
+            left:-2em;
+            top:2em;
+            img {
+                border:12px solid white; 
+                border-bottom-width: 50px;
+            }
+        }
         padding:3px;
         img {
             border:12px solid white; 

@@ -1,13 +1,3 @@
-// Requirements
-// ============
-@import "susy";
-
-$susy: (
-columns: 12,
-gutters: 1/2,
-container-position: center,
-);
-
 /**
  * Global styles
  */
@@ -28,28 +18,29 @@ body{
 /* sticky footer and main width */
 body:not(.ie){
     .wrapper {
-        @include display-flex(flex);
+        @include display(flex);
         min-height: 100vh;
         @include flex-direction(column);
         > #content{
-            @include flex(1 0);
+            @include flex(1);
         }
     }  
 }
 /** Global width ***/
 .container {
     position:relative;
+/*    @include foo(red);*/
     @media screen and (max-width:$screen-sm){
-        @include container;
+        @include outer-container;
         section &{
             padding:0 1em;
         }
     }
     @media screen and (min-width:$screen-sm + 1) and (max-width:$screen-lg){
-        @include container(875px);
+        @include outer-container(875px);
     }
     @media screen and (min-width:$screen-lg){
-        @include container(1015px);
+        @include outer-container(1015px);
     }
 }
 header.header {
@@ -58,14 +49,19 @@ header.header {
     }
     @media screen and (min-width:$screen-md){
         nav{
-            @include span(8 of 10);
+            @include span-columns(12);
         }
         .logo {
-            @include span(last 2 of 10);
+            position:absolute;
+            top:25px;
+            right:0;
+            @include span-columns(2);
+            @include omega();
+            float:none;
         }
     }
 }
-section.main{}
+
 article{
     > section {
         @media screen and (max-width:$screen-md){
@@ -74,24 +70,19 @@ article{
     }
     .post_content{
         @media screen and (min-width:$screen-sm){
-            @include span(7 of 10);
-
-            position:relative;
+           @include span-columns(8); 
+           position:relative;
             &.full{
-                @include span(full); 
+                @include span-columns(12);
             }
         }
-        @media screen and (max-width:$screen-sm - 1){
-            float:none;
-        }
     }
-    .zitate{
+        .zitate{
         @media screen and (max-width:$screen-sm){
             margin-top:2em;
         }
         @media screen and (min-width:$screen-sm){
-            @include span(last 3 of 10); 
+            @include span-columns(4);
         }
     }
-
 }

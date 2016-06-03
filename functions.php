@@ -7,6 +7,7 @@ function myTheme_setup() {
     load_theme_textdomain('myTheme', get_stylesheet_directory_uri() . '/languages');
 
     add_image_size('thumbnail-size', 550, '', true);
+    add_image_size('thumbnail-blog', 705, 285, true);
     // deregister parent script and load modernizer per cdn
     add_action('wp_enqueue_scripts', 'register_modernizr');
 
@@ -28,7 +29,7 @@ function myTheme_setup() {
 
                 wp_register_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'screen');
                 wp_enqueue_style('fontawesome');
-                wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/stylesheets/screen.min.css', 'style', '1.0', 'screen', array('bootstrap'));
+                wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/stylesheets/screen.css', 'style', '1.0', 'screen', array('bootstrap'));
                  wp_enqueue_style('print', get_stylesheet_directory_uri() . '/stylesheets/print.css', 'style', '1.0', 'print', array('bootstrap, myTheme'));
             }
 
@@ -76,6 +77,21 @@ function myTheme_setup() {
         return $classes;
 }
     add_filter('body_class','mv_browser_body_class');
+    
+    // Customize more Link
+    remove_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+    add_filter('excerpt_more', 'more_link'); // Add 'View Article' button instead of [...] for Excerpts
+    function more_link($more) {
+        global $post;
+        return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Mehr', 'myTheme') . '</a>';
+    }
+
+    
+    //remove parent theme functions
+    remove_filter('show_admin_bar', 'remove_admin_bar');
+    remove_action('init', 'create_post_type_html5');
+    
+    
 }
 
 ?>

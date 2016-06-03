@@ -1,0 +1,10 @@
+@mixin button-style($bg){
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: $baseFontsize * 1.1;
+    font-weight:600;
+    text-decoration:none;
+    background: $bg;
+    color:white!important;
+    padding: .5em 1em;
+}

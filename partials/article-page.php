@@ -1,7 +1,7 @@
 <?php $anker = get_field('anker'); ?>
 <?php $banner = get_field('hintergrundbild'); ?>
 
-<article id="<?php echo ($anker) ? $anker : 'post' . the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<article id="<?php echo ($anker) ? $anker : 'post' . the_ID(); ?>" <?php post_class(); ?>>
 
     <?php get_template_part('partials/article', 'header'); ?>
 

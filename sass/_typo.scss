@@ -126,7 +126,7 @@ article{
                     margin:0;
                 }
                 * {
-                    
+                    margin:0;
                     color:white;
                     line-height:1.33;
                     font-weight:600;
@@ -209,12 +209,7 @@ article{
 }
 #bt-kontakt {
     a{
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        font-weight:600;
-        text-decoration:none;
-        background: $basecolor;
-        color:white!important;
+        @include button-style($basecolor);
         &:hover, body.kontakt &, body.impressum &{
             text-decoration:none;
             background:$beige;

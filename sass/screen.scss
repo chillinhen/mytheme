@@ -1,18 +1,13 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "/Users/chilliscope/Documents/Webseiten/toolbox/bower_components/bourbon/bourbon";
+@import "/Users/chilliscope/Documents/Webseiten/toolbox/bower_components/neat/app/assets/stylesheets/_neat";
+@import "/Users/chilliscope/Documents/Webseiten/toolbox/sass/myMixins/extends";
+@import "/Users/chilliscope/Documents/Webseiten/toolbox/sass/myMixins/mixins";
+@import "/Users/chilliscope/Documents/Webseiten/toolbox/sass/myMixins/breakpoints";
 
-@import "compass/reset";
-@import "compass/css3/appearance";
-@import "compass/utilities/general/clearfix";
-@import "compass/css3/flexbox";
-@import "compass/layout/sticky-footer";
-@import "compass/css3/border-radius";
-@import "compass/css3/transform";
 @import "_variables";
+@import "_myMixins";
 @import "_typo";
 @import "_grids";
 @import "_layout";
 @import "_ie";
-@import "_shame";
+@import "_shame"

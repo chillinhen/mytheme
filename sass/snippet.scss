@@ -1,0 +1,874 @@
+header.header{ 
+    background:#fff;
+    > .container {
+        @media screen and (max-width:$screen-md - 1){
+            height:100%;
+        }  
+    }
+    /** Responsive Nav ***/
+    @media screen and (max-width:$screen-Lumia-landscape){
+        .scroll-to-top.screen-layout{
+            display:none !important;
+            visibility: hidden;
+        } 
+        .home-btn.mobile-layout{
+            display:block !important;
+        }
+    }
+    @media screen and (min-width:$screen-Lumia-landscape){
+        .home-btn.mobile-layout{
+            display:none;
+        }
+        .scroll-to-top.screen-layout{
+            display:block;
+        }
+    }
+    @media screen and (min-width:$screen-md){
+        .navbar-toggle, .close-menu{
+            display:none;
+        }
+    }
+    @media screen and (max-width:$screen-md - 1){
+        .navbar-toggle, .home-btn, #brand, nav.nav{
+            position:fixed;
+            cursor: pointer;
+            top:0;
+            background:white;
+        }
+        .navbar-toggle, .home-btn, #brand{
+            height:46px;
+            overflow:hidden;
+        }
+        .navbar-toggle{
+           z-index:997; 
+        }
+        .home-btn{
+           z-index:998; 
+        }
+        #brand{
+           z-index:999; 
+        }
+        .navbar-toggle, .home-btn{
+            padding:12px;
+            img {
+                height:20px;
+            }
+        }
+        .home-btn{
+            padding:12px 14px;
+        }
+        nav.nav.open {
+            @include transition;
+            height:320px;
+        }
+        nav.nav.closed {
+            @include transition;
+            height:0px;
+        }
+        /* Default State */
+        nav.nav {
+            left:0;
+            height:0;
+            z-index:9999;
+            background:white;
+            overflow: hidden;
+            @include transition;
+        }
+        /* Toggled State */
+        nav {
+            li{
+                    display: block;
+                    padding:1em;
+                    @include border-panel(0 0 1px 0,dotted,$basecolor);
+                    &:last-child{
+                        border:0;
+                    }
+                }
+        }
+    }
+
+    /** Header Look ***/
+    @media screen and (max-width:$screen-xs){
+        body.home &{
+            height:46px;
+            background:#fff;
+            position: fixed;
+            z-index:996;
+        }
+        
+        .navbar-toggle { 
+            right:0px;
+        }
+        nav.nav {
+            top:46px;
+            width:100%;
+            &.closed{
+                height:0;
+                @include transition;
+            }
+        }
+    }
+
+    @media screen and (min-width:$screen-Lumia-landscape) and (max-width:$screen-md){
+        .navbar-toggle { 
+            left:0px;
+            right:0;
+            z-index:999;
+        }
+        nav.nav {
+            top:46px;
+            min-width:320px;
+            ul {
+                padding:0 2em;
+                li:last-child{
+                    border:0;
+                }
+            }
+        }
+    }
+/*    .windows &{
+        @media screen and (min-width:$screen-md) {
+            height:$headerHeight;
+        }
+    }*/
+
+}
+li.close-menu{
+    @media screen and (max-width:$screen-md){
+        text-indent:-999999px;
+        background: white url('../img/arrow-mobile.svg') no-repeat center center / 2em auto;
+        display: block;
+        width:100%;
+        height:44px;
+        padding: 1em 0;
+    }
+}
+
+#bt-kontakt{
+    cursor: pointer;
+    display:block;
+    position:fixed;
+    z-index:99;
+    @include rotate(-90deg);
+    @include transform-origin(0%,0%);
+    left:0;
+    top:250px;
+    a {
+        display:block;
+        padding:.5em 1em;
+    }
+}
+#brand{
+    top:0;
+    left: 43px;
+    right: 46px;
+    a{
+        display:block;
+        background: white;
+        height: 46px;
+        text-align:center;
+
+        img {
+            height:100%;
+            padding: 7px;
+        }
+    }
+    @media screen and (max-width:600px){
+       body.home &{
+            visibility: hidden;
+        }
+    }
+    @media screen and (min-width:599px){
+        display:none;
+    }
+}
+.logo{
+    position: absolute;
+    z-index:99;
+    top:1em;
+    right:1em;
+    left:auto;
+    width:150px;
+    > img {
+        max-width: 100%;
+        width:100%;
+        height: auto;
+    }
+    @media screen and (max-width:$screen-xs){
+        body:not(.home) &{
+            display:none;
+        }
+    }
+    @media screen and (max-width:$screen-md){
+        top:60px;
+    }
+    @media screen and (min-width:$screen-md + 1) and (max-width:$screen-lg - 1){
+        top:35px;
+        right:1em;
+        width:180px;
+    }
+    @media screen and (min-width:$screen-lg){
+        top:25px;
+        right:5%;
+        width:200px;
+    }
+}
+nav.nav {
+    @media screen and (min-width:$screen-md){
+        margin-top:$headerHeight/2;
+        margin-bottom:2em;
+        ul {
+            li {
+                float:left;
+                display: inline-block;
+                margin-right: 1em;
+            }
+        }
+    }
+}
+section.main {
+    body.home & {
+        background-image: none;
+    }
+    @media screen and (max-width:$screen-md){
+        body.home &{
+        min-height:100vH;
+        }
+        body:not(.home) &{
+            padding-top: 44px;
+        }
+    }   
+}
+article{
+    position:relative;
+    background-color:white;
+    > section {
+        margin-bottom:2em;
+        @media screen and (min-width:$screen-lg){
+            @include container(90%);
+        }
+        &:not(#start){
+            /*** Background Image ***/
+            @media screen and (min-width:$screen-sm){
+                background-image:url('../img/Voegel.svg'),url('../img/Leuchtturm.svg');
+                background-repeat: no-repeat; 
+                background-size: auto 80px, auto 375px;  
+            }
+            @media screen and (min-width:$screen-sm)and (max-width:$screen-md){
+                background-position: 0 80px,90% 25%;
+            }
+            @media screen and (min-width:$screen-md) and (max-width:$screen-lg) {
+                background-position: 2% 30px,85% 25%;
+            }
+            @media screen and (min-width:$screen-lg) {
+                background-position: 5% 70px,80% 20px;
+            }
+            @media screen and (min-width:1440px){
+                @include container(1280px);
+            }
+            @media screen and (max-width:$screen-Iphone6-landscape){
+                background-image:none;
+            }
+        }
+    }
+    > section > .container{
+        @media screen and (max-width:$screen-xs){
+            body.ueber-mich &{
+                ul.qualifikation {
+                    margin-top: -1em;
+                }
+                .verbandslogo{
+                    width:100%;
+                    height:auto;
+                    display: block;
+                    float:none;
+                    img {
+                        max-width: 100%;
+                        height:auto;
+                    }
+                }
+            }
+            @media (orientation:landscape){
+                padding-top:190px;
+            }
+        }
+        @media screen and (min-width:$screen-xs + 1) and (max-width:$screen-Lumia-landscape){
+            padding-top:160px;
+        }
+        @media screen and (min-width:$screen-Lumia-landscape) and (max-width:$screen-Iphone6-landscape - 1){
+            padding-top:110px;
+        }
+        @media screen and (min-width:$screen-Iphone6-landscape - 1) and (max-width:$screen-sm - 1){
+            padding-top:180px;
+        }
+
+        @media screen and (max-width:$screen-sm - 1){
+            @media (orientation:portrait){
+                padding-left:22px;
+                padding-right:0;
+            }
+            @media (orientation:landscape){
+                padding-right:1em;
+                padding-left:3em;
+            }
+        }
+        @media screen and (min-width:$screen-Lumia-landscape) and (max-width:$screen-Iphone6-landscape){
+            padding-right:1em;
+            padding-left:3em;
+        }
+        @media screen and (min-width:$screen-sm) and (max-width:$screen-md){
+            padding-right:3em;
+            padding-left:3em;
+            padding-top:130px;
+        }
+        @media screen and (min-width:$screen-md)and (max-width:$screen-lg){
+            padding-top:70px;
+        }
+        @media screen and (min-width:$screen-lg){
+            padding-top:120px;
+        }
+        /** specials **/
+                @media screen and (max-width:$screen-mini) and (orientation:portrait){
+            padding-top:150px;
+                &.one-line{
+                    padding-top:120px;
+                }
+        }
+        @media screen and (max-width:$screen-mini) and (orientation:portrait){
+             padding-top:160px;
+                &.one-line{
+                    padding-top:130px;
+                }
+        }
+        @media screen and (min-width:$screen-mini + 1) and (max-width:$screen-xs) and (orientation:portrait){
+             padding-top:160px;
+                &.one-line{
+                    padding-top:160px;
+                }
+        }
+        @media screen and (min-width:$screen-xs) and (max-width:$screen-sm) and (orientation:landscape){
+            padding-top:180px;
+                &.one-line{
+                    padding-top:130px !important;
+                    padding-left: 2em;
+                }
+        }
+    }
+    &#start{
+        height:90vH;
+        > section {
+            background-image: none;
+        }
+        ul{
+            li{
+                margin:0 0 .2em 0;
+                min-height:60px;
+                @include alpha-background-color(rgba($basecolor, 0.75), white);
+                @include bullets(url('../img/bullets.svg'), 1em 1em, auto 12px);
+                padding:.75em .75em .75em 3em;
+                color:white;
+                display:block;
+            }
+        }
+        @media screen and (max-width:$screen-xs) and (orientation:portrait){
+            .container > * {display:none;}
+        }
+        @media screen and (max-width:$screen-Iphone6plus-landscape) and (orientation:landscape){
+            .container > * {display:none;}
+        }
+        @media screen and (min-width:$screen-xs) and (max-width:800px) and (orientation:portrait){
+            .container{
+                padding:0;
+                height:100vH;
+
+                .post_content{
+                    position: absolute;
+                    top: 50%;
+                    left: 1em;
+                    right: 1em; 
+                }
+            }
+            li {
+                padding:.5em .5em .5em 3em;
+                * {
+                    font-size:14px !important;
+                }
+            }
+        }
+
+        @media screen and (max-width:$screen-md) and (orientation:portrait){
+            background-position:50% 25%, 75% 50%;
+            background-size: 100% auto, 250% auto;
+            height:100vH;
+        }
+        @media screen and (max-height:600px) and (orientation:landscape){
+            background-size: 100% auto, 100% auto;
+        }
+        @media screen and (min-width:$screen-md) and (max-width:$screen-lg){
+            background-position:50% 5%, 0% 50%;
+            background-size: 100% auto, cover;
+        }
+
+        @media screen and (min-width:$screen-sm){
+            .container{
+                padding:0;
+                min-height:100vH;
+
+                .post_content{
+                    position: absolute;
+                    top: 45%;
+                    left: 3em;
+                    ul {
+                        max-width:400px;  
+                    }
+                    li > * {
+                        font-size:$baseFontsize * 1.1;
+                    }
+
+                } 
+
+            }
+
+        }
+        @media screen and (min-width:800px) and (orientation:portrait){
+            .container{
+                padding:0;
+                height:100vH;
+
+                .post_content{
+                    position: absolute;
+                    top: 50%;
+                    left: .5em;
+                    right: .5em; 
+                }
+            }
+        }
+        @media screen and (min-width:$screen-lg){
+            background-position: 50% 10%, 0 50%;
+            background-size: 70% auto, cover;
+        }
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+    
+        .no-svg &, .ie.windows & {
+            background:transparent url('../img/bg_start.jpg') no-repeat 0 50% / cover !important;
+        }
+    }
+    &#kontakt, &#impressum{
+        background-color:$basecolor;
+        > section {
+            background-image: none;
+        }
+        @media screen and (max-width:$screen-xs){
+            [class*="col"]{
+                height:auto;
+                min-height: none;
+            }
+            [class*="col"]:first-child{
+                padding-top:0;
+            }
+        }
+        @media screen and (min-width:$screen-sm){
+            .row {
+                @include display-flex;
+            }
+            [class*="col"]{
+                @include border-panel(0 0 0 1px,dotted,$bgcolor);
+                width:33%;
+                min-height: 100px;
+                padding:1em .5em;
+                > div:first-child {
+                    border:0;
+                }
+            }
+            [class*="col"].last{
+                border-right: 0;
+                padding-right: 0;
+            }
+            [class*="col"].first{
+                border-left: 0;
+                padding-left: 0;
+            }
+            [class*="col"].full{
+                @include flex-grow(3);
+                width:100%;
+                @include border-panel(1px 0,dotted,$bgcolor);
+                margin-top:3em;
+                text-align:left;
+                > div{padding:1em 0 !important;}
+                > div{padding-top:1em !important;}
+            }
+        }   
+        @media screen and (max-width:$screen-sm - 1){
+            [class*="col"]{
+                padding:2em 0;
+                text-align: left;
+            }
+        }
+        @media screen and (min-width:$screen-md) and (orientation:landscape){
+            [class*="col"]{
+                padding:1em 2em;
+            }
+        }
+        @media screen and (max-width:$screen-mini) and (orientation:portrait){
+            .container {
+                padding-top:60px;
+            }
+        }
+        @media screen and (max-width:360px) and (orientation:portrait){
+            .container {
+                padding-top:100px;
+            }
+        }
+
+    }
+}
+.article-header{
+    position:relative;
+    background-size: 200%;
+    background-position: 0;
+    body.home &{
+        background-image: url('../img/tags.svg');
+        background-repeat: no-repeat;
+        background-position: 0;
+        background-size: cover;
+    }
+    @media screen and (max-width:$screen-xs){
+        min-height:180px;
+        padding-left:1.2em;
+        body.fuer-eltern & {
+            background-position: 90% 40%; 
+        }
+        body.ueber-mich & {
+            background-position: 100%; 
+        }
+    }
+    @media screen and (min-width:$screen-xs + 1) and (max-width:$screen-Lumia-landscape){
+        min-height:225px;
+    }
+    @media screen and (min-width:$screen-Lumia-landscape) and (max-width:$screen-sm - 1){
+        min-height:250px;
+    }
+    @media screen and (min-width:$screen-sm){
+        height: 300px;
+        body.fuer-eltern & {
+            background-position: 90% 40%; 
+        }
+        body.ueber-mich & {
+            background-position: 100%; 
+        }
+    }
+    @media screen and (min-width:$screen-xs) and (max-width:800px){
+        body.kontakt &, body.ueber-mich & {
+            background-position: 100%; 
+            background-size: 250%;
+        }
+    }
+    @media screen and (min-width:$screen-md){
+        height: 350px;
+        background-position:0 50%;
+        background-size:cover;
+    }
+}
+.thumbnail{
+    position:absolute;
+    z-index:9;
+    @include rotate(-1.25deg);
+    @media screen and (min-width:$screen-md){
+        background: transparent url('../img/Bilderrahmen.svg') top left no-repeat;
+        background-size: cover;
+    }
+    img{
+        max-width: 100%;
+        height:auto;
+    }
+    @media screen and (max-width:$screen-xs){
+        @media screen and (orientation:portrait){
+            top:3em;
+            left:1em;
+            right:1em;
+            padding:.2em;
+        }
+        @media screen and (orientation:landscape){
+            top:2em;
+            left:25px;
+            right:50px;
+            padding:2px;
+        }
+        img {
+            border:5px solid white; 
+        }
+    }
+    @media screen and (min-width:$screen-xs + 1) and (max-width:$screen-Lumia-landscape){
+        top: 3em;
+        left: 1.5em;
+        right: 10em;
+        padding: 0.12em;
+        img {
+            border:7px solid white; 
+        }
+    }
+    @media screen and (min-width:$screen-Lumia-landscape) and (max-width:$screen-Iphone6plus-landscape){
+        top: 2em;
+        left: 2em;
+        right: 14em;
+        padding: 0.3em;
+        img {
+            border:10px solid white; 
+        }
+    }
+    @media screen and (min-width:$screen-sm) and (max-width:$screen-md){
+        width: span(7.5);
+        left:2.4em;
+        padding:5px;
+        top:2em;
+        img {
+            border:12px solid white; 
+        }
+    }
+    @media screen and (min-width:$screen-md + 1){
+        width: span(7);
+        left:2em;
+        top:3em;
+        padding:3px;
+        img {
+            border:12px solid white; 
+        }
+    }
+}
+
+.page-title{
+    @media screen and (max-width:$screen-sm){ 
+        font-size:2em;
+        line-height:1.2;
+        letter-spacing:.2px;
+        margin-top:.5em;  
+    }
+    @media screen and (min-width:$screen-sm){ 
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-indent:-999999999px;
+        display:inline-block;
+        overflow:hidden;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position:center center;
+        #trauer-und-abschied &{
+            background-image: url('../img/bg-trauer-abschied.svg');
+            width:242px;
+            height:58px;
+            top: 10%;
+            left: 50%;
+            margin-left: -121px;
+        }
+        #so-begleite-ich-sie &{
+            background-image: url('../img/bg-so-begleite-ich-sie.svg');
+            width:244px;
+            height:69px;
+            left: 10%;
+            top: 65%;
+        }
+        #fuer-trauerende &{
+            background-image: url('../img/bg-fuer-trauernde.svg');
+            width:190px;
+            height:70px;
+            top: 25%;
+            left: 55%;
+        }
+        #fuer-eltern &{
+            background-image: url('../img/bg-fuer-eltern.svg');
+            width:145px;
+            height:59px;
+            top: 35%;
+            left: 10%;
+
+        }
+        #fuer-kitas-und-schulen &{
+            background-image: url('../img/bg-fuer-kitas-schulen.svg');
+            width:191px;
+            height:97px;
+            top: 30%;
+            left:55%
+        }
+
+    }
+    &#ueber-mich,#kontakt &,#impressum &{display: none;}
+}
+.panel {
+    .conditions{
+        padding-bottom: 2em;
+    }
+    margin-bottom:-1px;
+    > header {
+        padding:.5em 0;
+        position:relative;
+        display:block;
+        &:hover{
+            cursor: pointer;
+        }
+        & span {
+            display: inline-block;
+            @media screen and (max-width:$screen-xs){
+                margin-right:2em;
+            }
+        }
+        & span:after {
+            content: ' ';
+            background:transparent url('../img/arrow.svg') no-repeat right center / cover;
+            display:block;
+            position:absolute;
+            top:50%;
+            margin-top:-.25em;
+            right:0;
+            height:9px;
+            width:18px;
+            @include rotate(180deg);
+        }
+        & span.open:after{
+            @include rotate(0deg);
+        }
+        > * {
+            font-size:$baseFontsize;
+            font-weight:600;
+            line-height: 1.4;
+            margin:0;
+        }
+    }
+    &.parent > header{
+        @include border-panel(1px 0,dotted,$blue);
+    }
+    #fuer-kitas-und-schulen & > header{
+        @include border-panel(1px 0 0 0,dotted,$blue);
+    }
+    #fuer-kitas-und-schulen &:last-child > header{
+        border-bottom-width: 1px;
+    }
+    .panel-content{
+        margin-top:.75em;
+    }
+    table{
+        width:100%;
+        margin-bottom:2em;
+        > * {
+            color:$blue;
+        }
+        tr {
+            @include border-panel(0 0 1px 0,dotted,$blue);
+            td {
+                padding:.5em 0;
+                vertical-align: top;
+            }
+        }
+        /*        tr:last-child{border:0;}*/
+    }
+    &.parent{
+        padding-bottom:2em;
+        table{
+            margin:-1px 0;
+            tr:first-child {
+                @include border-panel(1px 0 0 0,dotted,$blue);
+                td{
+                    padding-top:.5em;
+                }
+            }
+            tr:last-child {
+                @include border-panel(0 0 1px 0,dotted,$blue);
+                td{
+                    padding-bottom:.5em;
+                }
+            }
+            tr{
+                border:0;
+                td{
+                    padding:.25em 0;
+                }
+
+            }
+            ~p.small{
+                margin-top:2em;
+            }
+        }
+    }
+}
+table tr td:first-child{
+
+    ~td{ 
+        padding-left: 1em;
+    }
+    #fuer-trauerende &, #fuer-eltern &, #collapse-39 &{
+        width:180px;
+    }
+    #fuer-kitas-und-schulen &{
+        width:50px;
+    }
+    #collapse-37 &{
+        width:240px;
+    }
+    #collapse-39 &{
+        ~td:nth-child(2) {
+            width:150px;
+        }
+    }
+}
+.scroll-to-top {
+    &.screen-layout{
+        background: $headerSpan url('../img/arrow-white.svg') no-repeat center center / 50%;
+        border:0;
+        bottom: .75em;
+        position: fixed;
+        width:30px;
+        height:30px;
+        z-index: 9999;
+        right: 5%;
+        color: white;
+        cursor: pointer;
+        display: none;
+        transition: all 0.1s linear 0s;
+        opacity: 0.8;
+        &:hover {
+            background-color: $beige;
+            opacity: 1;
+        } 
+    }
+
+
+}
+footer.footer{
+    body.home &{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index:9999;
+        background-color: white;
+    }
+    body:not(.home) &{
+        background: $basecolor;
+        span, a{
+            line-height: 1.2;
+            color:white;
+        }  
+    }
+    > .container {
+        line-height: 1.4;
+        padding:1em 0;
+    }
+    span, a{
+        line-height: inherit;
+        color:$basecolor;
+        @media screen and (max-width:$screen-xs){
+            line-height:0;
+            padding:0;
+            display:inline-block;
+        }
+    }
+
+    @media screen and (min-width:$screen-xs){
+        .copyright{
+            border-right:1px solid currentColor;
+            padding-right: 1em;
+            margin-right: .8em;
+        }
+    }
+}

@@ -1,1 +1,20 @@
-<blockquote><p>Gefangen in der Trauer.<br /> Eingeschlossen in einem leidvollen, einsamen Raum.<br/>Leugnen? Fliehen? – nützt nichts.<br /> Gefangen in der Trauer.</p><p>Dieser Raum ist jetzt für dich die Wahrheit.<br /> Niemand weiß, ob sich jemals ein Weg heraus öffnen wird.</p> <p>Auch ich nicht.<br /> Dieser Raum ist jetzt für dich die Wahrheit.</p><p>Ich möchte dich besuchen,wenn ich darf,<br /> in deinem Raum des Schmerzes.<br /> Vielleicht kann ich ein Licht sein.<br /> Ich möchte dich besuchen, wenn ich darf.</p></blockquote>
+    <?php
+    $argsNews = array(
+        'post_type' => 'post',
+        'category_name' => 'aktuelles',
+        'post_status' => 'publish',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+    ?>
+    <?php
+    $newsQuery = new WP_Query($argsNews);
+    if ($newsQuery->have_posts()): while ($newsQuery->have_posts()) : $newsQuery->the_post();
+            ?>
+            <?php get_template_part('partials/preview', 'post'); ?>
+        <?php
+        endwhile;
+    endif;
+    wp_reset_query();
+    ?>
