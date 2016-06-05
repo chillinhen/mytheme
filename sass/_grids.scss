@@ -24,8 +24,12 @@ body:not(.ie){
         > #content{
             @include flex(1);
         }
-    }  
+    }
+    &.home{
+        .wrapper {overflow: hidden;}
+    }
 }
+
 /** Global width ***/
 .container {
     position:relative;

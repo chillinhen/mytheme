@@ -881,3 +881,56 @@ footer.footer{
         }
     }
 }
+
+/** Addons ***/
+#stoerer{
+    position: absolute;
+    top:25%;
+    min-height:200px;
+    margin-top:-100px;
+    right:0;
+    width:468px;
+    padding:.5em 1em;
+    background:#fff url(../img/bd-stoerer.svg) no-repeat center top / cover;
+    
+    hgroup{
+        background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
+        margin: .5em 0; 
+    }
+    article{
+        margin-bottom: 1em;
+    }
+    h2 {
+        @include button-style($basecolor);
+        display: inline-block;
+        margin:0 0 1em 1em;
+    }
+    h3,p,.post-edit-link{
+        margin:{
+            top:0;
+            left:1.2em;
+            right:1.2em;
+        }
+
+    }
+    h3,p{
+        font-size: $baseFontsize;
+        line-height: $baselineHeight * 1.2;
+        &, & * {color: $textcolor;}
+    }
+    h3{
+        font-weight: bold;
+        margin-bottom: .5em;
+        
+    }
+    p{
+        margin-bottom: 0;
+    }
+    .view-article{font-style:italic;}
+    .post-edit-link{
+        
+        &:after{
+            @include icon-style ("\f044", 0, 1, .5em, 1em);
+        } 
+    }
+}

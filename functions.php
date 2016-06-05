@@ -1,5 +1,16 @@
 <?php
+//ACF Theme Options
+if (function_exists('acf_add_options_page')) {
 
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'position' => '63.3',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+}
 add_action('after_setup_theme', 'myTheme_setup');
 
 function myTheme_setup() {

@@ -251,6 +251,8 @@ body:not(.ie) .wrapper {
     -moz-flex: 1;
     -ms-flex: 1;
     flex: 1; }
+body:not(.ie).home .wrapper {
+  overflow: hidden; }
 
 /** Global width ***/
 .container {
@@ -1111,45 +1113,19 @@ footer.footer span, footer.footer a {
     padding-right: 1em;
     margin-right: .8em; } }
 
-/*** Ie hacks ***/
-@media screen and (min-width: 768px) {
-  .ie article ul {
-    margin-left: 1em; }
-    .ie article ul li {
-      background-image: none !important;
-      list-style: square;
-      list-style-position: inside;
-      padding-left: 0; }
-  .ie article#start ul {
-    margin: 0; }
-    .ie article#start ul li {
-      padding-left: 2em;
-      list-style: none; }
-  .ie article:not(#start) > section {
-    width: 1170px;
-    background: transparent url("../img/Voegel.svg") no-repeat 0px 80px;
-    background-size: auto 80px; }
-    .ie article:not(#start) > section .zitate {
-      background: transparent url("../img/Leuchtturm.svg") no-repeat center top;
-      background-size: auto 100%;
-      min-height: 375px; }
-  .ie.impressum article > section, .ie.kontakt article > section {
-    background-image: none !important; }
-  .ie .logo a, .ie .logo .logo-img {
-    width: 200px;
-    display: block;
-    max-width: none; } }
-
+/** Addons ***/
 #stoerer {
   position: absolute;
-  top: 45%;
+  top: 25%;
+  min-height: 200px;
+  margin-top: -100px;
   right: 0;
   width: 468px;
   padding: .5em 1em;
   background: #fff url(../img/bd-stoerer.svg) no-repeat center top/cover; }
   #stoerer hgroup {
     background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
-    margin: 0.5em 0; }
+    margin: .5em 0; }
   #stoerer article {
     margin-bottom: 1em; }
   #stoerer h2 {
@@ -1186,6 +1162,35 @@ footer.footer span, footer.footer a {
     opacity: 1;
     margin-left: 0.5em;
     font-size: 1em; }
+
+/*** Ie hacks ***/
+@media screen and (min-width: 768px) {
+  .ie article ul {
+    margin-left: 1em; }
+    .ie article ul li {
+      background-image: none !important;
+      list-style: square;
+      list-style-position: inside;
+      padding-left: 0; }
+  .ie article#start ul {
+    margin: 0; }
+    .ie article#start ul li {
+      padding-left: 2em;
+      list-style: none; }
+  .ie article:not(#start) > section {
+    width: 1170px;
+    background: transparent url("../img/Voegel.svg") no-repeat 0px 80px;
+    background-size: auto 80px; }
+    .ie article:not(#start) > section .zitate {
+      background: transparent url("../img/Leuchtturm.svg") no-repeat center top;
+      background-size: auto 100%;
+      min-height: 375px; }
+  .ie.impressum article > section, .ie.kontakt article > section {
+    background-image: none !important; }
+  .ie .logo a, .ie .logo .logo-img {
+    width: 200px;
+    display: block;
+    max-width: none; } }
 
 .single article > section {
   background-image: none !important; }
