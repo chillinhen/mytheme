@@ -653,54 +653,73 @@ article{
         letter-spacing:.2px;
         margin-top:.5em;  
     }
-    @media screen and (min-width:$screen-sm){ 
+    @media screen and (min-width:$screen-sm){
         position: absolute;
-        top: 0;
-        left: 0;
-        text-indent:-999999999px;
-        display:inline-block;
-        overflow:hidden;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position:center center;
-        #trauer-und-abschied &{
-            background-image: url('../img/bg-trauer-abschied.svg');
-            width:242px;
-            height:58px;
-            top: 10%;
-            left: 50%;
-            margin-left: -121px;
-        }
-        #so-begleite-ich-sie &{
-            background-image: url('../img/bg-so-begleite-ich-sie.svg');
-            width:244px;
-            height:69px;
-            left: 10%;
-            top: 65%;
-        }
-        #fuer-trauerende &{
-            background-image: url('../img/bg-fuer-trauernde.svg');
-            width:190px;
-            height:70px;
-            top: 25%;
-            left: 55%;
-        }
-        #fuer-eltern &{
-            background-image: url('../img/bg-fuer-eltern.svg');
-            width:145px;
-            height:59px;
-            top: 35%;
-            left: 10%;
+        top: 1em;
+        left: 2em;
+        right:2em;
+        text-align: center;
+        z-index:99999;
+        body:not(.single){
+            text-indent:-999999999px;
+            display:inline-block;
+            overflow:hidden;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position:center center;
+            #trauer-und-abschied &{
+                background-image: url('../img/bg-trauer-abschied.svg');
+                width:242px;
+                height:58px;
+                top: 10%;
+                left: 50%;
+                right:auto;
+                margin-left: -121px;
+            }
+            #so-begleite-ich-sie &{
+                background-image: url('../img/bg-so-begleite-ich-sie.svg');
+                width:244px;
+                height:69px;
+                left: 10%;
+                top: 65%;
+                right:auto;
+            }
+            #fuer-trauerende &{
+                background-image: url('../img/bg-fuer-trauernde.svg');
+                width:190px;
+                height:70px;
+                top: 25%;
+                left: 55%;
+                right:auto;
+            }
+            #fuer-eltern &{
+                background-image: url('../img/bg-fuer-eltern.svg');
+                width:145px;
+                height:59px;
+                top: 35%;
+                left: 10%;
+                right:auto;
+
+            }
+            #fuer-kitas-und-schulen &{
+                background-image: url('../img/bg-fuer-kitas-schulen.svg');
+                width:191px;
+                height:97px;
+                top: 30%;
+                left:55%;
+                right:auto;
+            }
 
         }
-        #fuer-kitas-und-schulen &{
-            background-image: url('../img/bg-fuer-kitas-schulen.svg');
-            width:191px;
-            height:97px;
-            top: 30%;
-            left:55%
+        body.single & + .page-sub-title{
+            position: absolute;
+            top: auto;
+            bottom:-1em;
+            left: 2em;
+            right:2em;
+            text-align: center;
+            z-index:99999;
         }
-
     }
     &#ueber-mich,#kontakt &,#impressum &{display: none;}
 }
@@ -756,21 +775,6 @@ article{
     .panel-content{
         margin-top:.75em;
     }
-    table{
-        width:100%;
-        margin-bottom:2em;
-        > * {
-            color:$blue;
-        }
-        tr {
-            @include border-panel(0 0 1px 0,dotted,$blue);
-            td {
-                padding:.5em 0;
-                vertical-align: top;
-            }
-        }
-        /*        tr:last-child{border:0;}*/
-    }
     &.parent{
         padding-bottom:2em;
         table{
@@ -799,6 +803,24 @@ article{
             }
         }
     }
+}
+table{
+    width:100%;
+    margin-bottom:2em;
+    * {
+        color:$blue;
+    }
+    tr {
+        @include border-panel(0 0 1px 0,dotted,$blue);
+        td {
+            padding:.5em 0;
+            vertical-align: top;
+            color:$blue;
+            p{color:inherit;}
+            p:first-child {margin:0;}
+        }
+    }
+    tr:last-child{border:0;}
 }
 table tr td:first-child{
 
@@ -895,7 +917,13 @@ footer.footer{
     
     hgroup{
         background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
-        margin: .5em 0; 
+        margin: .5em 0;
+        position: relative;
+        img {
+            position: absolute;
+            top:0;
+            right:0;
+        }
     }
     article{
         margin-bottom: 1em;
@@ -911,7 +939,6 @@ footer.footer{
             left:1.2em;
             right:1.2em;
         }
-
     }
     h3,p{
         font-size: $baseFontsize;
@@ -921,12 +948,23 @@ footer.footer{
     h3{
         font-weight: bold;
         margin-bottom: .5em;
-        
+        .subtitle{
+            display: block;
+            font-weight: normal;
+            padding-bottom: 1em;
+        }
+        a:hover{text-decoration: none;}
     }
     p{
         margin-bottom: 0;
     }
+    &.angebot p{padding:1em;}
     .view-article{font-style:italic;}
+    .button{
+         @include button-style($grey);
+         margin:.5em 2em;
+         display: inline-block;
+    }
     .post-edit-link{
         
         &:after{

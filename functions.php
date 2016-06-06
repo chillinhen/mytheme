@@ -19,6 +19,8 @@ function myTheme_setup() {
 
     add_image_size('thumbnail-size', 550, '', true);
     add_image_size('thumbnail-blog', 705, 285, true);
+    add_image_size('teaser-pic', 83, 135, true);
+    add_image_size('addon-pic', 124, 202, true);
     // deregister parent script and load modernizer per cdn
     add_action('wp_enqueue_scripts', 'register_modernizr');
 

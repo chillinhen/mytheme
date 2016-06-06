@@ -5,6 +5,7 @@ body {
     line-height: $baselineHeight;
     color: $textcolor;
     background-color: $bgcolor;
+    font-weight:$baseFontWeight;
     &.page-template-page-full-width{
         background-color: $basecolor;
     }
@@ -40,8 +41,28 @@ h1, h2, h3, h4, h5, h6 {
     color: $basecolor;
 }
 h1{ font-size: $font-size-h1; }
-h2{ font-size: $font-size-h2;}
-h3 { font-size: $font-size-h3; }
+h2{ 
+    font-size: $font-size-h2;
+    body.single &.page-title{
+        font-size: $baseFontsize * 2.85;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1;
+        span{
+            color:$lightGrey;
+            display: block;
+        }
+    }
+}
+h3 { 
+    font-size: $font-size-h3;
+    body.single &.page-sub-title{
+        font-size: $baseFontsize * 1.7;
+        font-weight: bold;
+        color:$grey;
+    }
+}
 h4 { font-size: $font-size-h4; }
 h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
@@ -108,6 +129,8 @@ article{
     }
     ul {
         margin-bottom:2.3em;
+        list-style:none;
+        padding-left:0;
         li{
             /* margin:.5em 0 .5em 2em;*/
             background:transparent url('../img/bullets_beige.svg') no-repeat 0px 2px / auto 1em;

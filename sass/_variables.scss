@@ -21,6 +21,7 @@ $screen-Iphone6plus-landscape:736px;
 $screen-nexus7-landscape:960px;
 /**** type ***/
 $baseHeadWeight:300;
+$baseFontWeight:400;
 $baseFontstack:'Open Sans', Arial, Verdana, Helvetica, sans-serif;
 $baseFontsize:14px;
 $baselineHeight:$baseFontsize * 1.13;
@@ -39,16 +40,23 @@ $button-size:$baseFontsize * 1.5;
 $bgcolor: white;
 $blue:#558dbe;
 $basecolor:$blue;
+$grey:rgb(77,87,94);
+$lightGrey:rgb(93,118,119);
 $brown:rgba(52,52,52,0.85);
 $beige:#c1a879;
 $lightbeige:#dacbaf;
 $textcolor:#4d575e;
 $headerSpan:#5d7677;
+$base-border-color:$grey;
+$base-border:1px solid $base-border-color;
 
 //*** misc. measuremts ****/
 $headerHeight:80px;
+$small-spacing:1em;
+$base-spacing:1.2em;
 
 /**** Mixins *****/
+
 @mixin justify-text{
     text-align:justify;
     text-align-last:left;

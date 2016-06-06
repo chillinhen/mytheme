@@ -14,4 +14,77 @@
         font-weight:bold;
         &, & * {color: $textcolor;}
     }
+    .anmeldung {
+        background: transparent url('../img/bg_anmeldung.svg') no-repeat top center;
+        background-size: 100% auto;
+        padding:1.5em;
+        .intro{
+           background: $basecolor;
+           padding:1em;
+           margin-bottom:2em;
+           &,& * {color:white};
+           p:first-child{margin-top:0;}
+        }
+    }
+    .mc4wp-form{
+        p{
+            @extend %clearfix;
+            margin:.5em 0;
+
+            label, input {
+                float:left;
+                display:inline-block;
+            }
+            label {
+                width:125px;
+            }
+            input{
+                width: 242px;
+            }
+        }
+    }
+    .addons{
+        width: 240px;
+        background: transparent url('../img/bg_addons.svg') no-repeat top center;
+        background-size: 102% auto;
+        padding:1em;
+        margin:0 0 0 3em;
+        .bg_addon_pic{
+            width: 204px;
+            height: 168px;
+            margin: 0px auto;
+            position: relative;
+            background: $basecolor;
+            
+            img{
+                position: absolute;
+                top:1em;
+                left:50%;
+                margin-left: -38px;
+            }
+            
+            & + p{
+                margin: 50px 1em 1em 1em;
+            }         
+        }
+        .addon_link{
+            padding: 1em;
+            display:block;
+            font-weight:bold;
+            background: transparent url('../img/icon-pdf.svg') no-repeat 1em 0;
+            background-size: contain;
+            padding:0 2em 0 60px;
+            &:hover {
+                text-decoration: none;
+                color:$basecolor;
+                opacity: .5;
+            }
+        }
+        
+       .register{
+        label {display: none;}
+        input{width:100%;}
+    }
+    }
+
 }

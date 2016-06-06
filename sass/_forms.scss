@@ -1,0 +1,93 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $baseFontstack;
+  font-size: $baseFontsize;
+}
+
+#{$all-text-inputs},
+select[multiple] {
+  background-color: $bgcolor;
+  border: $base-border;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+/*  @include transition(border-color 200ms ease-in-out);*/
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $basecolor;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: lighten($base-border-color, 15%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+input[type="submit"]{
+    @include button-style($grey);
+    display: inline-block;
+    width:auto !important;
+    border:0;
+    .addons & {
+        white-space: normal;
+    }
+}
+
+select {
+  margin-bottom: $small-spacing;
+  max-width: 100%;
+  width: auto;
+}

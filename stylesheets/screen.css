@@ -6,6 +6,12 @@ html {
   box-sizing: inherit; }
 
 /*** BSP: @extend %reset;***/
+.single .mc4wp-form p:before, .single .mc4wp-form p:after {
+  content: "";
+  display: table; }
+.single .mc4wp-form p:after {
+  clear: both; }
+
 /*** Mixins & Placeholders ***/
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
@@ -27,7 +33,8 @@ body {
   font-size: 14px;
   line-height: 15.82px;
   color: #4d575e;
-  background-color: white; }
+  background-color: white;
+  font-weight: 400; }
   body.page-template-page-full-width {
     background-color: #558dbe; }
 
@@ -66,9 +73,22 @@ h1 {
 
 h2 {
   font-size: 2em; }
+  body.single h2.page-title {
+    font-size: 39.9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1; }
+    body.single h2.page-title span {
+      color: #5d7677;
+      display: block; }
 
 h3 {
   font-size: 1.665em; }
+  body.single h3.page-sub-title {
+    font-size: 23.8px;
+    font-weight: bold;
+    color: #4d575e; }
 
 h4 {
   font-size: 14px; }
@@ -121,7 +141,9 @@ article aside[id*="quote"] p {
   line-height: 1.33;
   margin-bottom: 1.625em; }
 article ul {
-  margin-bottom: 2.3em; }
+  margin-bottom: 2.3em;
+  list-style: none;
+  padding-left: 0; }
   article ul li {
     /* margin:.5em 0 .5em 2em;*/
     background: transparent url("../img/bullets_beige.svg") no-repeat 0px 2px/auto 1em;
@@ -206,6 +228,91 @@ article#kontakt, article#impressum {
     text-decoration: none;
     background: #c1a879;
     color: white !important; }
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+legend {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  padding: 0; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em; }
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: "Open Sans", Arial, Verdana, Helvetica, sans-serif;
+  font-size: 14px; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: white;
+  border: 1px solid #4d575e;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  padding: 0.4em;
+  /*  @include transition(border-color 200ms ease-in-out);*/
+  width: 100%; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+  select[multiple]:hover {
+    border-color: #3e464b; }
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+  select[multiple]:focus {
+    border-color: #558dbe;
+    box-shadow: none;
+    outline: none; }
+  input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+  select[multiple]:disabled {
+    background-color: #6f7e88;
+    cursor: not-allowed; }
+    input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+    select[multiple]:disabled:hover {
+      border: 1px solid #4d575e; }
+
+textarea {
+  resize: vertical; }
+
+[type="search"] {
+  appearance: none; }
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.5em; }
+
+[type="file"] {
+  margin-bottom: 1em;
+  width: 100%; }
+
+input[type="submit"] {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 15.4px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #4d575e;
+  color: white !important;
+  padding: .5em 1em;
+  display: inline-block;
+  width: auto !important;
+  border: 0; }
+  .addons input[type="submit"] {
+    white-space: normal; }
+
+select {
+  margin-bottom: 1em;
+  max-width: 100%;
+  width: auto; }
 
 /**
  * Global styles
@@ -332,15 +439,15 @@ body:not(.ie).home .wrapper {
       article .post_content.full:last-child {
         margin-right: 0; } }
 @media screen and (max-width: 768px) {
-  article .zitate {
+  article .zitate, article .addons {
     margin-top: 2em; } }
 @media screen and (min-width: 768px) {
-  article .zitate {
+  article .zitate, article .addons {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%; }
-    article .zitate:last-child {
+    article .zitate:last-child, article .addons:last-child {
       margin-right: 0; } }
 
 header.header {
@@ -924,45 +1031,62 @@ article {
 @media screen and (min-width: 768px) {
   .page-title {
     position: absolute;
-    top: 0;
-    left: 0;
-    text-indent: -999999999px;
-    display: inline-block;
-    overflow: hidden;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center center; }
-    #trauer-und-abschied .page-title {
-      background-image: url("../img/bg-trauer-abschied.svg");
-      width: 242px;
-      height: 58px;
-      top: 10%;
-      left: 50%;
-      margin-left: -121px; }
-    #so-begleite-ich-sie .page-title {
-      background-image: url("../img/bg-so-begleite-ich-sie.svg");
-      width: 244px;
-      height: 69px;
-      left: 10%;
-      top: 65%; }
-    #fuer-trauerende .page-title {
-      background-image: url("../img/bg-fuer-trauernde.svg");
-      width: 190px;
-      height: 70px;
-      top: 25%;
-      left: 55%; }
-    #fuer-eltern .page-title {
-      background-image: url("../img/bg-fuer-eltern.svg");
-      width: 145px;
-      height: 59px;
-      top: 35%;
-      left: 10%; }
-    #fuer-kitas-und-schulen .page-title {
-      background-image: url("../img/bg-fuer-kitas-schulen.svg");
-      width: 191px;
-      height: 97px;
-      top: 30%;
-      left: 55%; } }
+    top: 1em;
+    left: 2em;
+    right: 2em;
+    text-align: center;
+    z-index: 99999; }
+    .page-title body:not(.single) {
+      text-indent: -999999999px;
+      display: inline-block;
+      overflow: hidden;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center center; }
+      #trauer-und-abschied .page-title body:not(.single) {
+        background-image: url("../img/bg-trauer-abschied.svg");
+        width: 242px;
+        height: 58px;
+        top: 10%;
+        left: 50%;
+        right: auto;
+        margin-left: -121px; }
+      #so-begleite-ich-sie .page-title body:not(.single) {
+        background-image: url("../img/bg-so-begleite-ich-sie.svg");
+        width: 244px;
+        height: 69px;
+        left: 10%;
+        top: 65%;
+        right: auto; }
+      #fuer-trauerende .page-title body:not(.single) {
+        background-image: url("../img/bg-fuer-trauernde.svg");
+        width: 190px;
+        height: 70px;
+        top: 25%;
+        left: 55%;
+        right: auto; }
+      #fuer-eltern .page-title body:not(.single) {
+        background-image: url("../img/bg-fuer-eltern.svg");
+        width: 145px;
+        height: 59px;
+        top: 35%;
+        left: 10%;
+        right: auto; }
+      #fuer-kitas-und-schulen .page-title body:not(.single) {
+        background-image: url("../img/bg-fuer-kitas-schulen.svg");
+        width: 191px;
+        height: 97px;
+        top: 30%;
+        left: 55%;
+        right: auto; }
+    body.single .page-title + .page-sub-title {
+      position: absolute;
+      top: auto;
+      bottom: -1em;
+      left: 2em;
+      right: 2em;
+      text-align: center;
+      z-index: 99999; } }
 .page-title#ueber-mich, #kontakt .page-title, #impressum .page-title {
   display: none; }
 
@@ -1019,19 +1143,6 @@ article {
     border-bottom-width: 1px; }
   .panel .panel-content {
     margin-top: .75em; }
-  .panel table {
-    width: 100%;
-    margin-bottom: 2em;
-    /*        tr:last-child{border:0;}*/ }
-    .panel table > * {
-      color: #558dbe; }
-    .panel table tr {
-      border-width: 0 0 1px 0;
-      border-style: dotted;
-      border-color: #558dbe; }
-      .panel table tr td {
-        padding: .5em 0;
-        vertical-align: top; }
   .panel.parent {
     padding-bottom: 2em; }
     .panel.parent table {
@@ -1054,6 +1165,26 @@ article {
           padding: .25em 0; }
       .panel.parent table ~ p.small {
         margin-top: 2em; }
+
+table {
+  width: 100%;
+  margin-bottom: 2em; }
+  table * {
+    color: #558dbe; }
+  table tr {
+    border-width: 0 0 1px 0;
+    border-style: dotted;
+    border-color: #558dbe; }
+    table tr td {
+      padding: .5em 0;
+      vertical-align: top;
+      color: #558dbe; }
+      table tr td p {
+        color: inherit; }
+      table tr td p:first-child {
+        margin: 0; }
+  table tr:last-child {
+    border: 0; }
 
 table tr td:first-child ~ td {
   padding-left: 1em; }
@@ -1125,7 +1256,12 @@ footer.footer span, footer.footer a {
   background: #fff url(../img/bd-stoerer.svg) no-repeat center top/cover; }
   #stoerer hgroup {
     background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
-    margin: .5em 0; }
+    margin: .5em 0;
+    position: relative; }
+    #stoerer hgroup img {
+      position: absolute;
+      top: 0;
+      right: 0; }
   #stoerer article {
     margin-bottom: 1em; }
   #stoerer h2 {
@@ -1151,10 +1287,29 @@ footer.footer span, footer.footer a {
   #stoerer h3 {
     font-weight: bold;
     margin-bottom: .5em; }
+    #stoerer h3 .subtitle {
+      display: block;
+      font-weight: normal;
+      padding-bottom: 1em; }
+    #stoerer h3 a:hover {
+      text-decoration: none; }
   #stoerer p {
     margin-bottom: 0; }
+  #stoerer.angebot p {
+    padding: 1em; }
   #stoerer .view-article {
     font-style: italic; }
+  #stoerer .button {
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 15.4px;
+    font-weight: 600;
+    text-decoration: none;
+    background: #4d575e;
+    color: white !important;
+    padding: .5em 1em;
+    margin: .5em 2em;
+    display: inline-block; }
   #stoerer .post-edit-link:after {
     font-family: 'FontAwesome';
     content: "";
@@ -1218,5 +1373,60 @@ footer.footer span, footer.footer a {
   font-weight: bold; }
   .single .single-post-title, .single .single-post-title * {
     color: #4d575e; }
+.single .anmeldung {
+  background: transparent url("../img/bg_anmeldung.svg") no-repeat top center;
+  background-size: 100% auto;
+  padding: 1.5em; }
+  .single .anmeldung .intro {
+    background: #558dbe;
+    padding: 1em;
+    margin-bottom: 2em; }
+    .single .anmeldung .intro, .single .anmeldung .intro * {
+      color: white; }
+    .single .anmeldung .intro p:first-child {
+      margin-top: 0; }
+.single .mc4wp-form p {
+  margin: .5em 0; }
+  .single .mc4wp-form p label, .single .mc4wp-form p input {
+    float: left;
+    display: inline-block; }
+  .single .mc4wp-form p label {
+    width: 125px; }
+  .single .mc4wp-form p input {
+    width: 242px; }
+.single .addons {
+  width: 240px;
+  background: transparent url("../img/bg_addons.svg") no-repeat top center;
+  background-size: 102% auto;
+  padding: 1em;
+  margin: 0 0 0 3em; }
+  .single .addons .bg_addon_pic {
+    width: 204px;
+    height: 168px;
+    margin: 0px auto;
+    position: relative;
+    background: #558dbe; }
+    .single .addons .bg_addon_pic img {
+      position: absolute;
+      top: 1em;
+      left: 50%;
+      margin-left: -38px; }
+    .single .addons .bg_addon_pic + p {
+      margin: 50px 1em 1em 1em; }
+  .single .addons .addon_link {
+    padding: 1em;
+    display: block;
+    font-weight: bold;
+    background: transparent url("../img/icon-pdf.svg") no-repeat 1em 0;
+    background-size: contain;
+    padding: 0 2em 0 60px; }
+    .single .addons .addon_link:hover {
+      text-decoration: none;
+      color: #558dbe;
+      opacity: .5; }
+  .single .addons .register label {
+    display: none; }
+  .single .addons .register input {
+    width: 100%; }
 
 /*# sourceMappingURL=screen.css.map */
