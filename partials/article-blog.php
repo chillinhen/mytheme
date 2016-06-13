@@ -8,7 +8,8 @@ $anmeldeformular = get_field('anmeldeformular');
 $registerformular = get_field('register-form');
 
 $addon_text = get_field('addon_text');
-$addon_link = get_field('addon_link');
+#$addon_link = get_field('addon_link');
+$file = get_field('addon_link');
 $addon_link_text = get_field('addon_link_text');
 
 $image = get_field('teaser_bild');
@@ -30,9 +31,7 @@ $height = $image['sizes'][$size . '-height'];
 
     <header class="article-header" role="banner" style="background-image: url('<?php echo ($banner) ? $banner : ''; ?>');">
         <hgroup class="container">
-            <?php #if (in_category('aktuelles')) : ?>
             <h1 class="category-title"><?php _e('Aktuelles', 'myTheme'); ?></h1>
-            <?php #endif; ?>
             <?php if (has_post_thumbnail()) : ?>
                 <div class="thumbnail blog-image">   
                     <?php the_post_thumbnail('thumbnail-blog'); ?>
@@ -49,6 +48,9 @@ $height = $image['sizes'][$size . '-height'];
     <section>
         <div class="container">
             <div class="post_content" itemprop="articleBody">
+                <?php if (in_category('aktuelles')) : ?>
+                    <h4><?php the_title(); ?></h4>
+                <?php endif; ?>
                 <?php the_content(); ?>
                 <!--- Infos --->
                 <?php
@@ -62,47 +64,47 @@ $height = $image['sizes'][$size . '-height'];
                             ?>
                             <tr>
                                 <td><?php the_sub_field('label'); ?></td>
-                                <td><?php  the_sub_field('wert'); ?></td>  
+                                <td><?php the_sub_field('wert'); ?></td>  
                             </tr>
                         <?php endwhile; ?>
                     </table>
                 <?php endif; ?>
 
                 <!--- Anmeldung --->
-                <?php
-                if ($anmeldung) : ?>
-                <div class="anmeldung">
-                    <div class="intro">
-                        <?php echo $anmeldung; ?>
+                <?php if ($anmeldung) : ?>
+                    <div class="anmeldung">
+                        <div class="intro">
+                            <?php echo $anmeldung; ?>
+                        </div>
+                        <?php echo do_shortcode($anmeldeformular); ?>
                     </div>
-                    <?php echo do_shortcode($anmeldeformular); ?>
-                </div>
-                    
-                <?php endif;?>
-                <?php if (in_category('aktuelles')) : ?>
-                <footer>
-                    <span><?php the_title(); ?></span><br>
-                    <span class="date"><?php _e('veröffentlicht am: ','myTheme');?><?php the_time('J, F, Y'); ?></span>
-                </footer>
-                <?php endif;?>
-            </div>
-                
-                    <aside class="addons">
-                        <div class="bg_addon_pic">
-                            <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-                        </div>
 
-                        <?php echo $addon_text; ?>
-                        <?php if (get_field('download_angebot')) : ?>
-                        <a class="addon_link" href="<?php echo $addon_link; ?>" title="<?php echo $addon_link_text; ?>"><?php echo $addon_link_text; ?></a>
-                         <?php endif; ?>
-                        <?php #if (get_field('register_angebot')) : ?>
-                        <div class="register">
-                            <?php echo do_shortcode($registerformular); ?>
-                        </div>
-                        <?php #endif; ?>
-                    </aside>
-               
+                <?php endif; ?>
+                <?php if (in_category('aktuelles')) : ?>
+                    <footer>
+                        <span class="date"><?php _e('veröffentlicht am: ', 'myTheme'); ?><?php the_time('d.m.Y'); ?></span>
+                    </footer>
+                <?php endif; ?>
+            </div>
+            <?php if (get_field('download_angebot') || get_field('register_angebot')) : ?>
+                <aside class="addons">
+                    <div class="bg_addon_pic">
+                        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+                    </div>
+
+                    <?php echo $addon_text; ?>
+                    <?php if (get_field('download_angebot')) : if ($file): ?>
+                            <a class="addon_link" href="<?php echo $file['url']; ?>" target="_blank" title="<?php echo $file['filename']; ?>"><?php echo $addon_link_text; ?></a>
+                        <?php endif; ?>
+                <?php endif; ?>
+                <?php if (get_field('register_angebot')) : ?>
+                    <div class="register">
+                        <?php echo do_shortcode($registerformular); ?>
+                    </div>
+                <?php endif; ?>
+            </aside>
+            <?php endif; ?>
+
         </div>
 
     </section>

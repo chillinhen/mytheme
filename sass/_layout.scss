@@ -356,8 +356,7 @@ article{
                 }
         }
     }
-    &#start{
-        height:90vH;
+  &#start{
         > section {
             background-image: none;
         }
@@ -373,22 +372,17 @@ article{
             }
         }
         @media screen and (max-width:$screen-xs) and (orientation:portrait){
-            .container > * {display:none;}
+            .container > .post_content {display:none;}
+            #stoerer{margin-top:100px;}
         }
         @media screen and (max-width:$screen-Iphone6plus-landscape) and (orientation:landscape){
-            .container > * {display:none;}
+            .container > .post_content {display:none;}
+            #stoerer{margin-top:100px;}
         }
         @media screen and (min-width:$screen-xs) and (max-width:800px) and (orientation:portrait){
             .container{
                 padding:0;
                 height:100vH;
-
-                .post_content{
-                    position: absolute;
-                    top: 50%;
-                    left: 1em;
-                    right: 1em; 
-                }
             }
             li {
                 padding:.5em .5em .5em 3em;
@@ -414,12 +408,11 @@ article{
         @media screen and (min-width:$screen-sm){
             .container{
                 padding:0;
-                min-height:100vH;
-
+                height:100vH;
+                @include display(flex);
+                @include align-items(center);
                 .post_content{
-                    position: absolute;
-                    top: 45%;
-                    left: 3em;
+                    margin-top: 150px;
                     ul {
                         max-width:420px;  
                     }
@@ -435,8 +428,11 @@ article{
         @media screen and (min-width:800px) and (orientation:portrait){
             .container{
                 padding:0;
-                height:100vH;
-
+                height:80vH;
+                padding-bottom:20vH;
+                @include display(flex);
+                @include align-items(flex-end);
+                
                 .post_content{
                     position: absolute;
                     top: 50%;
@@ -587,6 +583,9 @@ article{
     @media screen and (max-width:$screen-xs){
         @media screen and (orientation:portrait){
             top:3em;
+            &.blog-image{
+                top:6em;
+            }
             left:1em;
             right:1em;
             padding:.2em;
@@ -624,6 +623,9 @@ article{
         left:2.4em;
         padding:5px;
         top:2em;
+        &.blog-image{
+                top:4em;
+            }
         img {
             border:12px solid white; 
         }
@@ -656,17 +658,27 @@ article{
     @media screen and (min-width:$screen-sm){
         position: absolute;
         top: 1em;
-        left: 2em;
-        right:2em;
+        left: 1em;
+        right:1em;
         text-align: center;
         z-index:99999;
-        body:not(.single){
+        body:not(.single) &{
             text-indent:-999999999px;
             display:inline-block;
             overflow:hidden;
             background-color: transparent;
             background-repeat: no-repeat;
             background-position:center center;
+            }
+            #danke &{
+                background-image: url('../img/bg-vielen-dank.svg');
+                width:242px;
+                height:58px;
+                top: 10%;
+                right: 20%;
+                left:auto;
+                margin-right: -121px;
+            }
             #trauer-und-abschied &{
                 background-image: url('../img/bg-trauer-abschied.svg');
                 width:242px;
@@ -710,11 +722,11 @@ article{
                 right:auto;
             }
 
-        }
+        
         body.single & + .page-sub-title{
             position: absolute;
             top: auto;
-            bottom:-1em;
+            bottom:-.5em;
             left: 2em;
             right:2em;
             text-align: center;
@@ -906,27 +918,35 @@ footer.footer{
 
 /** Addons ***/
 #stoerer{
-    position: absolute;
-    top:25%;
-    min-height:200px;
-    margin-top:-100px;
-    right:0;
-    width:468px;
+    @media screen and (min-width:$screen-sm){
+       width:468px;  
+    }
+
     padding:.5em 1em;
-    background:#fff url(../img/bd-stoerer.svg) no-repeat center top / cover;
+    background: {
+        color: rgba(255,255,255,.5);
+        image:url(../img/bd-stoerer.svg);
+        repeat:no-repeat;
+        position: center top;
+        size: 100% auto;  
+    }
     
     hgroup{
         background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
-        margin: .5em 0;
+        margin: .5em 0 1.5em 0;
         position: relative;
         img {
             position: absolute;
-            top:0;
-            right:0;
+            top:-.5em;
+            right:.5em;
         }
     }
     article{
+        background: transparent;
         margin-bottom: 1em;
+    }
+    &.angebot article{
+        margin-bottom: .5em;
     }
     h2 {
         @include button-style($basecolor);
@@ -956,13 +976,16 @@ footer.footer{
         a:hover{text-decoration: none;}
     }
     p{
-        margin-bottom: 0;
+        margin-bottom: .5em;
+        @media screen and (max-width:$screen-xs){
+            display:none;
+        }
     }
-    &.angebot p{padding:1em;}
+/*    &.angebot p{padding:1em;}*/
     .view-article{font-style:italic;}
     .button{
          @include button-style($grey);
-         margin:.5em 2em;
+         margin:.5em;
          display: inline-block;
     }
     .post-edit-link{
@@ -971,4 +994,142 @@ footer.footer{
             @include icon-style ("\f044", 0, 1, .5em, 1em);
         } 
     }
+}
+.single{
+    article > section {background-image: none !important;}
+    .category-title{
+        @include button-style($basecolor);
+        display: inline-block;
+        @include rotate(-1.25deg);
+        position: absolute;
+        top:2em;
+        z-index: 99;
+    }
+    .single-post-title{
+        font-size: $baseFontsize;
+        line-height: $baselineHeight * 1.2;
+        font-weight:bold;
+        &, & * {color: $textcolor;}
+    }
+    .anmeldung {
+        background: transparent url('../img/bg_anmeldung.svg') no-repeat top center;
+        background-size: 100% auto;
+        padding:1.5em;
+        .intro{
+            background: $basecolor;
+            padding:1em;
+            margin-bottom:2em;
+            &,& * {color:white};
+            p:first-child{margin-top:0;}
+        }
+    }
+    .mc4wp-form{
+        p{
+            @extend %clearfix;
+            margin:.5em 0;
+
+            label, input {
+                float:left;
+                display:inline-block;
+            }
+            label {
+                width:125px;
+            }
+            input{
+                width: 242px;
+            }
+        }
+    }
+    .addons{
+        @media screen and (max-width:$screen-sm){
+            @media screen and (orientation:portrait){
+                margin-top:2em;
+            }
+            @media screen and (orientation:landscape){
+                background-image:none;
+                .bg_addon_pic{
+                    display: none;
+                }
+                p{
+                    margin:1em;
+                }
+                .addon_link{
+                    height:50px;
+                }
+            }
+
+        }
+        
+        @media screen and (min-width:$screen-sm + 1) and (max-width:$screen-md){
+            margin:0;
+        }
+        @media screen and (min-width:$screen-lg) {
+           width: 240px;
+           margin:0 0 0 3em;
+           .bg_addon_pic{
+               width: 204px;
+           }
+        }
+       
+        background: transparent url('../img/bg_addons.svg') no-repeat top center;
+        background-size: cover;
+                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='../img/bg_addons.svg',
+                sizingMethod='scale');
+            -webkit-background-size: 99% auto;
+            -moz-background-size: 99% auto;
+            -o-background-size: 99% auto;
+            background-size: 99% auto;
+            -ms-behavior: url(/backgroundsize.min.htc);
+        padding:1.25em 1em;
+
+        .bg_addon_pic{
+            height: 168px;
+            margin: 0px auto;
+            position: relative;
+            background: $basecolor;
+
+            img{
+                position: absolute;
+                top:.5em;
+                left:50%;
+                margin-left: -60px;
+            }
+
+            & + p{
+                margin: 50px 1em 1em 1em;
+            }         
+        }
+        .addon_link{
+            padding: 1em;
+            display:block;
+            font-weight:bold;
+            background: transparent url('../img/icon-pdf.svg') no-repeat 0 0;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                src='../img/icon-pdf.svg',
+                sizingMethod='scale');
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            background-size: contain;
+            -ms-behavior: url(/backgroundsize.min.htc);
+            padding:0 2em 0 60px;
+            &:hover {
+                text-decoration: none;
+                color:$basecolor;
+                opacity: .5;
+            }
+        }
+
+        .register{
+            label {display: none;}
+            input{width:100%;}
+        }
+    }
+    footer{
+        border-top:1px dotted $lightGrey;
+        padding-top: .2em;
+        .date{font-size: smaller;}
+    }
+
 }

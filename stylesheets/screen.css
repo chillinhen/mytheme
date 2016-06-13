@@ -74,24 +74,42 @@ h1 {
 h2 {
   font-size: 2em; }
   body.single h2.page-title {
-    font-size: 39.9px;
+    font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     line-height: 1; }
+    @media screen and (max-width: 768px) {
+      body.single h2.page-title {
+        font-size: 22px; } }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      body.single h2.page-title {
+        margin: 0 3em; } }
+    @media screen and (min-width: 992px) {
+      body.single h2.page-title {
+        font-size: 28px; } }
     body.single h2.page-title span {
       color: #5d7677;
       display: block; }
+      @media screen and (max-width: 480px) {
+        body.single h2.page-title span {
+          display: none; } }
 
 h3 {
   font-size: 1.665em; }
   body.single h3.page-sub-title {
     font-size: 23.8px;
     font-weight: bold;
-    color: #4d575e; }
+    color: #4d575e;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      body.single h3.page-sub-title {
+        font-size: 14px; } }
 
 h4 {
-  font-size: 14px; }
+  font-size: 14px;
+  color: #4d575e;
+  font-weight: bold; }
 
 h5 {
   font-size: 14px; }
@@ -776,7 +794,6 @@ article {
           padding-top: 130px !important;
           padding-left: 2em; } }
   article#start {
-    height: 90vH;
     background-repeat: no-repeat;
     background-blend-mode: multiply; }
     article#start > section {
@@ -794,20 +811,19 @@ article {
       color: white;
       display: block; }
     @media screen and (max-width: 480px) and (orientation: portrait) {
-      article#start .container > * {
-        display: none; } }
+      article#start .container > .post_content {
+        display: none; }
+      article#start #stoerer {
+        margin-top: 100px; } }
     @media screen and (max-width: 736px) and (orientation: landscape) {
-      article#start .container > * {
-        display: none; } }
+      article#start .container > .post_content {
+        display: none; }
+      article#start #stoerer {
+        margin-top: 100px; } }
     @media screen and (min-width: 480px) and (max-width: 800px) and (orientation: portrait) {
       article#start .container {
         padding: 0;
         height: 100vH; }
-        article#start .container .post_content {
-          position: absolute;
-          top: 50%;
-          left: 1em;
-          right: 1em; }
       article#start li {
         padding: .5em .5em .5em 3em; }
         article#start li * {
@@ -827,11 +843,25 @@ article {
     @media screen and (min-width: 768px) {
       article#start .container {
         padding: 0;
-        min-height: 100vH; }
+        height: 100vH;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        box-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        -ms-flex-align: center; }
         article#start .container .post_content {
-          position: absolute;
-          top: 45%;
-          left: 3em; }
+          margin-top: 150px; }
           article#start .container .post_content ul {
             max-width: 420px; }
           article#start .container .post_content li > * {
@@ -839,7 +869,24 @@ article {
     @media screen and (min-width: 800px) and (orientation: portrait) {
       article#start .container {
         padding: 0;
-        height: 100vH; }
+        height: 80vH;
+        padding-bottom: 20vH;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: end;
+        -moz-box-align: end;
+        box-align: end;
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+        -ms-align-items: flex-end;
+        -o-align-items: flex-end;
+        align-items: flex-end;
+        -ms-flex-align: end; }
         article#start .container .post_content {
           position: absolute;
           top: 50%;
@@ -974,7 +1021,9 @@ article {
     top: 3em;
     left: 1em;
     right: 1em;
-    padding: .2em; } }
+    padding: .2em; }
+    .thumbnail.blog-image {
+      top: 6em; } }
 @media screen and (max-width: 480px) and (orientation: landscape) {
   .thumbnail {
     top: 2em;
@@ -1006,6 +1055,8 @@ article {
       left: 2.4em;
       padding: 5px;
       top: 2em; }
+      .thumbnail.blog-image {
+        top: 4em; }
       .thumbnail img {
         border: 12px solid white; } }
   @media screen and (min-width: 993px) {
@@ -1032,57 +1083,65 @@ article {
   .page-title {
     position: absolute;
     top: 1em;
-    left: 2em;
-    right: 2em;
+    left: 1em;
+    right: 1em;
     text-align: center;
     z-index: 99999; }
-    .page-title body:not(.single) {
+    body:not(.single) .page-title {
       text-indent: -999999999px;
       display: inline-block;
       overflow: hidden;
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: center center; }
-      #trauer-und-abschied .page-title body:not(.single) {
-        background-image: url("../img/bg-trauer-abschied.svg");
-        width: 242px;
-        height: 58px;
-        top: 10%;
-        left: 50%;
-        right: auto;
-        margin-left: -121px; }
-      #so-begleite-ich-sie .page-title body:not(.single) {
-        background-image: url("../img/bg-so-begleite-ich-sie.svg");
-        width: 244px;
-        height: 69px;
-        left: 10%;
-        top: 65%;
-        right: auto; }
-      #fuer-trauerende .page-title body:not(.single) {
-        background-image: url("../img/bg-fuer-trauernde.svg");
-        width: 190px;
-        height: 70px;
-        top: 25%;
-        left: 55%;
-        right: auto; }
-      #fuer-eltern .page-title body:not(.single) {
-        background-image: url("../img/bg-fuer-eltern.svg");
-        width: 145px;
-        height: 59px;
-        top: 35%;
-        left: 10%;
-        right: auto; }
-      #fuer-kitas-und-schulen .page-title body:not(.single) {
-        background-image: url("../img/bg-fuer-kitas-schulen.svg");
-        width: 191px;
-        height: 97px;
-        top: 30%;
-        left: 55%;
-        right: auto; }
+    #danke .page-title {
+      background-image: url("../img/bg-vielen-dank.svg");
+      width: 242px;
+      height: 58px;
+      top: 10%;
+      left: 80%;
+      right: auto;
+      margin-left: -121px; }
+    #trauer-und-abschied .page-title {
+      background-image: url("../img/bg-trauer-abschied.svg");
+      width: 242px;
+      height: 58px;
+      top: 10%;
+      left: 50%;
+      right: auto;
+      margin-left: -121px; }
+    #so-begleite-ich-sie .page-title {
+      background-image: url("../img/bg-so-begleite-ich-sie.svg");
+      width: 244px;
+      height: 69px;
+      left: 10%;
+      top: 65%;
+      right: auto; }
+    #fuer-trauerende .page-title {
+      background-image: url("../img/bg-fuer-trauernde.svg");
+      width: 190px;
+      height: 70px;
+      top: 25%;
+      left: 55%;
+      right: auto; }
+    #fuer-eltern .page-title {
+      background-image: url("../img/bg-fuer-eltern.svg");
+      width: 145px;
+      height: 59px;
+      top: 35%;
+      left: 10%;
+      right: auto; }
+    #fuer-kitas-und-schulen .page-title {
+      background-image: url("../img/bg-fuer-kitas-schulen.svg");
+      width: 191px;
+      height: 97px;
+      top: 30%;
+      left: 55%;
+      right: auto; }
     body.single .page-title + .page-sub-title {
       position: absolute;
       top: auto;
-      bottom: -1em;
+      bottom: -.5em;
       left: 2em;
       right: 2em;
       text-align: center;
@@ -1246,24 +1305,29 @@ footer.footer span, footer.footer a {
 
 /** Addons ***/
 #stoerer {
-  position: absolute;
-  top: 25%;
-  min-height: 200px;
-  margin-top: -100px;
-  right: 0;
-  width: 468px;
   padding: .5em 1em;
-  background: #fff url(../img/bd-stoerer.svg) no-repeat center top/cover; }
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url(../img/bd-stoerer.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+  /*    &.angebot p{padding:1em;}*/ }
+  @media screen and (min-width: 768px) {
+    #stoerer {
+      width: 468px; } }
   #stoerer hgroup {
     background: transparent url(../img/bg_header_stoerer.jpg) no-repeat center 1.2em;
-    margin: .5em 0;
+    margin: .5em 0 1.5em 0;
     position: relative; }
     #stoerer hgroup img {
       position: absolute;
-      top: 0;
-      right: 0; }
+      top: -.5em;
+      right: .5em; }
   #stoerer article {
+    background: transparent;
     margin-bottom: 1em; }
+  #stoerer.angebot article {
+    margin-bottom: .5em; }
   #stoerer h2 {
     text-transform: uppercase;
     letter-spacing: .5px;
@@ -1294,9 +1358,10 @@ footer.footer span, footer.footer a {
     #stoerer h3 a:hover {
       text-decoration: none; }
   #stoerer p {
-    margin-bottom: 0; }
-  #stoerer.angebot p {
-    padding: 1em; }
+    margin-bottom: .5em; }
+    @media screen and (max-width: 480px) {
+      #stoerer p {
+        display: none; } }
   #stoerer .view-article {
     font-style: italic; }
   #stoerer .button {
@@ -1308,7 +1373,7 @@ footer.footer span, footer.footer a {
     background: #4d575e;
     color: white !important;
     padding: .5em 1em;
-    margin: .5em 2em;
+    margin: .5em;
     display: inline-block; }
   #stoerer .post-edit-link:after {
     font-family: 'FontAwesome';
@@ -1317,35 +1382,6 @@ footer.footer span, footer.footer a {
     opacity: 1;
     margin-left: 0.5em;
     font-size: 1em; }
-
-/*** Ie hacks ***/
-@media screen and (min-width: 768px) {
-  .ie article ul {
-    margin-left: 1em; }
-    .ie article ul li {
-      background-image: none !important;
-      list-style: square;
-      list-style-position: inside;
-      padding-left: 0; }
-  .ie article#start ul {
-    margin: 0; }
-    .ie article#start ul li {
-      padding-left: 2em;
-      list-style: none; }
-  .ie article:not(#start) > section {
-    width: 1170px;
-    background: transparent url("../img/Voegel.svg") no-repeat 0px 80px;
-    background-size: auto 80px; }
-    .ie article:not(#start) > section .zitate {
-      background: transparent url("../img/Leuchtturm.svg") no-repeat center top;
-      background-size: auto 100%;
-      min-height: 375px; }
-  .ie.impressum article > section, .ie.kontakt article > section {
-    background-image: none !important; }
-  .ie .logo a, .ie .logo .logo-img {
-    width: 200px;
-    display: block;
-    max-width: none; } }
 
 .single article > section {
   background-image: none !important; }
@@ -1395,30 +1431,60 @@ footer.footer span, footer.footer a {
   .single .mc4wp-form p input {
     width: 242px; }
 .single .addons {
-  width: 240px;
   background: transparent url("../img/bg_addons.svg") no-repeat top center;
-  background-size: 102% auto;
-  padding: 1em;
-  margin: 0 0 0 3em; }
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../img/bg_addons.svg', sizingMethod='scale');
+  -webkit-background-size: 99% auto;
+  -moz-background-size: 99% auto;
+  -o-background-size: 99% auto;
+  background-size: 99% auto;
+  -ms-behavior: url(/backgroundsize.min.htc);
+  padding: 1.25em 1em; }
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .single .addons {
+    margin-top: 2em; } }
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .single .addons {
+    background-image: none; }
+    .single .addons .bg_addon_pic {
+      display: none; }
+    .single .addons p {
+      margin: 1em; }
+    .single .addons .addon_link {
+      height: 50px; } }
+
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    .single .addons {
+      margin: 0; } }
+  @media screen and (min-width: 1200px) {
+    .single .addons {
+      width: 240px;
+      margin: 0 0 0 3em; }
+      .single .addons .bg_addon_pic {
+        width: 204px; } }
   .single .addons .bg_addon_pic {
-    width: 204px;
     height: 168px;
     margin: 0px auto;
     position: relative;
     background: #558dbe; }
     .single .addons .bg_addon_pic img {
       position: absolute;
-      top: 1em;
+      top: .5em;
       left: 50%;
-      margin-left: -38px; }
+      margin-left: -60px; }
     .single .addons .bg_addon_pic + p {
       margin: 50px 1em 1em 1em; }
   .single .addons .addon_link {
     padding: 1em;
     display: block;
     font-weight: bold;
-    background: transparent url("../img/icon-pdf.svg") no-repeat 1em 0;
+    background: transparent url("../img/icon-pdf.svg") no-repeat 0 0;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../img/icon-pdf.svg', sizingMethod='scale');
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
     background-size: contain;
+    -ms-behavior: url(/backgroundsize.min.htc);
     padding: 0 2em 0 60px; }
     .single .addons .addon_link:hover {
       text-decoration: none;
@@ -1428,5 +1494,39 @@ footer.footer span, footer.footer a {
     display: none; }
   .single .addons .register input {
     width: 100%; }
+.single footer {
+  border-top: 1px dotted #5d7677;
+  padding-top: .2em; }
+  .single footer .date {
+    font-size: smaller; }
+
+/*** Ie hacks ***/
+@media screen and (min-width: 768px) {
+  .ie article ul {
+    margin-left: 1em; }
+    .ie article ul li {
+      background-image: none !important;
+      list-style: square;
+      list-style-position: inside;
+      padding-left: 0; }
+  .ie article#start ul {
+    margin: 0; }
+    .ie article#start ul li {
+      padding-left: 2em;
+      list-style: none; }
+  .ie article:not(#start) > section {
+    width: 1170px;
+    background: transparent url("../img/Voegel.svg") no-repeat 0px 80px;
+    background-size: auto 80px; }
+    .ie article:not(#start) > section .zitate {
+      background: transparent url("../img/Leuchtturm.svg") no-repeat center top;
+      background-size: auto 100%;
+      min-height: 375px; }
+  .ie.impressum article > section, .ie.kontakt article > section {
+    background-image: none !important; }
+  .ie .logo a, .ie .logo .logo-img {
+    width: 200px;
+    display: block;
+    max-width: none; } }
 
 /*# sourceMappingURL=screen.css.map */

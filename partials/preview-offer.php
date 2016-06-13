@@ -24,7 +24,7 @@ $smallHeadline = get_field('subtitle');
         <h2><?php _e('Aktuelles', 'myTheme'); ?></h2>
         <h3 style="margin-right:<?php echo $width; ?>px;">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                <?php echo $bigHeadline; ?>
+                <?php echo strip_tags($bigHeadline); ?>
                 <span class="subtitle"><?php echo $smallHeadline; ?></span>
             </a>
         </h3>
@@ -39,7 +39,9 @@ $smallHeadline = get_field('subtitle');
     <!-- post title -->
 
     <!-- /post title -->
-    <?php echo $teaserText; ?>
+<!--    <div style="margin-right:<?php #echo $width; ?>px;">-->
+        <?php echo $teaserText; ?>
+<!--    </div>-->
     <a class="button" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
         <?php echo $button_text; ?>
     </a>

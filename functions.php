@@ -18,7 +18,7 @@ function myTheme_setup() {
     load_theme_textdomain('myTheme', get_stylesheet_directory_uri() . '/languages');
 
     add_image_size('thumbnail-size', 550, '', true);
-    add_image_size('thumbnail-blog', 705, 285, true);
+    add_image_size('thumbnail-blog', 705, 285, array( 'center', 'center'));
     add_image_size('teaser-pic', 83, 135, true);
     add_image_size('addon-pic', 124, 202, true);
     // deregister parent script and load modernizer per cdn
@@ -42,7 +42,7 @@ function myTheme_setup() {
 
                 wp_register_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'screen');
                 wp_enqueue_style('fontawesome');
-                wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/stylesheets/screen.css', 'style', '1.0', 'screen', array('bootstrap'));
+                wp_enqueue_style('myTheme', get_stylesheet_directory_uri() . '/stylesheets/screen.min.css', 'style', '1.0', 'screen', array('bootstrap'));
                  wp_enqueue_style('print', get_stylesheet_directory_uri() . '/stylesheets/print.css', 'style', '1.0', 'print', array('bootstrap, myTheme'));
             }
 
@@ -58,13 +58,22 @@ function myTheme_setup() {
                 wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.2', true);
                 wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery', 'bootstrap'), '1.2', true);
                 if (!(wp_is_mobile())) {
-                   wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll..min.js', array('jquery', 'scripts'), '1.2', true); 
+                   wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.min.js', array('scripts'), '1.2', true); 
                 }
             }
 
         }
     }
     add_action('wp_enqueue_scripts', 'my_scripts');
+    
+        // init conditional scripts
+    function conditonal_enqueue_scripts() {
+
+        wp_enqueue_script('html5shiv', 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js');
+        wp_script_add_data('html5shiv', 'conditional', 'lt IE 7');
+    }
+
+    add_action('wp_enqueue_scripts', 'conditonal_enqueue_scripts');
     
     function mv_browser_body_class($classes) {
         global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
