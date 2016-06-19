@@ -2,11 +2,11 @@
 <!-- footer -->
 <footer class="footer" role="contentinfo">
     <div class="container">
-        <span class="copyright">©2015 Andrea Bruders trauer-aachen.de</span> <a class="impressum" href="<?php echo home_url(); ?>/impressum"><?php _e("Impressum", "html5blank"); ?></a>
+        <span class="copyright">©2015 Andrea Bruders trauer-aachen.de</span> <a class="impressum" href="<?php echo home_url(); ?>/impressum"><?php _e("Impressum", "myTheme"); ?></a>
         <div class="scroll-to-top screen-layout"> </div><!-- .scroll-to-top -->
     </div>
 </footer>
-<div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "html5blank"); ?></a></div>
+<div id="bt-kontakt"><a class="kontakt" href="<?php echo home_url(); ?>/kontakt"><?php _e("Kontakt", "myTheme"); ?></a></div>
 </div>
 
 

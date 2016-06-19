@@ -91,7 +91,7 @@ $notes = get_field('notes');
     <div class="row">
         <?php if ($location) : ?>
             <div class="label">
-                <?php _e("Ort", "wpbootstrap"); ?>
+                <?php _e("Ort", "myTheme"); ?>
             </div>
             <div class="value">
                 <?php echo $location; ?>

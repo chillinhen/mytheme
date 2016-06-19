@@ -4,7 +4,7 @@
     <div class="container">
         <div class="post_content">
             <?php if (have_posts()): ?>
-                <h1><?php _e('Latest Posts', 'html5blank'); ?></h1>
+                <h1><?php _e('Latest Posts', 'myTheme'); ?></h1>
                 <?php while (have_posts()) : the_post(); ?>
 
 

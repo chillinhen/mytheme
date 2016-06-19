@@ -14,7 +14,7 @@
                     <div class="panel parent">
                         <header id="heading-<?php the_ID(); ?>">
                             <h3 role="button" data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="false" aria-controls="collapse-<?php the_ID(); ?>">
-                                <span><?php _e("Konditionen", "html5blank"); ?></span>
+                                <span><?php _e("Konditionen", "myTheme"); ?></span>
                             </h3>
                         </header>
                         <div class="collapse" id="collapse-<?php the_ID(); ?>">

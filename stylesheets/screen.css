@@ -16,6 +16,7 @@ html {
 /**** caret ****/
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
 /******* SVG *********/
+/*** WP Specials ***/
 /* Mediaqueries breakpoints */
 /* Helper Classes */
 /**** Debugging ***/
@@ -28,6 +29,33 @@ html {
 /*** bullets***/
 /*** Thumbnail Sie ***/
 /*** Transition ***/
+.screen-reader-text {
+  /* Text meant only for screen readers. */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
 body {
   font-family: "Open Sans", Arial, Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -65,8 +93,10 @@ p.small {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", Arial, Verdana, Helvetica, sans-serif;
   font-weight: 300;
-  line-height: 1.4;
-  color: #558dbe; }
+  line-height: 1.2;
+  color: #558dbe;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 h1 {
   font-size: 3.33em; }
@@ -75,10 +105,8 @@ h2 {
   font-size: 2em; }
   body.single h2.page-title {
     font-size: 35px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1; }
+    line-height: 1;
+    text-align: center; }
     @media screen and (max-width: 768px) {
       body.single h2.page-title {
         font-size: 22px; } }
@@ -1099,9 +1127,9 @@ article {
       width: 242px;
       height: 58px;
       top: 10%;
-      left: 80%;
-      right: auto;
-      margin-left: -121px; }
+      right: 20%;
+      left: auto;
+      margin-right: -121px; }
     #trauer-und-abschied .page-title {
       background-image: url("../img/bg-trauer-abschied.svg");
       width: 242px;

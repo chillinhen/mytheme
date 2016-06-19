@@ -31,7 +31,7 @@ $smallHeadline = get_field('subtitle');
         <?php if ($image) : ?>
             <a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
 
-                <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+                <img class="teaser-pic" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
 
             </a>
         <?php endif; ?>

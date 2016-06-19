@@ -16,6 +16,8 @@ add_action('after_setup_theme', 'myTheme_setup');
 function myTheme_setup() {
     // Adding Translation Option
     load_theme_textdomain('myTheme', get_stylesheet_directory_uri() . '/languages');
+    
+    add_theme_support('title-tag');
 
     add_image_size('thumbnail-size', 550, '', true);
     add_image_size('thumbnail-blog', 705, 285, array( 'center', 'center'));
@@ -28,6 +30,26 @@ function myTheme_setup() {
         wp_deregister_script('modernizr', get_template_directory_uri() . '/library/js/modernizr.full.min.js');
         wp_enqueue_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js', array('jquery'), '1.2', true);
     }
+    
+    //replace deprecated wp_title
+function filter_title_part($title) {
+    $name = get_bloginfo('name');
+    global $post;
+    $title = get_the_title();
+    $parent = get_the_title($post->post_parent);
+    return array($name, $parent, $title);
+}
+
+function my_document_title_separator($sep) {
+    // change separator for singular blog post
+    if (is_singular(array('post', 'page'))) {
+        $sep = '|';
+    }
+
+    return $sep;
+}
+
+add_filter('document_title_separator', 'my_document_title_separator', 10);
 
     //init styles
     if (!function_exists("my_styles")) {

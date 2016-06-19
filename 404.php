@@ -9,7 +9,7 @@
         <section>
             <div class="container">
                 <div class="post_content" itemprop="articleBody">
-                    <h1><?php _e('Page not found', 'html5blank'); ?></h1>
+                    <h1><?php _e('Page not found', 'myTheme'); ?></h1>
                     <p>
                         <strong>
                         <a href="<?php echo home_url(); ?>">
